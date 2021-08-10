@@ -58,7 +58,7 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
             offset: window.screen.availHeight * -0.15, // Scrolls to element + 50 pixels down the page,
         })
     }
-
+    //
     //onYotube video onClick event (auto throw confetti + show manual throw confetti button) (play isn't instantaneus like stateChange)
     let ONCEonPlayAltaBirra = true
     async function onPlayAltaBirra() {
