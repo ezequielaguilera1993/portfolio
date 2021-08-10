@@ -4,6 +4,13 @@ import YouTube from 'react-youtube';
 import emailjs from 'emailjs-com'
 import { useForm, Resolver } from "react-hook-form";
 import Confetti from 'react-dom-confetti';
+var Scroll = require('react-scroll');
+var Element = Scroll.Element;
+var scroller = Scroll.scroller;
+
+
+// Somewhere else, even another file
+
 
 function sendMail() {
     emailjs.send("gmail", "template_2tshsrs", {
@@ -16,8 +23,7 @@ function sendMail() {
 }
 
 
-export const Portfolio: React.FunctionComponent<{}> = () => {
-
+export const Portfolio: React.FunctionComponent<{}> = (conf) => {
     //THROW CONFETTI//
     // automatic throw confetti
     let [confetti, ºconfetti] = useState<boolean>(false)
@@ -42,69 +48,91 @@ export const Portfolio: React.FunctionComponent<{}> = () => {
 
     //onYotube video onClick event (auto throw confetti + show manual throw confetti button)
     let [playAltabirra, setPlayAltaBirra] = useState<boolean>(false)
+
     async function onPlayAltaBirra() {
-        await setPlayAltaBirra(!playAltabirra)
-        await setTimeout(() => { throwConfetti() }, 1680)
-        await setTimeout(() => { ºshowMoreConfetti(true) }, 2680);
+        if (playAltabirra === false) {
+            setTimeout(() => { throwConfetti() }, 2200)
+            setTimeout(() => { ºshowMoreConfetti(true) }, 3600);
+        }
+
+        setPlayAltaBirra(true)
+
+        scroller.scrollTo('altaBirraVideo', {
+            duration: 300,
+            delay: 0,
+            smooth: true,
+            offset: window.screen.availHeight * -0.15, // Scrolls to element + 50 pixels down the page,
+        })
     }
+
+
 
     const config = {
         angle: 90,
         spread: 360,
         startVelocity: 50,
         elementCount: 300,
-        dragFriction: .1,
+        dragFriction: 0.1,
         duration: 5000,
-        stagger: 2,
-        width: "10px",
-        height: "10px",
+        stagger: 1,
+        width: ".7rem",
+        height: ".7rem",
         perspective: "568px",
         colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
     };
-    //en of throw confetti//
+    //en of throw confetti logic//
 
     return (<div >
 
+
         {/* Auto Confeti */}
-        <div style={{ marginLeft: "100%", }}>
+        {/* <div style={{ display: 'flex', justifyContent: "flex-end" }}>
             <Confetti active={confetti} config={config} />
         </div>
-
+ */}
         <div style={{}}>
             <Confetti active={confetti} config={config} />
         </div>
 
         {/* Manual confetti */}
-        <div style={{ position: "absolute", marginLeft: "50vw", top: "-20vh" }}>
-            <Confetti active={moreConfetti} config={{ ...config, elementCount: 400, duration: 2000, startVelocity: 80 }} />
+        <div style={{}}>
+            <Confetti active={moreConfetti} config={{ ...config, elementCount: 300, duration: 2000, startVelocity: 40 }} />
         </div>
+
+
+        {/* <div style={{ display: 'flex', justifyContent: "flex-end", zIndex: 1, position: "absolute" }} >
+            <div style={{ width: "100px", height: "100px", backgroundColor: "#fff", zIndex: 1 }} ></div>
+        </div> */}
+
+
+
         {
             showMoreConfetti && !moreConfettiLoading ?
-                <button id={Style.moreConfetti} onClick={throwMoreConfetti} />
+                <button id={Style.moreConfetti} onClick={throwMoreConfetti}></button>
                 :
                 showMoreConfetti && moreConfettiLoading ?
                     <svg id={Style.moreConfettiLoading} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" style={{ margin: "auto", background: "none", display: "block", shapeRendering: "auto" }} width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
                         <circle cx="50" cy="50" r="32" stroke-width="8" stroke="#4877be" stroke-dasharray="50.26548245743669 50.26548245743669" fill="none" stroke-linecap="round">
                             <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" keyTimes="0;1" values="0 50 50;360 50 50"></animateTransform>
                         </circle>
-                        asd </svg>
+                    </svg>
                     :
                     null
         }
-
+        {/* end of confetti things */}
 
         <div id={Style.portfolio} >
             <h1>Portfolio</h1>
 
             <h2>AltaBirra</h2>
+            <Element name="altaBirraVideo">
 
-            <YouTube
-                videoId={"PGe7mLyGKsg"}
-                onPlay={onPlayAltaBirra}
-                onStateChange={() => console.log("as")}
-                className={playAltabirra ? Style.youtubeVideoPlay : Style.youtubeVideo}
-            />
-
+                <YouTube
+                    videoId={"PGe7mLyGKsg"}
+                    onStateChange={onPlayAltaBirra}
+                    className={playAltabirra ? Style.youtubeVideoPlay : Style.youtubeVideo}
+                />
+            </Element>
             <h2>PokemonSPA</h2>
 
 

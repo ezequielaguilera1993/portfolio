@@ -16,9 +16,8 @@ function App() {
   return (
     <div className="App">
       <NavigationBar />
-      <Route path="/Portfolio" component={Portfolio} />
-      <Route path="/About" component={About} />
-      <Route path="/Contact" component={Contact} />
+      <About />
+      <Portfolio />
       <Footer />
     </div>
   );

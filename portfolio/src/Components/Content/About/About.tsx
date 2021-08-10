@@ -13,10 +13,10 @@ export const About: React.FunctionComponent<{}> = () => {
     ✨Empecé a interesarme en programación por curioso y encontré algo que sacaba las mejores cosas de mi, que a pesar de que era un desafío podía estudiarlo desvelandome y de forma apasionada. Hice un bootcamp muy intensivo en Henry que me abrió la cabeza y también las puertas a esta industria que me fascina rodeándome de un grupo de personas excelentes con las que comparto esta pasión.
     ✨ Manejo tecnologías como #TypeScript #JavaScript #HTML #React #Redux #Node #Express #CSS #LESS #Postgress #Sequelize #Prism`
 
-    return (<div id={Style.container} >
+    return (<div id={Style.About} >
         <h1>About</h1>
 
-        <div id={Style.about}>
+        <div >
             {
                 iWantCarJumps(about, "br")
             }
