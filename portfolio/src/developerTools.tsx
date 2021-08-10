@@ -1,8 +1,19 @@
 import { ReactElement } from "react";
 
-interface IdeveloperTools {
-    consoleInfo: boolean;
-    showMargins?: boolean;
+
+
+
+export function vh(percentaje: number): number {
+    if (percentaje <= 100 && percentaje >= -100) {
+        return window.screen.availHeight * percentaje / 100
+    }
+    else return 0
+}
+export function vw(percentaje: number) {
+    if (percentaje <= 100 && percentaje >= -100) {
+        return window.screen.availWidth * percentaje / 100
+    }
+    else return 0
 }
 
 export const iWantCarJumps = (textWithCarJumps: string, divOrBr: "div" | "br") => {
@@ -24,6 +35,11 @@ export const iWantCarJumps = (textWithCarJumps: string, divOrBr: "div" | "br") =
 }
 
 
+
+interface IdeveloperTools {
+    consoleInfo: boolean;
+    showMargins?: boolean;
+}
 export const visualGuide = function ({ consoleInfo, showMargins }: IdeveloperTools) {
     let beforeElement: any;
 

@@ -46,23 +46,27 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
     //3) Load more confetti
     let [moreConfettiLoading, ºmoreConfettiLoading] = useState<boolean>(false)
 
-    //onYotube video onClick event (auto throw confetti + show manual throw confetti button)
+
+    //onStateChange, in the moment TOUCH the player, do this. Give styles and scroll
     let [playAltabirra, setPlayAltaBirra] = useState<boolean>(false)
-
-    async function onPlayAltaBirra() {
-        if (playAltabirra === false) {
-            setTimeout(() => { throwConfetti() }, 2200)
-            setTimeout(() => { ºshowMoreConfetti(true) }, 3600);
-        }
-
+    async function onStateChangeAltaBirra() {
         setPlayAltaBirra(true)
-
         scroller.scrollTo('altaBirraVideo', {
             duration: 300,
             delay: 0,
             smooth: true,
             offset: window.screen.availHeight * -0.15, // Scrolls to element + 50 pixels down the page,
         })
+    }
+
+    //onYotube video onClick event (auto throw confetti + show manual throw confetti button) (play isn't instantaneus like stateChange)
+    let ONCEonPlayAltaBirra = true
+    async function onPlayAltaBirra() {
+        if (ONCEonPlayAltaBirra) {
+            ONCEonPlayAltaBirra = false
+            setTimeout(() => { throwConfetti() }, 1700)
+            setTimeout(() => { ºshowMoreConfetti(true) }, 2600);
+        }
     }
 
 
@@ -82,7 +86,7 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
     };
     //en of throw confetti logic//
 
-    return (<div >
+    return (<div id={Style.Portfolio} >
 
 
         {/* Auto Confeti */}
@@ -90,12 +94,12 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
             <Confetti active={confetti} config={config} />
         </div>
  */}
-        <div style={{}}>
+        <div style={{ marginLeft: "-4vh" }}>
             <Confetti active={confetti} config={config} />
         </div>
 
         {/* Manual confetti */}
-        <div style={{}}>
+        <div style={{ marginLeft: "-4vh" }}>
             <Confetti active={moreConfetti} config={{ ...config, elementCount: 300, duration: 2000, startVelocity: 40 }} />
         </div>
 
@@ -129,7 +133,8 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
 
                 <YouTube
                     videoId={"PGe7mLyGKsg"}
-                    onStateChange={onPlayAltaBirra}
+                    onStateChange={onStateChangeAltaBirra}
+                    onPlay={onPlayAltaBirra}
                     className={playAltabirra ? Style.youtubeVideoPlay : Style.youtubeVideo}
                 />
             </Element>

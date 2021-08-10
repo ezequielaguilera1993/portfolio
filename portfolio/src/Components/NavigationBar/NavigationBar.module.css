@@ -1,8 +1,9 @@
-#container {
+#NavigationBar {
   background-color: rgb(163, 165, 165);
   font-size: 1.5rem;
+  position: fixed;
 }
 
-#container span {
+.link {
   margin: 1rem;
 }

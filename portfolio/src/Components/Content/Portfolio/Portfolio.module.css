@@ -1,4 +1,4 @@
-#container {
+#Portfolio {
 }
 
 /* *margins */
@@ -28,9 +28,6 @@ body {
 } */
 /*  */
 
-#portfolio {
-  padding: 10px;
-}
 /* 
 @keyframes salsa {
   49.5% {
@@ -47,6 +44,7 @@ body {
 /* soloParaQueLoAgregue */
 #altaBirraVideo {
 }
+
 .youtubeVideo {
   box-shadow: 0rem 0rem 2rem 0rem;
   border-radius: 0.6rem;

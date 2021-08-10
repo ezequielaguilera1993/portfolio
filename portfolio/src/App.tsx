@@ -18,6 +18,7 @@ function App() {
       <NavigationBar />
       <About />
       <Portfolio />
+      <Contact />
       <Footer />
     </div>
   );
