@@ -1,0 +1,8 @@
+#container {
+  background-color: rgb(163, 165, 165);
+  font-size: 1.5rem;
+}
+
+#container span {
+  margin: 1rem;
+}

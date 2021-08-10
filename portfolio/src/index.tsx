@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { Children } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-const appContext = React.createContext({});
-const { Provider, Consumer } = appContext;
+import { BrowserRouter } from 'react-router-dom';
+
 
 ReactDOM.render(
-  <Provider value={{}}>
-    <React.StrictMode>
+  <React.StrictMode>
+    <BrowserRouter>
       <App />
-    </React.StrictMode>
-  </Provider>,
+    </BrowserRouter>
+
+  </React.StrictMode>,
   document.getElementById('root')
 )
 
@@ -19,3 +20,5 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+

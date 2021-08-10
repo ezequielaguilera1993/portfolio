@@ -1,0 +1,89 @@
+#container {
+}
+
+/* *margins */
+/* :not(html, body, #app, #root):hover {
+  border: 2px solid green;
+} */
+
+#portfolio {
+  padding: 10px;
+}
+/* 
+@keyframes salsa {
+  49.5% {
+    filter: brightness(2);
+  }
+  50.5% {
+    background-color: rgb(46, 63, 46);
+  }
+  to {
+    background-color: black;
+  }
+} */
+
+.youtubeVideo {
+  box-shadow: 0rem 0rem 2rem 0rem;
+  border-radius: 2rem;
+  border: 5px solid rgb(51, 51, 51);
+}
+
+.youtubeVideoPlay {
+  width: 70vw;
+  height: 70vh;
+  transition: all 300ms;
+  box-shadow: 0rem 0rem 03rem 0.1rem;
+  border-radius: 3rem;
+  border: 5px solid rgb(51, 51, 51);
+}
+
+@keyframes APPEARmoreConfetti {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#moreConfetti {
+  animation: APPEARmoreConfetti 1s;
+  position: fixed;
+  bottom: 0.4rem;
+  right: 0.4rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+  box-shadow: 0rem 0rem 0.3rem 0.01rem white;
+  filter: grayscale(0.2);
+  background: url(https://1.bp.blogspot.com/-ePRlATWuvHc/XqCQ-UE4VfI/AAAAAAAAC5w/SUH0d47ozHQQIIzUGCRrStzAaCUhZx6rACLcBGAsYHQ/s640/confetii.gif);
+  background-size: 300%;
+  font-size: 1.1rem;
+  font-family: serif;
+  -webkit-text-stroke: 0.4px black;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+}
+
+#moreConfettiLoading {
+  color: aliceblue;
+  background-color: rgb(78, 77, 78);
+  animation: APPEARmoreConfetti 1s;
+  transform: scale(1.32);
+  position: fixed;
+  bottom: 0.4rem;
+  right: 0.4rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 100%;
+}
+
+@keyframes home {
+  0% {
+    font-size: 100em;
+  }
+
+  to {
+    font-size: 1em;
+  }
+}
