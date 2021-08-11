@@ -1,6 +1,6 @@
 import React from 'react'
 import { iWantCarJumps } from '../../../developerTools'
-import Style from './About.module.css'
+import Style from './About.module.scss'
 export const About: React.FunctionComponent<{}> = () => {
     const about = `✨ Full Stack Web Developer 💻🌎🌏
     Soy Ezequiel Aguilera y me apasiona programar💫

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Style from './Portfolio.module.css'
+import Style from './Portfolio.module.scss'
 import YouTube from 'react-youtube';
 import emailjs from 'emailjs-com'
 import { useForm, Resolver } from "react-hook-form";

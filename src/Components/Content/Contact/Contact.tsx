@@ -1,5 +1,5 @@
 import React from 'react'
-import Style from './Contact.module.css'
+import Style from './Contact.module.scss'
 
 export const Contact: React.FunctionComponent<{}> = () => {
 

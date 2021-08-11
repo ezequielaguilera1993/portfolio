@@ -2,11 +2,11 @@
 
 import React from 'react'
 // import { Link } from 'react-router-dom'
-import Style from './NavigationBar.module.css'
+import Style from './NavigationBar.module.scss'
 import { Link } from 'react-scroll'
-import AboutStyle from '../Content/About/About.module.css'
-import PortfolioStyle from '../Content/Portfolio/Portfolio.module.css'
-import ContactStyle from '../Content/Contact/Contact.module.css'
+import AboutStyle from '../Content/About/About.module.scss'
+import PortfolioStyle from '../Content/Portfolio/Portfolio.module.scss'
+import ContactStyle from '../Content/Contact/Contact.module.scss'
 import { vh } from '../../developerTools'
 export const NavigationBarHeight = "4.6vh";
 

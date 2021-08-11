@@ -8,6 +8,7 @@ import { visualGuide } from './developerTools';
 import { About } from './Components/Content/About/About';
 import { Portfolio } from './Components/Content/Portfolio/Portfolio';
 import { Contact } from './Components/Content/Contact/Contact';
+import { MiComponente } from './Components/MiComponente/MiComponente';
 
 function App() {
   visualGuide({ consoleInfo: true })

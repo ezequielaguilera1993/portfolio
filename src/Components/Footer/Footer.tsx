@@ -1,5 +1,5 @@
 import React from 'react'
-import Style from './Footer.module.css'
+import Style from './Footer.module.scss'
 
 export const Footer: React.FunctionComponent<{}> = () => {
 
