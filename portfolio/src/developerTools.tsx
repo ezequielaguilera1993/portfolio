@@ -1,6 +1,12 @@
 import { ReactElement } from "react";
 
+//git commands
+/* 
 
+git add .
+git
+
+*/
 
 
 export function vh(percentaje: number): number {

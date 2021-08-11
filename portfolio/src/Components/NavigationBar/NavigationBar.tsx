@@ -8,11 +8,13 @@ import AboutStyle from '../Content/About/About.module.css'
 import PortfolioStyle from '../Content/Portfolio/Portfolio.module.css'
 import ContactStyle from '../Content/Contact/Contact.module.css'
 import { vh } from '../../developerTools'
+export const NavigationBarHeight = "4.6vh";
+
 export const NavigationBar: React.FunctionComponent<{}> = () => {
 
     const duration = 300
     return (
-        <div id={Style.NavigationBar}>
+        <div id={Style.NavigationBar} style={{ height: NavigationBarHeight }}>
             {/* <Link to="/About">About </Link>
             <Link to="/Portfolio">Portfolio</Link> */}
             <Link className={Style.link} to={PortfolioStyle.Portfolio} smooth={true} duration={duration} offset={vh(-1)} >Portfolio</Link>

@@ -2,6 +2,9 @@
   background-color: rgb(163, 165, 165);
   font-size: 1.5rem;
   position: fixed;
+  width: 100vw;
+  /* change heigth in the top of the tsx code!  */
+  top: 0px;
 }
 
 .link {
