@@ -1,0 +1,35 @@
+//PIVOT SIZE
+$pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
+
+//BASE
+@mixin baseMobile() {
+  #NavigationBar {
+    display: flex;
+    background-color: rgba(78, 78, 78, 0.795);
+    font-size: 1.5rem;
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    /* change heigth in the top of the tsx code! 11line!  */
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+
+    .link {
+      margin: 0 1rem;
+    }
+  }
+}
+
+//MOBILE
+@media (max-width: $pivotWidthScreen) {
+  @include baseMobile;
+}
+
+//DESKTOP
+@media (min-width: $pivotWidthScreen) {
+  @include baseMobile;
+  #NavigationBar {
+    top: 0px;
+  }
+}

@@ -1,0 +1,56 @@
+@mixin componentBorders($About, $weigth: 0.2rem, $margin: 0.5rem) {
+  #{$About} {
+    border: 0.3rem rgb(104, 104, 240) solid;
+    margin: $margin;
+    border-radius: 2px;
+    margin-top: 100px;
+
+    * {
+      border: $weigth blue solid;
+      margin: $margin;
+
+      border-radius: 14px;
+    }
+  }
+}
+@include componentBorders(#About);
+
+//PIVOT SIZE
+$pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
+
+//BASE
+@mixin baseMobile() {
+  #About {
+    background-image: url(https://i.imgur.com/qOI6RNH.jpg);
+    background-size: cover;
+    margin: 10vw;
+    border-radius: 1rem;
+    font-family: "Source Serif Pro", serif;
+  }
+
+  #tittle {
+    font-size: 3rem;
+  }
+
+  #picANDdescription {
+    // background-color: #c00c00;
+    display: flex;
+  }
+  #img {
+    // background-color: #3300c0;
+  }
+
+  #description {
+    // background-color: #e0ec00;
+  }
+}
+
+//MOBILE
+@media (max-width: $pivotWidthScreen) {
+  @include baseMobile;
+}
+
+//DESKTOP
+@media (min-width: $pivotWidthScreen) {
+  @include baseMobile;
+}

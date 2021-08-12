@@ -1,0 +1,124 @@
+/* 
+@keyframes salsa {
+  49.5% {
+    filter: brightness(2);
+  }
+  50.5% {
+    background-color: rgb(46, 63, 46);
+  }
+  to {
+    background-color: black;
+  }
+} */
+
+/* soloParaQueLoAgregue */
+
+//Constants
+//
+$ratioYoutubeVideo: 0.5625;
+//
+$pivotWidthScreen: 1000px;
+@mixin positionTrowConfetti($scale: 1) {
+  bottom: 0.4rem * $scale;
+  right: 0.4rem * $scale;
+  width: 3rem * $scale;
+  height: 3rem * $scale;
+}
+
+@mixin base() {
+  /* Solo para que le asigne el id! */
+  #Portfolio {
+    background-color: none;
+  }
+  #altaBirraVideo {
+  }
+
+  .youtubeVideo {
+    $sizeInVw: 40vw;
+    width: $sizeInVw;
+    height: $sizeInVw * $ratioYoutubeVideo;
+    box-shadow: 0rem 0rem 2rem 0rem;
+    border-radius: 0.6rem;
+    border: 5px solid rgb(51, 51, 51);
+  }
+
+  .youtubeVideoPlay {
+    $sizeInVw: 65vw;
+    width: $sizeInVw;
+    height: $sizeInVw * $ratioYoutubeVideo;
+    transition: all 500ms;
+    box-shadow: 0rem 0rem 03rem 0.1rem;
+    border-radius: 1rem;
+    border: 5px solid rgb(51, 51, 51);
+  }
+
+  @keyframes APPEARmoreConfetti {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  #moreConfetti {
+    animation: APPEARmoreConfetti 1s;
+    position: fixed;
+    border-radius: 100%;
+    @include positionTrowConfetti();
+    box-shadow: 0rem 0rem 0.3rem 0.01rem white;
+    filter: grayscale(0.2);
+    background: url(https://i.imgur.com/wrfAe7w.png);
+    filter: brightness(1);
+    background-size: cover;
+    font-size: 1rem;
+    font-family: serif;
+    -webkit-text-stroke: 0.4px black;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+  }
+
+  #moreConfettiLoading {
+    color: aliceblue;
+    background-color: rgb(78, 77, 78);
+    animation: APPEARmoreConfetti 1s;
+    transform: scale(1.32);
+    position: fixed;
+    @include positionTrowConfetti();
+    border-radius: 100%;
+  }
+
+  @keyframes home {
+    0% {
+      font-size: 100em;
+    }
+
+    to {
+      font-size: 1em;
+    }
+  }
+}
+
+//DESKTOP////////////////////////////////////////////////////////////////////////
+@media (min-width: $pivotWidthScreen) {
+  @include base;
+}
+/////////////////////////////////////////////////////////////////////////////////
+
+//MOBILE/////////////////////////////////////////////////////////////////////////
+@media (max-width: $pivotWidthScreen) {
+  @include base;
+  .youtubeVideo,
+  .youtubeVideoPlay {
+    $sizeInVw: 95vw;
+    width: $sizeInVw;
+    height: $sizeInVw * $ratioYoutubeVideo;
+    max-height: 90vh;
+  }
+
+  #moreConfettiLoading,
+  #moreConfetti {
+    bottom: 5vh+1; //Same as navigationBar! + some (1vh)
+  }
+}
+//////////////////////////////////////////////////////////////////////////////////
