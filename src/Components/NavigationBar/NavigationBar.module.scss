@@ -5,7 +5,7 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
 @mixin baseMobile() {
   #NavigationBar {
     display: flex;
-    background-color: rgb(78, 78, 78);
+    background-color: rgba(78, 78, 78, 0.795);
     font-size: 1.5rem;
     position: fixed;
     bottom: 0px;
@@ -14,9 +14,10 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
     height: fit-content;
     justify-content: center;
     align-items: center;
-  }
-  .link {
-    margin: 0 1rem;
+
+    .link {
+      margin: 0 1rem;
+    }
   }
 }
 

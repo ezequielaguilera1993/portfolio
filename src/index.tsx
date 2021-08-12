@@ -9,6 +9,7 @@ import { developerTools } from './developerTools/developerTools';
 developerTools({ consoleInfo: true, showMargins: true, marginSize: 2 })
 
 /* 
+- About
 - Contacto, agregar titulo de enviar mail, poner whatsApp
 - Chat whatsApp en vivo
 - Agendar calendly
