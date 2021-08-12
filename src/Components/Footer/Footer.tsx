@@ -3,8 +3,8 @@ import Style from './Footer.module.scss'
 
 export const Footer: React.FunctionComponent<{}> = () => {
 
-    return (<div id={Style.container} >
+    return (<h1 id={Style.container} >
         Footer
 
-    </div>)
+    </h1>)
 }

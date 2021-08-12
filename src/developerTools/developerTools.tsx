@@ -8,13 +8,13 @@ import Styles from "./developerTools.module.scss";
 
 export function vh(percentaje: number): number {
     if (percentaje <= 100 && percentaje >= -100) {
-        return window.screen.availHeight * percentaje / 100
+        return window.innerHeight * percentaje / 100
     }
     else return 0
 }
 export function vw(percentaje: number) {
     if (percentaje <= 100 && percentaje >= -100) {
-        return window.screen.availWidth * percentaje / 100
+        return window.innerWidth * percentaje / 100
     }
     else return 0
 }
@@ -62,6 +62,7 @@ export const developerTools = function ({ consoleInfo = false, showMargins = fal
                         cacheObject.push({ border: elemStyle.border, margin: elemStyle.margin })
                         elemStyle.border = marginSize + "px solid green"
                         elemStyle.margin = "20px"
+                        elemStyle.borderRadius = "7px"
                     }
                     console.log(cacheObject)
                 }
@@ -72,6 +73,7 @@ export const developerTools = function ({ consoleInfo = false, showMargins = fal
                     for (let i = 0; i < allElems.length; i++) {
                         allElems[i].style.border = ""
                         allElems[i].style.margin = ""
+                        allElems[i].style.borderRadius = ""
                     }
                 }
             }

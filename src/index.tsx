@@ -8,6 +8,27 @@ import { developerTools } from './developerTools/developerTools';
 
 developerTools({ consoleInfo: true, showMargins: true, marginSize: 2 })
 
+/* 
+- Contacto, agregar titulo de enviar mail, poner whatsApp
+- Chat whatsApp en vivo
+- Agendar calendly
+- Hacer scroll para "chater con whatsapp en vivo" - "enviar un mail" - "agendar reunion en calendly"  
+-
+- Mejorar pokemon api
+- Hacer video de pokemon api
+- 
+- Poner enlaces a github y linkedin
+- Boton para descargar cv (o que lo abra en otra pestaña y que aparezca el boton para descargarlo)
+- 
+- 
+- 
+
+
+
+
+
+
+*/
 
 ReactDOM.render(
   <React.StrictMode>

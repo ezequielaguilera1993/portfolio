@@ -1,12 +1,34 @@
-#NavigationBar {
-  background-color: rgb(78, 78, 78);
-  font-size: 1.5rem;
-  position: fixed;
-  width: 100vw;
-  /* change heigth in the top of the tsx code! 11line!  */
-  top: 0px;
+//PIVOT SIZE
+$pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
+
+//BASE
+@mixin baseMobile() {
+  #NavigationBar {
+    display: flex;
+    background-color: rgb(78, 78, 78);
+    font-size: 1.5rem;
+    position: fixed;
+    bottom: 0px;
+    width: 100vw;
+    /* change heigth in the top of the tsx code! 11line!  */
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+  }
+  .link {
+    margin: 0 1rem;
+  }
 }
 
-.link {
-  margin: 1rem;
+//MOBILE
+@media (max-width: $pivotWidthScreen) {
+  @include baseMobile;
+}
+
+//DESKTOP
+@media (min-width: $pivotWidthScreen) {
+  @include baseMobile;
+  #NavigationBar {
+    top: 0px;
+  }
 }

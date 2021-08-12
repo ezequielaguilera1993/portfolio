@@ -6,23 +6,26 @@
   #{$About} {
     border: 0.6rem rgb(104, 104, 240) solid;
     margin: $margin;
+    border-radius: 2px;
 
     * {
       border: $weigth blue solid;
       margin: $margin;
+
+      border-radius: 14px;
     }
   }
 }
-@include componentBorders(#About);
+// @include componentBorders(#About);
 
 #picANDdescription {
-  background-color: #c00c00;
+  // background-color: #c00c00;
   display: flex;
 }
 #img {
-  background-color: #3300c0;
+  // background-color: #3300c0;
 }
 
 #description {
-  background-color: #e0ec00;
+  // background-color: #e0ec00;
 }

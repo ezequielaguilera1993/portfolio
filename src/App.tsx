@@ -15,7 +15,7 @@ function App() {
   return (
     <div className="App">
       <NavigationBar />
-      <div style={{ marginTop: NavigationBarHeight }} />{/* div that make place to navigation bar */}
+      <div style={{ marginTop: NavigationBarHeight + "vh" }} />{/* div that make place to navigation bar */}
       <About />
       <Portfolio />
       <Contact />

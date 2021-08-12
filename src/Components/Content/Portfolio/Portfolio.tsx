@@ -4,6 +4,7 @@ import YouTube from 'react-youtube';
 // import { useForm, Resolver } from "react-hook-form";
 import Confetti from 'react-dom-confetti';
 import { vh, vw } from '../../../developerTools/developerTools';
+import { NavigationBarHeight } from '../../NavigationBar/NavigationBar';
 var Scroll = require('react-scroll');
 var Element = Scroll.Element;
 var scroller = Scroll.scroller;
@@ -39,20 +40,35 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
     let [moreConfettiLoading, ºmoreConfettiLoading] = useState<boolean>(false)
 
 
-    //onStateChange, in the moment TOUCH the player, do this. Give styles and scroll
+    // alert(vw(65) * 9 / 16)
+    //SCOLL+PLAYSTYLES onStateChange, in the moment TOUCH the player, do this. Give styles and scroll
     let [playAltabirra, setPlayAltaBirra] = useState<boolean>(false)
     async function onStateChangeAltaBirra() {
         setPlayAltaBirra(true)
         if (smallScreen === false) {
+
+            const heightOfVideo = (vw(65) * 9 / 16) + 10//5px de cada lado por el border! //the height is ratio-proportional at width!, and width value is 65 (see scss associate)
+
             scroller.scrollTo('altaBirraVideo', {
                 duration: 300,
                 delay: 0,
                 smooth: true,
-                offset: window.screen.availHeight * -0.1, // Scrolls to element + 50 pixels down the page,
+                offset: (-1) * (vh(NavigationBarHeight) + ((vh(100 - NavigationBarHeight) - heightOfVideo) / 2))
+            })
+        }
+
+        else if (smallScreen === true) {
+            const heightOfVideo = (vw(95) * 9 / 16) + 10//5px de cada lado por el border! //the height is ratio-proportional at width!, and width value is 65 (see scss associate)
+
+            scroller.scrollTo('altaBirraVideo', {
+                duration: 300,
+                delay: 0,
+                smooth: true,
+                offset: (-1) * (((vh(100 - NavigationBarHeight) - heightOfVideo) / 2))
             })
         }
     }
-    //
+
     //onYotube video onClick event (auto throw confetti + show manual throw confetti button) (play isn't instantaneus like stateChange)
     let ONCEonPlayAltaBirra = true
     async function onPlayAltaBirra() {
@@ -84,8 +100,11 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
     };
     //en of throw confetti logic//
 
-
-
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////RETURN//////////////////////////////////////////////////////////
+    ///////////////////////////////////////////RETURN///////////////////////////////////////////////////
+    ///////////////////////////////////////////////////RETURN///////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////
     return (<div id={Style.Portfolio} >
 
         {/* Auto Confeti */}
@@ -136,9 +155,14 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
                     className={playAltabirra ? Style.youtubeVideoPlay : Style.youtubeVideo}
                 />
             </Element>
-            <h2>PokemonSPA</h2>
+            <h2 style={{}} >PokemonSPA</h2>
 
         </div>
 
-    </div>)
+
+        {/* <div style={{ position: "fixed", left: "260px", top: vh(NavigationBarHeight), height: "36.56vw", width: vw(65) + "px", margin: "auto", backgroundColor: "gray", }}>Rule! vw(65)</div>
+
+
+        <div style={{ position: "fixed", left: "260px", top: vh(NavigationBarHeight) + vw(36.56), height: vh(3), width: vw(10) + "px", margin: "auto", backgroundColor: "greenyellow", }}>Rule! vw(65)</div> */}
+    </div >)
 }

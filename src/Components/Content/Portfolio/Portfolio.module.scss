@@ -15,9 +15,15 @@
 
 //Constants
 //
-$ratioYoutubeVideo: 9/16;
+$ratioYoutubeVideo: 0.5625;
 //
 $pivotWidthScreen: 1000px;
+@mixin positionTrowConfetti($scale: 1) {
+  bottom: 0.4rem * $scale;
+  right: 0.4rem * $scale;
+  width: 3rem * $scale;
+  height: 3rem * $scale;
+}
 
 @mixin base() {
   /* Solo para que le asigne el id! */
@@ -58,11 +64,8 @@ $pivotWidthScreen: 1000px;
   #moreConfetti {
     animation: APPEARmoreConfetti 1s;
     position: fixed;
-    bottom: 0.4rem;
-    right: 0.4rem;
-    width: 3rem;
-    height: 3rem;
     border-radius: 100%;
+    @include positionTrowConfetti();
     box-shadow: 0rem 0rem 0.3rem 0.01rem white;
     filter: grayscale(0.2);
     background: url(https://i.imgur.com/wrfAe7w.png);
@@ -81,10 +84,7 @@ $pivotWidthScreen: 1000px;
     animation: APPEARmoreConfetti 1s;
     transform: scale(1.32);
     position: fixed;
-    bottom: 0.4rem;
-    right: 0.4rem;
-    width: 3rem;
-    height: 3rem;
+    @include positionTrowConfetti();
     border-radius: 100%;
   }
 
@@ -113,10 +113,12 @@ $pivotWidthScreen: 1000px;
     $sizeInVw: 95vw;
     width: $sizeInVw;
     height: $sizeInVw * $ratioYoutubeVideo;
+    max-height: 90vh;
   }
 
-  body {
-    // background-color: #c00c00;
+  #moreConfettiLoading,
+  #moreConfetti {
+    bottom: 5vh+1; //Same as navigationBar! + some (1vh)
   }
 }
 //////////////////////////////////////////////////////////////////////////////////
