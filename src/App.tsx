@@ -1,17 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import { Route } from 'react-router-dom'
+// import { Route } from 'react-router-dom'
 import { NavigationBar, NavigationBarHeight } from './Components/NavigationBar/NavigationBar';
 import { Footer } from './Components/Footer/Footer';
-import { visualGuide } from './developerTools';
+
 import { About } from './Components/Content/About/About';
 import { Portfolio } from './Components/Content/Portfolio/Portfolio';
 import { Contact } from './Components/Content/Contact/Contact';
-import { MiComponente } from './Components/MiComponente/MiComponente';
 
 function App() {
-  visualGuide({ consoleInfo: true })
+
 
   return (
     <div className="App">

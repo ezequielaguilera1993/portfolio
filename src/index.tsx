@@ -1,9 +1,12 @@
-import React, { Children } from 'react';
+import React/* , { Children } */ from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import { developerTools } from './developerTools/developerTools';
+
+developerTools({ consoleInfo: true, showMargins: true, marginSize: 2 })
 
 
 ReactDOM.render(

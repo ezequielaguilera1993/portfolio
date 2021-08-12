@@ -1,7 +1,28 @@
 #About {
+  background: none;
+}
+
+@mixin componentBorders($About, $weigth: 0.1rem, $margin: 1rem) {
+  #{$About} {
+    border: 0.6rem rgb(104, 104, 240) solid;
+    margin: $margin;
+
+    * {
+      border: $weigth blue solid;
+      margin: $margin;
+    }
+  }
+}
+@include componentBorders(#About);
+
+#picANDdescription {
+  background-color: #c00c00;
   display: flex;
-  /*  margin: 0 16rem;
-  border: 0.15rem solid wheat;
-  border-radius: 1em;
-  padding: 2rem; */
+}
+#img {
+  background-color: #3300c0;
+}
+
+#description {
+  background-color: #e0ec00;
 }

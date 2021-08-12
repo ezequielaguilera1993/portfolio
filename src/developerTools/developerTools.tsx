@@ -1,12 +1,9 @@
-import { ReactElement } from "react";
 
-//git commands
-/* 
+import Styles from "./developerTools.module.scss";
 
-git add .
-git
+//AUTOPUSH
+// npm run git -- ""
 
-*/
 
 
 export function vh(percentaje: number): number {
@@ -43,15 +40,50 @@ export const iWantCarJumps = (textWithCarJumps: string, divOrBr: "div" | "br") =
 
 
 interface IdeveloperTools {
-    consoleInfo: boolean;
+    consoleInfo?: boolean;
     showMargins?: boolean;
+    marginSize?: number
 }
-export const visualGuide = function ({ consoleInfo, showMargins }: IdeveloperTools) {
-    let beforeElement: any;
+let once = true
+export const developerTools = function ({ consoleInfo = false, showMargins = false, marginSize = 1 }: IdeveloperTools) {
+    if (showMargins) {
+        window.addEventListener("keydown", function (event) {
+            // const p = document.createElement("p");
+            let allElems: any;
 
-    if (consoleInfo || showMargins) {
+            if (event.key === "m") {
+                allElems = document.getElementsByTagName("*");
+                let cacheObject = []
+                if (once === true) {
+                    console.log('Aca!', once)
+                    once = false
+                    for (let i = 0; i < allElems.length; i++) {
+                        const elemStyle = allElems[i].style
+                        cacheObject.push({ border: elemStyle.border, margin: elemStyle.margin })
+                        elemStyle.border = marginSize + "px solid green"
+                        elemStyle.margin = "20px"
+                    }
+                    console.log(cacheObject)
+                }
+
+                else if (once === false) {
+                    console.log('Aca!', once)
+                    once = true
+                    for (let i = 0; i < allElems.length; i++) {
+                        allElems[i].style.border = ""
+                        allElems[i].style.margin = ""
+                    }
+                }
+            }
+            // p.textContent = `KeyboardEvent: key='${event.key}' | code='${event.code}'`;
+            // document.getElementById("output").appendChild(p);
+        }, true);
+
+    }
+
+    if (consoleInfo) {
         const threeAndGrave = document.getElementById("root");
-        const outLineSize = "1"
+
         let flag = false
         console.log("Presionar click derecho para encender el consoleInfo!")
 
@@ -62,38 +94,8 @@ export const visualGuide = function ({ consoleInfo, showMargins }: IdeveloperToo
         threeAndGrave?.addEventListener("mouseover", (event: any) => {
 
             const target = event.target
-            if (!beforeElement) beforeElement = target
 
             if (flag) {
-
-                if (showMargins) {
-                    const randomColorDecimal = Math.round(Math.random() * 16777215)
-                    const randomColorHexa = "#" + randomColorDecimal.toString(16)
-                    target.style.outline = outLineSize + "px solid " + randomColorHexa
-
-                    // target.style.heigth = parseInt(target.style.heigth) - 5 + "px"
-
-                    let childrenLength = target.children.length
-
-                    if (childrenLength > 0) {
-                        for (let i = 0; i < childrenLength; i++) {
-                            target.children[i].style.outline = outLineSize + "px solid grey"
-                        }
-                    }
-
-                    if (beforeElement != target) {
-
-                        if (beforeElement.children.length > 0) {
-                            for (let i = 0; i < beforeElement.children.length; i++) {
-                                beforeElement.children[i].style.outline = "0"
-                            }
-                        }
-
-                        beforeElement.style.outline = "0"
-                        beforeElement = target
-                    }
-                }
-
 
                 if (consoleInfo) {
                     console.log("\n\n\n")
@@ -110,14 +112,7 @@ export const visualGuide = function ({ consoleInfo, showMargins }: IdeveloperToo
 
             }
 
-            else {
-                if (beforeElement.children.length > 0) {
-                    for (let i = 0; i < beforeElement.children.length; i++) {
-                        beforeElement.children[i].style.outline = "0"
-                    }
-                }
-                beforeElement.style.outline = "0";
-            }
+
 
         }
         );

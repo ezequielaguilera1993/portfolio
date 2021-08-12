@@ -1,0 +1,10 @@
+@mixin _componentBorders($componentId: DarkGray) {
+  #{$componentId} {
+    border: 0.1rem rgb(14, 14, 95) solid;
+    margin: 1rem;
+  }
+  #{$componentId}* {
+    border: 0.1rem blue solid;
+    margin: 1rem;
+  }
+}

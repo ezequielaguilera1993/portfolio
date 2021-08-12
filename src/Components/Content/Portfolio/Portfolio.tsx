@@ -1,30 +1,22 @@
-import React, { useEffect, useState } from 'react'
+import React, { /* useEffect, */ useState } from 'react'
 import Style from './Portfolio.module.scss'
 import YouTube from 'react-youtube';
-import emailjs from 'emailjs-com'
-import { useForm, Resolver } from "react-hook-form";
+// import { useForm, Resolver } from "react-hook-form";
 import Confetti from 'react-dom-confetti';
+import { vh, vw } from '../../../developerTools/developerTools';
 var Scroll = require('react-scroll');
 var Element = Scroll.Element;
 var scroller = Scroll.scroller;
 
-
 // Somewhere else, even another file
 
 
-function sendMail() {
-    emailjs.send("gmail", "template_2tshsrs", {
-        name: "Riboer",
-        mail: "asdasd",
-        phone: "asdasd",
-        message: "asdasdasd",
-    }, "user_1aZLUJ4EJdglFQR5mfcZ1").then(() => alert("mail sended"))
-        .catch(() => alert("error"))
-}
-
 
 export const Portfolio: React.FunctionComponent<{}> = (conf) => {
-    //THROW CONFETTI//
+
+    const smallScreen = vw(100) < 1000 ? true : false
+
+    //THROW CONFETTI LOGIC//
     // automatic throw confetti
     let [confetti, ºconfetti] = useState<boolean>(false)
     async function throwConfetti() {
@@ -39,7 +31,7 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
         await ºmoreConfetti(true)
         await ºmoreConfetti(false)
         await ºmoreConfettiLoading(true)
-        await setTimeout(() => ºmoreConfettiLoading(false), 1000)
+        await setTimeout(() => ºmoreConfettiLoading(false), smallScreen ? 2000 : 2000)
     }
     //2) Show
     let [showMoreConfetti, ºshowMoreConfetti] = useState<boolean>(false)
@@ -51,12 +43,14 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
     let [playAltabirra, setPlayAltaBirra] = useState<boolean>(false)
     async function onStateChangeAltaBirra() {
         setPlayAltaBirra(true)
-        scroller.scrollTo('altaBirraVideo', {
-            duration: 300,
-            delay: 0,
-            smooth: true,
-            offset: window.screen.availHeight * -0.15, // Scrolls to element + 50 pixels down the page,
-        })
+        if (smallScreen === false) {
+            scroller.scrollTo('altaBirraVideo', {
+                duration: 300,
+                delay: 0,
+                smooth: true,
+                offset: window.screen.availHeight * -0.1, // Scrolls to element + 50 pixels down the page,
+            })
+        }
     }
     //
     //onYotube video onClick event (auto throw confetti + show manual throw confetti button) (play isn't instantaneus like stateChange)
@@ -69,46 +63,50 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
         }
     }
 
-
+    const scale = 0.8
+    const _vw = vw(scale)
+    const _vh = vh(scale)
+    const goodSquare = _vw > _vh ? _vw : _vh
+    const useGoodSquare = smallScreen ? (goodSquare) : goodSquare * .6
 
     const config = {
         angle: 90,
         spread: 360,
         startVelocity: 50,
-        elementCount: 300,
-        dragFriction: 0.1,
-        duration: 5000,
-        stagger: 1,
-        width: ".7rem",
-        height: ".7rem",
+        elementCount: smallScreen ? 50 : 200,
+        dragFriction: smallScreen ? 0.2 : 0.1,
+        duration: 3000,
+        stagger: 3,
+        width: useGoodSquare + "px",
+        height: useGoodSquare + "px",
         perspective: "568px",
         colors: ["#a864fd", "#29cdff", "#78ff44", "#ff718d", "#fdff6a"]
     };
     //en of throw confetti logic//
 
-    return (<div id={Style.Portfolio} >
 
+
+    return (<div id={Style.Portfolio} >
 
         {/* Auto Confeti */}
         {/* <div style={{ display: 'flex', justifyContent: "flex-end" }}>
             <Confetti active={confetti} config={config} />
         </div>
  */}
+
         <div style={{ marginLeft: "-4vh" }}>
             <Confetti active={confetti} config={config} />
         </div>
 
         {/* Manual confetti */}
         <div style={{ marginLeft: "-4vh" }}>
-            <Confetti active={moreConfetti} config={{ ...config, elementCount: 300, duration: 2000, startVelocity: 40 }} />
+            <Confetti active={moreConfetti} config={config} />
         </div>
 
 
         {/* <div style={{ display: 'flex', justifyContent: "flex-end", zIndex: 1, position: "absolute" }} >
             <div style={{ width: "100px", height: "100px", backgroundColor: "#fff", zIndex: 1 }} ></div>
         </div> */}
-
-
 
         {
             showMoreConfetti && !moreConfettiLoading ?
@@ -132,7 +130,7 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
             <Element name="altaBirraVideo">
 
                 <YouTube
-                    videoId={"PGe7mLyGKsg"}
+                    videoId={"_pI3rPdwZp0"}
                     onStateChange={onStateChangeAltaBirra}
                     onPlay={onPlayAltaBirra}
                     className={playAltabirra ? Style.youtubeVideoPlay : Style.youtubeVideo}
@@ -140,10 +138,7 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
             </Element>
             <h2>PokemonSPA</h2>
 
-
         </div>
-
-
 
     </div>)
 }
