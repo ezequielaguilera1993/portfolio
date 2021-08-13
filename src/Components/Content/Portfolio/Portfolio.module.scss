@@ -18,6 +18,21 @@
 $ratioYoutubeVideo: 0.5625;
 //
 $pivotWidthScreen: 1000px;
+
+#title {
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.267);
+
+  color: white;
+  height: 3rem;
+  margin: 0;
+  padding-top: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0rem 0rem 0.3rem 0.01rem;
+}
+
 @mixin positionTrowConfetti($scale: 1) {
   bottom: 0.4rem * $scale;
   right: 0.4rem * $scale;

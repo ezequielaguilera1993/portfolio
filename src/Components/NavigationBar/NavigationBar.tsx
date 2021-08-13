@@ -7,10 +7,10 @@ import { Link, animateScroll } from 'react-scroll'
 import AboutStyle from '../Content/About/About.module.scss'
 import PortfolioStyle from '../Content/Portfolio/Portfolio.module.scss'
 import ContactStyle from '../Content/Contact/Contact.module.scss'
-import { vh } from '../../developerTools/developerTools'
+import { smallScreen, vh } from '../../developerTools/developerTools'
 export const NavigationBarHeight = 5;
 export const NavigationBar: React.FunctionComponent<{}> = () => {
-
+    const sc = smallScreen()
 
     const duration = 300
     const goTop = () => animateScroll.scrollToTop({ duration: duration })
@@ -19,8 +19,8 @@ export const NavigationBar: React.FunctionComponent<{}> = () => {
             {/* <Link to="/About">About </Link>
             <Link to="/Portfolio">Portfolio</Link> */}
             <span className={Style.link} onClick={goTop} >About</span>
-            <Link className={Style.link} to={PortfolioStyle.Portfolio} smooth={true} duration={duration} offset={-vh(NavigationBarHeight)} >Portfolio</Link>
-            <Link className={Style.link} to={ContactStyle.Contact} smooth={true} duration={duration} offset={-vh(NavigationBarHeight)} >Contact</Link>
+            <Link className={Style.link} to={PortfolioStyle.title} smooth={true} duration={duration} offset={!sc ? -vh(NavigationBarHeight) - 3.5 : -3.5} >Portfolio</Link>
+            <Link className={Style.link} to={ContactStyle.title} smooth={true} duration={duration} offset={!sc ? -vh(NavigationBarHeight) - 3.5 : -3.5} >Contact</Link>
         </div >
     )
 }

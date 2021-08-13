@@ -4,7 +4,7 @@ import { Form } from './Form/Form'
 export const Contact: React.FunctionComponent<{}> = () => {
 
     return (<div id={Style.Contact} >
-        <h1>Contact</h1>
+        <div id={Style.title}>Contact</div>
         <Form />
 
     </div>)
