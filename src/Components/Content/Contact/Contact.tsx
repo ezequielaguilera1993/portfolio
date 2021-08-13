@@ -5,9 +5,6 @@ export const Contact: React.FunctionComponent<{}> = () => {
 
     return (<div id={Style.Contact} >
         <h1>Contact</h1>
-
-        contact, api de calendly,
-
         <Form />
 
     </div>)

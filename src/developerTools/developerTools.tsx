@@ -4,7 +4,9 @@ import Styles from "./developerTools.module.scss";
 //AUTOPUSH
 // npm run git -- ""
 
-
+export function smallScreen() {
+    return vw(100) < 1000 ? true : false
+}
 
 export function vh(percentaje: number): number {
     if (percentaje <= 100 && percentaje >= -100) {

@@ -2,14 +2,17 @@ import React from 'react'
 import { iWantCarJumps } from '../../../developerTools/developerTools'
 import Style from './About.module.scss'
 export const About: React.FunctionComponent<{}> = () => {
-    const about = `                 
-        ✨ Full Stack Web Developer 💻🌎🌏
+    const about = `✨ Full Stack Web Developer 💻🌎🌏
     Soy Ezequiel Aguilera y me apasiona programar💫
     Mi principal motor es que amo este trabajo ♥
-    ✨ Manejo tecnologías como #TypeScript #JavaScript #HTML #React #Redux #Node #Express #CSS #LESS #Postgress #Sequelize #Prism`//.trimStart()
+    ✨ Manejo tecnologías como #TypeScript #JavaScript #HTML #React #Redux #Node #Express #CSS #LESS #Postgress #Sequelize #Prism`
 
     return (<div id={Style.About} >
-        <h1 id={Style.tittle} >About</h1>
+
+        <div id={Style.tittle} >
+            <div id={Style.titleForeground}>About me</div>
+            <div id={Style.tittleBackground} />
+        </div>
 
         <div id={Style.picANDdescription}>
             <div id={Style.description} >

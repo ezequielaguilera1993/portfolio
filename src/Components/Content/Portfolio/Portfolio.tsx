@@ -3,7 +3,7 @@ import Style from './Portfolio.module.scss'
 import YouTube from 'react-youtube';
 // import { useForm, Resolver } from "react-hook-form";
 import Confetti from 'react-dom-confetti';
-import { vh, vw } from '../../../developerTools/developerTools';
+import { smallScreen as sc, vh, vw } from '../../../developerTools/developerTools';
 import { NavigationBarHeight } from '../../NavigationBar/NavigationBar';
 var Scroll = require('react-scroll');
 var Element = Scroll.Element;
@@ -15,7 +15,7 @@ var scroller = Scroll.scroller;
 
 export const Portfolio: React.FunctionComponent<{}> = (conf) => {
 
-    const smallScreen = vw(100) < 1000 ? true : false
+    const smallScreen = sc()
 
     //THROW CONFETTI LOGIC//
     // automatic throw confetti
