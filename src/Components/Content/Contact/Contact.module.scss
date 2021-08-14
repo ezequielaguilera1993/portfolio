@@ -70,7 +70,7 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
     margin-bottom: 0.3rem;
     padding-top: 0.2rem;
     background-color: rgb(36, 36, 36);
-    width: 100vw;
+    width: 90%;
   }
 }
 
@@ -82,7 +82,7 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
   #title {
     font-size: 2rem;
     background-color: rgba(0, 0, 0, 0.267);
-
+    max-width: 100%;
     color: white;
     height: 3rem;
     margin: 0;
@@ -128,6 +128,6 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
     margin-bottom: 0.3rem;
     padding-top: 0.2rem;
     background-color: rgb(36, 36, 36);
-    width: 100vw;
+    width: 100%;
   }
 }

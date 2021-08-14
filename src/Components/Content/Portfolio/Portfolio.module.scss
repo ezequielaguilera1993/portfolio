@@ -22,6 +22,7 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
 #title {
   font-size: 2rem;
   background-color: rgba(0, 0, 0, 0.267);
+  max-width: 100vw;
   //margin-top modify in code! depends of navBar and size of dispositive!
   color: white;
   height: 3rem;
@@ -124,7 +125,7 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
   @include base;
   .youtubeVideo,
   .youtubeVideoPlay {
-    $sizeInVw: 95vw;
+    $sizeInVw: 10%;
     width: $sizeInVw;
     height: $sizeInVw * $ratioYoutubeVideo;
     max-height: 90vh;

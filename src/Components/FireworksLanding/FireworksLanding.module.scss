@@ -1,0 +1,81 @@
+@mixin componentBorders($FireworksLanding, $weigth: 1px, $margin: 1px) {
+  #{$FireworksLanding} {
+    border: 1px solid rgb(255, 255, 255);
+    margin: $margin;
+    border-radius: 14px;
+
+    * {
+      border: $weigth rgb(0, 174, 255) solid;
+      margin: $margin;
+
+      border-radius: 14px;
+    }
+  }
+}
+// @include componentBorders(#FireworksLanding);
+
+#FireworksLanding {
+  background-image: url(https://cdn.pixabay.com/photo/2016/06/05/07/59/stars-1436950_960_720.jpg);
+  background-size: contain;
+  max-width: 100%;
+  height: 100vh;
+  text-align: right;
+  position: relative;
+  z-index: 0;
+
+  #moon {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    z-index: -1;
+    transform: scale(2);
+    $scale: 20vw;
+    width: $scale;
+    height: $scale;
+    border-radius: 100%;
+    box-shadow: 0 0 1rem 1rem;
+    object-fit: cover;
+    object-position: 20% 10%; /* try 20px 10px */
+  }
+
+  @keyframes fire {
+    from {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  #fireContainer {
+  }
+
+  #fire,
+  #fireBye {
+    position: absolute;
+    align-self: center;
+    background-image: url(https://i.imgur.com/Mr7Lej1.jpg);
+    background-size: contain;
+    $scale: 20vw;
+    width: $scale;
+    height: $scale;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    animation: fire 1s infinite;
+    border-radius: 100%;
+    box-shadow: 0 0 0.1rem 0.3rem rgb(16, 67, 134);
+    filter: opacity(1);
+    transition: all 1s;
+  }
+
+  #fireBye {
+    transition: all 1s;
+    filter: opacity(0);
+  }
+}

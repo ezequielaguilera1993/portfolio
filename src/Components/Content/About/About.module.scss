@@ -35,7 +35,6 @@ inset	outset */
   #title {
     font-size: 2rem;
     background-color: rgba(29, 29, 29, 0.267);
-    width: 100vw;
     color: white;
     height: 3rem;
     margin-top: 0.2rem;
@@ -45,12 +44,13 @@ inset	outset */
     justify-content: center;
     align-items: center;
     box-shadow: 0rem 0rem 0.3rem 0.01rem;
+    width: 100%;
   }
 
   #imgANDdescription {
     // border: 0.1rem solid grey;
     margin-bottom: 0.4rem;
-    width: 96vw;
+    width: 90%;
 
     display: flex;
     flex-direction: row-reverse;
@@ -80,10 +80,11 @@ inset	outset */
     margin-bottom: 0.3rem;
     padding-top: 0.2rem;
     background-color: rgb(36, 36, 36);
-    width: 100vw;
+    width: 100%;
   }
 
   #logos {
+    max-width: 90%;
     margin-top: 0.3rem;
 
     a {
@@ -146,11 +147,13 @@ inset	outset */
   }
 
   #subTitles {
+    padding: 0;
+    margin: 0;
     font-size: 1.4rem;
     margin-bottom: 0.3rem;
     padding-top: 0.2rem;
     background-color: rgb(36, 36, 36);
-    width: 100vw;
+    width: 100%;
   }
   #logos {
     margin-top: 0.7rem;
