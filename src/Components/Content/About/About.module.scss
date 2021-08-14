@@ -56,17 +56,19 @@ inset	outset */
     flex-direction: row-reverse;
     align-items: center;
 
-    #description {
+    .description {
       font-size: 1.05rem;
+      font-size: 4vw;
       color: rgb(238, 238, 238);
       text-align: left;
       // text-justify: inter-character;
     }
     img {
       // background-color: #3300c0;
-      $size: 30%;
+      $size: 38%;
       width: $size;
-      border-radius: 7%;
+      height: 100%;
+      border-radius: 100%;
       box-shadow: 0 0 1rem -0.3rem;
       margin-left: 0.4rem;
       transition: 1000ms;
@@ -112,4 +114,61 @@ inset	outset */
 //DESKTOP
 @media (min-width: $pivotWidthScreen) {
   @include baseMobile;
+
+  #imgANDdescription {
+    // border: 0.1rem solid grey;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    .descriptionContainer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 30%;
+    }
+    .description {
+      font-size: 1.5rem;
+      text-align: center;
+      // text-justify: inter-character;
+    }
+    img {
+      // background-color: #3300c0;
+      $size: 23%;
+      width: $size;
+      box-shadow: 0 0 1rem 0.1rem;
+      margin: 1rem 0;
+      margin-left: 1.4rem;
+    }
+  }
+
+  #subTitles {
+    font-size: 1.4rem;
+    margin-bottom: 0.3rem;
+    padding-top: 0.2rem;
+    background-color: rgb(36, 36, 36);
+    width: 100vw;
+  }
+  #logos {
+    a {
+      color: transparent;
+    }
+    $scale: 4vw;
+    img {
+      width: $scale;
+      height: $scale;
+      border-radius: 0.3rem;
+    }
+    img[src="https://www.nextontop.com/assets/img/services/web/expressjs.svg"]
+    {
+      transform: scale(1.57);
+    }
+
+    img[ src="https://images.tute.io/tute/topic/prisma.png"]
+    {
+      transform: scale(1.57);
+      filter: brightness(3);
+    }
+  }
 }

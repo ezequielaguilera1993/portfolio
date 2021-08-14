@@ -17,8 +17,15 @@ export const About: React.FunctionComponent<{}> = () => {
                     iWantCarJumps(about, "div")
                 }
             </div> */}
-            <img alt="Imágen de Ezequiel Aguilera, el propietario de este portfolio. Joven buen mozo y pelirrojo jaja. No pero hablando en serio es bien guapo" src="https://i.imgur.com/A5s3OuY.png?2" />
-            <div id={Style.description} >✨ Soy Ezequiel Aguilera, Full Stack Web Developer. Apasionado de la programación, valoro mucho el trabajo en equipo por haber vivido muy lindas experiencias que me enriquecieron como persona y también como desarrollador</div>
+            <img alt="Imágen de Ezequiel Aguilera, el propietario de este portfolio. Joven buen mozo y pelirrojo jaja. No pero hablando en serio es bien guapo" src="https://i.imgur.com/A5s3OuY.png?3" />
+            <div className={Style.descriptionContainer}>
+                <div className={Style.description} >✨ Soy Ezequiel Aguilera
+                </div>
+                <div style={{ marginLeft: ".5rem" }} className={Style.description} >Full Stack Web Developer.
+                </div>
+                <div style={{ marginLeft: "0rem" }} className={Style.description} >
+                    Apasionado de la programación, valoro mucho el trabajo en equipo por haber vivido muy lindas experiencias que me enriquecieron como persona y también como desarrollador.</div>
+            </div>
         </div>
 
 
