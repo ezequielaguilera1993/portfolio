@@ -28,10 +28,10 @@ export function Form() {
 
     return (
         <div id={Style.Form} className="App">
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <form onSubmit={handleSubmit(onSubmit)} autoComplete="on">
                 <div>
                     <label htmlFor="name">Nombre</label>
-                    <input
+                    <input autoComplete="on"
                         placeholder='"Florencia"'
                         {...register("name", { required: false/* , maxLength: 2  */ })}
                     />
@@ -42,14 +42,14 @@ export function Form() {
                     <label htmlFor="email" placeholder='"florencia1990@hotmail.com"'>
                         Email
                     </label>
-                    <input {...register("email", { required: true })} placeholder='"florencia1990@hotmail.com"' />
+                    <input autoComplete="on"  {...register("email", { required: true })} type="email" placeholder='"florencia1990@hotmail.com"' />
                     {errors.email && <p>Campo requerido para poder contactarme</p>}
                 </div>
 
                 <div>
                     <label htmlFor="phone">Telefono</label>
-                    <input
-                        {...register("phone", { required: false })}
+                    <input autoComplete="on"
+                        {...register("phone", { required: false })} type="tel"
                         placeholder='"+541128676833"'
                     />
                     {errors.phone && <p>Campo requerido para poder contactarme</p>}
@@ -57,7 +57,7 @@ export function Form() {
 
                 <div>
                     <label htmlFor="message">Cualquier cosa a agregar</label>
-                    <input
+                    <input autoComplete="on"
                         placeholder='"Tengo este proyecto en mente [...] | Me gustaria entrevistarte etc [...] | etc."'
                         {...register("message", { required: false })}
                     />
