@@ -2,14 +2,13 @@ import React, { Component } from 'react'
 import Style from './Contact.module.scss'
 import { Form } from '../../UtilComponents/Form/Form'
 import { WhatsAppFloatButton } from '../../UtilComponents/WhatsAppFloatButton/WhatsAppFloatButton'
-
 import { ArcText } from '@arctext/react'
-
-
+import { NavigationBarHeight, osBxShadow } from '../../NavigationBar/NavigationBar'
+import { smallScreen as sc } from '../../../developerTools/developerTools'
 
 export const Contact: React.FunctionComponent<{}> = () => {
     return (<div id={Style.Contact} >
-        <div id={Style.title}>~Contacto~</div>
+        <div id={Style.title} style={{ marginTop: sc() ? "1rem" : NavigationBarHeight + osBxShadow + "vh" }}>~Contacto~</div>
 
 
 
@@ -44,8 +43,8 @@ export const Contact: React.FunctionComponent<{}> = () => {
                     radius={40}
                     className={Style.curveButtons}
                 >
-                    <a href='tel:+541128676833' ><img src='https://i.imgur.com/l6Qe81D.png' style={{ filter: "brightness(1.4)" }} /></a>
 
+                    <a href='tel:+541128676833' ><img src='https://i.imgur.com/l6Qe81D.png' style={{ filter: "brightness(1.4)" }} /></a>
                 </ArcText>
             </div>
 
