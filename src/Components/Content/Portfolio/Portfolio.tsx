@@ -143,7 +143,7 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
         {/* end of confetti things */}
 
         <div id={Style.portfolio} >
-            <div id={Style.title}>Portfolio</div>
+            <div id={Style.title}>~Portfolio~</div>
 
             <h2>AltaBirra</h2>
             <Element name="altaBirraVideo">

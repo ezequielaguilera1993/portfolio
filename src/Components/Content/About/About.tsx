@@ -1,28 +1,45 @@
 import React from 'react'
 import { iWantCarJumps } from '../../../developerTools/developerTools'
 import Style from './About.module.scss'
+import { icons } from './Logos'
 export const About: React.FunctionComponent<{}> = () => {
 
-    const about = `💫 Soy Ezequiel Aguilera y me apasiona programar
-    ✨ Full Stack Web Developer 💻🌎🌏
-    
-    ~Tech kills~
-    TypeScript•JavaScript
-    •HTML•React•Redux•Node•Express•CSS
-    •LESS•Postgress•Sequelize•Prism`
 
     return (<div id={Style.About} >
 
-        <div id={Style.title}>~About me~</div>
+
+        <div id={Style.title}>~Sobre mi~</div>
 
         <div id={Style.picANDdescription}>
-            <div id={Style.description} >
+            {/* <div id={Style.description} >
                 {
-                    iWantCarJumps(about, "br")
+                    iWantCarJumps(about, "div")
                 }
-            </div>
-            <img id={Style.img} alt="Imágen de Ezequiel Aguilera, el propietario de este portfolio. Joven buen mozo y pelirrojo jaja. No pero hablando en serio es bien guapo" src="https://i.imgur.com/A5s3OuY.png" width="30%" height="30%" />
+            </div> */}
+
+            <p id={Style.titleDescription} >✨ Ezequiel Aguilera ✨</p>
+
+            <img alt="Imágen de Ezequiel Aguilera, el propietario de este portfolio. Joven buen mozo y pelirrojo jaja. No pero hablando en serio es bien guapo" src="https://i.imgur.com/A5s3OuY.png?2" />
+            <p id={Style.description} >Full Stack Web Developer, apasionado de la programación, valoro mucho el trabajo en equipo por haber vivido muy lindas experiencias que me enriquecieron como persona</p>
         </div>
+
+        <p id={Style.TitleTechkills} >~Tech kills~</p>
+
+        <p> | Typescript | Javascript | Git | React | Redux | HTML | Sass | CSS | Figma | NodeJs  | Express | Postman | PostgreSQL | SQLite | Prisma | Sequelize | Kotlin | Babel | Electron | Firebase | </p>
+
+        <div id={Style.logos} >
+            {icons}
+        </div>
+
 
     </div>)
 }
+
+
+
+
+
+
+
+
+
