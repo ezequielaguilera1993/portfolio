@@ -24,11 +24,11 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
     flex-direction: column;
     display: flex;
     align-items: center;
+  }
 
-    p {
-      margin: 0;
-      padding: 0;
-    }
+  #About p {
+    margin: 0;
+    padding: 0;
   }
   /* double	groove	ridge
 inset	outset */
@@ -39,6 +39,7 @@ inset	outset */
     color: white;
     height: 3rem;
     margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
     padding-top: 0.2rem;
     display: flex;
     justify-content: center;
@@ -46,33 +47,40 @@ inset	outset */
     box-shadow: 0rem 0rem 0.3rem 0.01rem;
   }
 
-  #picANDdescription {
-    margin-top: 0.4rem;
-    font-size: 1rem;
-    background-color: rgb(0, 0, 0);
-    border-radius: 3rem;
+  #imgANDdescription {
     // border: 0.1rem solid grey;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: 0.4rem;
+    width: 96vw;
 
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    #description {
+      font-size: 1.05rem;
+      color: rgb(238, 238, 238);
+      text-align: left;
+      // text-justify: inter-character;
+    }
     img {
       // background-color: #3300c0;
-      width: 30%;
-      border-radius: 1rem;
+      $size: 30%;
+      width: $size;
+      border-radius: 7%;
       box-shadow: 0 0 1rem -0.3rem;
-      float: right;
-    }
-
-    p {
-      font-size: 1rem;
-      color: rgb(255, 255, 255);
+      margin-left: 0.4rem;
+      transition: 1000ms;
     }
   }
 
-  #TitleTechkills {
-    margin-top: 0.2rem;
-    background-color: rgb(26, 26, 26);
+  #subTitles {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    padding-top: 0.2rem;
+    background-color: rgb(36, 36, 36);
+    width: 100vw;
   }
+
   #logos {
     a {
       color: transparent;
@@ -105,32 +113,3 @@ inset	outset */
 @media (min-width: $pivotWidthScreen) {
   @include baseMobile;
 }
-
-/*  $topMargin: 0.2rem;
-  #titleForeground {
-    color: rgb(187, 186, 186);
-    font-size: 2rem;
-    background-color: rgba(0, 0, 0, 0.692);
-    position: absolute;
-    border-radius: 0.5rem;
-    width: 100vw;
-    font-weight: 600;
-    -webkit-text-stroke: 0.03rem rgb(29, 29, 29);
-    margin: 0;
-    padding: 0;
-    margin-top: $topMargin;
-  }
-
-  #tittleBackground {
-    top: 0px;
-    width: 100%;
-    z-index: -1;
-    background: url(https://i.imgur.com/JbvBhgQ.jpg);
-    background-size: cover;
-    border-radius: 0.5rem;
-    height: 2.6rem;
-    filter: brightness(1.2);
-    margin: 0;
-    padding: 0;
-    margin-top: $topMargin;
-  } */

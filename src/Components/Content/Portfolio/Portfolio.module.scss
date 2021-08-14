@@ -17,15 +17,14 @@
 //
 $ratioYoutubeVideo: 0.5625;
 //
-$pivotWidthScreen: 1000px;
+$pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
 
 #title {
   font-size: 2rem;
   background-color: rgba(0, 0, 0, 0.267);
-
+  margin-top: 1rem;
   color: white;
   height: 3rem;
-  margin: 0;
   padding-top: 0.2rem;
   display: flex;
   justify-content: center;
