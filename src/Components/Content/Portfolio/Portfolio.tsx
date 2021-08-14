@@ -4,7 +4,7 @@ import YouTube from 'react-youtube';
 // import { useForm, Resolver } from "react-hook-form";
 import Confetti from 'react-dom-confetti';
 import { smallScreen as sc, vh, vw } from '../../../developerTools/developerTools';
-import { NavigationBarHeight } from '../../NavigationBar/NavigationBar';
+import { NavigationBarHeight, osBxShadow } from '../../NavigationBar/NavigationBar';
 var Scroll = require('react-scroll');
 var Element = Scroll.Element;
 var scroller = Scroll.scroller;
@@ -105,7 +105,7 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
     ///////////////////////////////////////////RETURN///////////////////////////////////////////////////
     ///////////////////////////////////////////////////RETURN///////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    return (<div id={Style.Portfolio} >
+    return (<div id={Style.Portfolio} style={{ marginTop: sc() ? "1rem" : NavigationBarHeight + osBxShadow + "vh" }} >
 
         {/* Auto Confeti */}
         {/* <div style={{ display: 'flex', justifyContent: "flex-end" }}>

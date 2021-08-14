@@ -39,11 +39,11 @@ export function Form() {
                 </div>
 
                 <div>
-                    <label htmlFor="email" placeholder='"florencia1990@hotmail.com"'>
+                    <label htmlFor="mail" placeholder='"florencia1990@hotmail.com"'>
                         Email
                     </label>
-                    <input autoComplete="on"  {...register("email", { required: true })} type="email" placeholder='"florencia1990@hotmail.com"' />
-                    {errors.email && <p>Campo requerido para poder contactarme</p>}
+                    <input autoComplete="on"  {...register("mail", { required: true })} type="mail" placeholder='"florencia1990@hotmail.com"' />
+                    {errors.mail && <p>Campo requerido para poder contactarme</p>}
                 </div>
 
                 <div>
@@ -56,11 +56,13 @@ export function Form() {
                 </div>
 
                 <div>
-                    <label htmlFor="message">Cualquier cosa a agregar</label>
-                    <input autoComplete="on"
-                        placeholder='"Tengo este proyecto en mente [...] | Me gustaria entrevistarte etc [...] | etc."'
+                    <label htmlFor="message">Nota</label>
+                    <div contentEditable={true}
+                        placeholder='[...]'
                         {...register("message", { required: false })}
-                    />
+                        style={{ height: "100px", textAlign: "start", borderRadius: "80px" }}
+                    ></div>
+
                     {errors.message && <p>Campo requerido para poder contactarme</p>}
                 </div>
 
