@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <Route path="/" >
-        {/* <NavigationBar /> */}
+        <NavigationBar />
         {/* div that make place to navigation bar, if the screen is swamll, the navigarot go down, and no neceseary to make place */}
         {
           smallScreen() ? null :
