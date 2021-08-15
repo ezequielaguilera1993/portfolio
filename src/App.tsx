@@ -14,15 +14,30 @@ import { FireworksLanding } from './Components/FireworksLanding/FireworksLanding
 
 
 
+// let scrollCache = 0
+
+window.addEventListener("scroll", () => {
+  const innerHeight = window.innerHeight /* || document.documentElement.clientHeight ||
+    document.body.clientHeight; */
+  let HTML = document.documentElement
+  var HTMLmeasures = HTML.getBoundingClientRect();
+  console.log(HTMLmeasures.bottom, innerHeight)
+  //Si lo que le falta par alo ultimo, es tu viewport, ejecuta la alerta
+  // if (!Math.round(innerHeight - HTMLmeasures.bottom)) { alert("Bottom!") }
+
+});
+
 
 function App() {
 
   //http://vyctoire.com/about sensaciond e vida
   //https://prashantsani.com/ figuras en 3d
+
+
   return (
     <div className="App">
       <Route path="/" >
-        <NavigationBar />
+        {/* <NavigationBar /> */}
         {/* div that make place to navigation bar, if the screen is swamll, the navigarot go down, and no neceseary to make place */}
         {
           smallScreen() ? null :

@@ -38,23 +38,64 @@
     object-position: 20% 10%; /* try 20px 10px */
   }
 
-  @keyframes fire {
-    from {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    to {
-      transform: scale(1);
+  @mixin random($rem1, $rem2, $maxSize) {
+    $initialColor: rgb(random(255), random(255), random(255));
+    @keyframes fire {
+      0% {
+        transform: rotate(0rad) scale(1);
+        box-shadow: 0 0 $rem1 $rem2 $initialColor;
+      }
+
+      10% {
+        transform: rotate(0rad) scale($maxSize);
+        box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
+      }
+
+      20% {
+        transform: rotate(0rad) scale(1);
+        box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
+      }
+      30% {
+        transform: rotate(0rad) scale($maxSize);
+        box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
+      }
+      40% {
+        transform: rotate(0rad) scale(1);
+        box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
+      }
+      50% {
+        transform: rotate(0rad) scale($maxSize);
+        box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
+      }
+      60% {
+        transform: rotate(0rad) scale(1);
+        box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
+      }
+      70% {
+        transform: rotate(0rad) scale($maxSize);
+        box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
+      }
+      80% {
+        transform: rotate(0rad) scale(1);
+        box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
+      }
+      90% {
+        transform: rotate(0rad) scale($maxSize);
+        box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
+      }
+      100% {
+        transform: rotate(0rad) scale(1);
+        box-shadow: 0 0 $rem1 $rem2 $initialColor;
+      }
     }
   }
 
   #fireContainer {
+    // animation: fire 6s infinite;
   }
-
   #fire,
   #fireBye {
+    @include random(1rem, 0.1rem, 1.07);
     position: absolute;
     align-self: center;
     background-image: url(https://i.imgur.com/Mr7Lej1.jpg);
@@ -67,15 +108,16 @@
     top: 0;
     bottom: 0;
     margin: auto;
-    animation: fire 1s infinite;
+    animation: fire 6s infinite;
     border-radius: 100%;
-    box-shadow: 0 0 0.1rem 0.3rem rgb(16, 67, 134);
-    filter: opacity(1);
     transition: all 1s;
   }
 
   #fireBye {
     transition: all 1s;
     filter: opacity(0);
+    &:hover {
+      filter: opacity(1);
+    }
   }
 }

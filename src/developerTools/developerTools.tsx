@@ -129,3 +129,34 @@ export const developerTools = function ({ consoleInfo = false, showMargins = fal
 
 
 }
+
+
+
+/* Funcion reloj
+
+ //Genera colores aleatorios
+    const randomizeColors = () => {
+        const randomColorDecimal = Math.round(Math.random() * 16777215)
+        const randomColorHexa = "#" + randomColorDecimal.toString(16)
+        return randomColorHexa
+    }
+
+    //Declaro useState
+    const [color, ªcolor] = useState<string>("")
+
+    //UseEffect (controla que no se dispare)
+    useEffect(() => {
+
+        ; (async function clockFunction(c = 0) {//Es recursiva y autoinvocable, funciona como un reloj
+            await ªcolor(randomizeColors())
+            ++c
+            await setTimeout(() => clockFunction(c), 100);
+        })()
+
+    }, [])
+
+    //Busca el elemento y le asocia otro color de boxShadow
+    const fwButton = document.getElementById(Style.fire)//Busca al elemento
+    if (fwButton) fwButton.style.boxShadow = "0 0 0.1rem 0.3rem " + color//Le cambia el bos shadow
+
+*/
