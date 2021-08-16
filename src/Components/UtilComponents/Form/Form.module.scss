@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Stalemate&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 //PIVOT SIZE
 $pivotWidthScreen: 1000px;
 //IF CHANGE, CHANGE IN EVEREWHERE!!
@@ -12,14 +13,17 @@ $pivotWidthScreen: 1000px;
     $imageWidth: 40vmax;
     $ratioImg: 1621/1337;
     $imageHeight: $imageWidth * $ratioImg;
-    $positionConst: $imageHeight/10;
+    $positionHeight: $imageHeight/10;
+    $positionWidth: $imageWidth/10;
     ////////////////////
+
     position: relative;
     display: flex;
     justify-content: center;
 
     * {
       font-family: "WindSong", cursive;
+      font-family: "Sacramento", cursive;
       font-size: $imageHeight * 0.05;
       color: black;
       font-weight: bolder;
@@ -39,17 +43,75 @@ $pivotWidthScreen: 1000px;
       width: $imageWidth;
       height: $imageWidth * $ratioImg;
       margin: auto;
+
+      .inputContainer {
+        background-color: transparent;
+        position: relative;
+        display: flex;
+        margin-left: $positionWidth * 0.6;
+        label {
+          text-align: left;
+          font-weight: bolder;
+        }
+        input {
+          width: 70%;
+          font-weight: normal;
+          background-color: transparent;
+          color: #222222;
+          outline: none;
+          -webkit-text-stroke: 0.7px #222222;
+        }
+      }
     }
 
     #name {
-      background-color: transparent;
-      position: relative;
-      top: $positionConst * 2;
+      top: $positionHeight * 1.62;
+      label {
+      }
+      input {
+        text-indent: $positionWidth * 0.025;
+      }
     }
 
-    input {
-      width: 50%;
-      background-color: transparent;
+    #mail {
+      top: $positionHeight * 1.57;
+      label {
+      }
+      input {
+        text-indent: $positionWidth * 0.025;
+      }
+    }
+
+    #phone {
+      top: $positionHeight * 1.54;
+      label {
+      }
+      input {
+        text-indent: $positionWidth * 0.025;
+        font-size: $imageHeight * 0.04;
+      }
+    }
+
+    #message {
+      top: $positionHeight * 1.51;
+      label {
+      }
+      position: relative;
+      textarea {
+        position: absolute;
+        left: $positionWidth * 0.18;
+        text-indent: $positionWidth * 1.3;
+        width: 88.5%;
+        height: fit-content;
+        font-weight: normal;
+        background-color: transparent;
+        color: #222222;
+        outline: none;
+        -webkit-text-stroke: 0.7px #222222;
+        text-align: left;
+        background-color: rgba(0, 128, 0, 0.5);
+        resize: none;
+      }
     }
   }
 }
@@ -62,4 +124,8 @@ $pivotWidthScreen: 1000px;
 //DESKTOP
 @media (min-width: $pivotWidthScreen) {
   @include baseMobile;
+}
+
+#divEditable {
+  background-color: none;
 }
