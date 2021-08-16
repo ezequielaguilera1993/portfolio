@@ -41,6 +41,28 @@ export const iWantCarJumps = (textWithCarJumps: string, divOrBr: "div" | "br") =
 
 
 
+
+
+
+export function TopBottomOfScreen(whenTop: Function, whenBottom: Function) {
+    window.addEventListener("scroll", () => {
+        const innerHeight = window.innerHeight /* || document.documentElement.clientHeight ||
+      document.body.clientHeight; */
+        let HTML = document.documentElement
+        var HTMLmeasures = HTML.getBoundingClientRect();
+        console.log(HTMLmeasures.bottom, HTMLmeasures.top, innerHeight)
+        if (HTMLmeasures.top === 0) whenTop()
+        //Si lo que le falta par alo ultimo, es tu viewport, ejecuta la alerta
+        if (!Math.round(innerHeight - HTMLmeasures.bottom)) whenBottom()
+    });
+}
+
+
+
+
+
+
+
 interface IdeveloperTools {
     consoleInfo?: boolean;
     showMargins?: boolean;
@@ -63,8 +85,8 @@ export const developerTools = function ({ consoleInfo = false, showMargins = fal
                         const elemStyle = allElems[i].style
                         cacheObject.push({ border: elemStyle.border, margin: elemStyle.margin })
                         elemStyle.border = marginSize + "px solid green"
-                        elemStyle.margin = "20px"
-                        elemStyle.borderRadius = "7px"
+                        elemStyle.margin = "3px"
+                        elemStyle.borderRadius = "3px"
                     }
                     console.log(cacheObject)
                 }

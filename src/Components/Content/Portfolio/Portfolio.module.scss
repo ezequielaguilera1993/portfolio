@@ -125,10 +125,9 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
   @include base;
   .youtubeVideo,
   .youtubeVideoPlay {
-    $sizeInVw: 10%;
+    $sizeInVw: 95vw;
     width: $sizeInVw;
     height: $sizeInVw * $ratioYoutubeVideo;
-    max-height: 90vh;
   }
 
   #moreConfettiLoading,

@@ -28,7 +28,7 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
     color: white;
     height: 3rem;
     margin: 0;
-    padding-top: 0.2rem;
+    // padding-top: 0.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,24 +39,46 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 1vh 0vw;
 
-    #cButton {
-      background-color: cadetblue;
-    }
+    $rotate: -41.25grad;
+    .curveButtonContainer {
+      border-radius: 100%;
+      $top: 2vh;
+      margin: $top 1vw;
+      margin-top: $top + 2.4;
+      transition: all 0.2s;
+      background: radial-gradient(
+        circle,
+        rgb(255, 255, 255) 40%,
+        rgba(255, 0, 0, 0) 53%
+      );
 
-    $rotate: -0.7rad;
-    .rotateText {
-      transform: rotate($rotate) scale(1.3);
-    }
-    .curveButtons {
-      font-size: 10px;
-      color: rgb(255, 255, 255);
-      margin: 1rem 1em;
-      font-family: monospace;
-      a {
-        transform: rotate(-$rotate);
-        z-index: -1; //Sino queda abajo llamar por el brightness
+      &:hover {
+        transform: scale(1.9) rotate($rotate);
+        margin-left: 1.5vw;
+        margin-right: 1.5vw;
+        background: radial-gradient(
+          circle,
+          rgb(255, 255, 255) 40%,
+          rgba(255, 0, 0, 0) 54.5%
+        );
+      }
+
+      transition: all 0.4s linear;
+      transform: rotate($rotate) scale(1.5);
+
+      .curveButton {
+        // background-color: rgb(136, 136, 136);
+
+        font-size: 10px;
+        color: rgb(255, 255, 255);
+        font-family: monospace;
+        // z-index: -1; //Sino queda abajo llamar por el brightness
+        // margin: 3vh 1vw;
+
         img {
+          transform: rotate(-$rotate);
           $scale: 70%;
           width: $scale;
           height: $scale;
@@ -67,16 +89,26 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
 
   #subTitles {
     font-size: 1.1rem;
-    margin-bottom: 0.3rem;
-    padding-top: 0.2rem;
+    // margin-bottom: 0.3rem;
+    // padding-top: 0.2rem;
     background-color: rgb(36, 36, 36);
     width: 90%;
   }
 }
-
+////////////////
+////////////////
+////////////////
+////////////////
+////////////////
+////////////////
+////////////////
+////////////////
+////////////////
+////////////////
 //DESKTOP
 @media (min-width: $pivotWidthScreen) {
   #Contact {
+    // margin-bottom: 40vh;
   }
 
   #title {
@@ -86,7 +118,7 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
     color: white;
     height: 3rem;
     margin: 0;
-    padding-top: 0.2rem;
+    // padding-top: 0.2rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,24 +129,46 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 1vh 0vw;
 
-    #cButton {
-      background-color: cadetblue;
-    }
+    $rotate: -41.25grad;
+    .curveButtonContainer {
+      border-radius: 100%;
+      $top: 2vh;
+      margin: $top 1vw;
+      margin-top: $top + 2.4;
+      transition: all 0.2s;
+      background: radial-gradient(
+        circle,
+        rgb(255, 255, 255) 40%,
+        rgba(255, 0, 0, 0) 53%
+      );
 
-    $rotate: -0.7rad;
-    .rotateText {
-      transform: rotate($rotate) scale(1.3);
-    }
-    .curveButtons {
-      font-size: 10px;
-      color: rgb(255, 255, 255);
-      margin: 1rem 1em;
-      font-family: monospace;
-      a {
-        transform: rotate(-$rotate);
-        z-index: -1; //Sino queda abajo llamar por el brightness
+      &:hover {
+        transform: scale(1.9) rotate($rotate);
+        margin-left: 1.5vw;
+        margin-right: 1.5vw;
+        background: radial-gradient(
+          circle,
+          rgb(255, 255, 255) 40%,
+          rgba(255, 0, 0, 0) 54.5%
+        );
+      }
+
+      transition: all 0.4s linear;
+      transform: rotate($rotate) scale(1.5);
+
+      .curveButton {
+        // background-color: rgb(136, 136, 136);
+
+        font-size: 10px;
+        color: rgb(255, 255, 255);
+        font-family: monospace;
+        // z-index: -1; //Sino queda abajo llamar por el brightness
+        // margin: 3vh 1vw;
+
         img {
+          transform: rotate(-$rotate);
           $scale: 70%;
           width: $scale;
           height: $scale;
@@ -125,8 +179,6 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
 
   #subTitles {
     font-size: 1.1rem;
-    margin-bottom: 0.3rem;
-    padding-top: 0.2rem;
     background-color: rgb(36, 36, 36);
     width: 100%;
   }

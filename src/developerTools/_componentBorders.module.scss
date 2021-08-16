@@ -8,3 +8,88 @@
     margin: 1rem;
   }
 }
+
+@mixin random($rem1, $rem2, $maxSize) {
+  $initialColor: rgb(random(255), random(255), random(255));
+  @keyframes fire {
+    0% {
+      background: radial-gradient(
+        circle,
+        $initialColor 40%,
+        rgba(255, 0, 0, 0) 54%
+      );
+    }
+
+    10% {
+      background: radial-gradient(
+        circle,
+        rgb(random(255), random(255), random(255)) 40%,
+        rgba(255, 0, 0, 0) 54%
+      );
+    }
+
+    20% {
+      background: radial-gradient(
+        circle,
+        rgb(random(255), random(255), random(255)) 40%,
+        rgba(255, 0, 0, 0) 54%
+      );
+    }
+    30% {
+      background: radial-gradient(
+        circle,
+        rgb(random(255), random(255), random(255)) 40%,
+        rgba(255, 0, 0, 0) 54%
+      );
+    }
+    40% {
+      background: radial-gradient(
+        circle,
+        rgb(random(255), random(255), random(255)) 40%,
+        rgba(255, 0, 0, 0) 54%
+      );
+    }
+    50% {
+      background: radial-gradient(
+        circle,
+        rgb(random(255), random(255), random(255)) 40%,
+        rgba(255, 0, 0, 0) 54%
+      );
+    }
+    60% {
+      background: radial-gradient(
+        circle,
+        rgb(random(255), random(255), random(255)) 40%,
+        rgba(255, 0, 0, 0) 54%
+      );
+    }
+    70% {
+      background: radial-gradient(
+        circle,
+        rgb(random(255), random(255), random(255)) 40%,
+        rgba(255, 0, 0, 0) 54%
+      );
+    }
+    80% {
+      background: radial-gradient(
+        circle,
+        rgb(random(255), random(255), random(255)) 40%,
+        rgba(255, 0, 0, 0) 54%
+      );
+    }
+    90% {
+      background: radial-gradient(
+        circle,
+        rgb(random(255), random(255), random(255)) 40%,
+        rgba(255, 0, 0, 0) 54%
+      );
+    }
+    100% {
+      background: radial-gradient(
+        circle,
+        $initialColor 40%,
+        rgba(255, 0, 0, 0) 54%
+      );
+    }
+  }
+}

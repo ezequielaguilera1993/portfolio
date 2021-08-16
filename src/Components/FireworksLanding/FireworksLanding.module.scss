@@ -18,24 +18,60 @@
   background-image: url(https://cdn.pixabay.com/photo/2016/06/05/07/59/stars-1436950_960_720.jpg);
   background-size: contain;
   max-width: 100%;
+  max-height: 100vh;
   height: 100vh;
   text-align: right;
   position: relative;
   z-index: 0;
+  // overflow-x: hidden;
+  #gradientDiv {
+    background: rgb(24, 24, 24);
+    background: linear-gradient(
+      180deg,
+      rgba(24, 24, 24, 1) 0%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    // background-color: white;
+    width: 100%;
+    height: 14vw;
+    position: absolute;
+    top: 0px;
+    right: 0px;
 
-  #moon {
+    z-index: -2;
+  }
+
+  #moonContainer {
+    background-color: rgba(0, 0, 0, 0);
+    color: black;
+    overflow: hidden;
     position: absolute;
     right: 0px;
-    top: 0px;
-    z-index: -1;
-    transform: scale(2);
-    $scale: 20vw;
+    $scale: 50vw;
+    top: $scale * -1.7/5;
     width: $scale;
     height: $scale;
+    max-height: 98vh;
+    // border: 1px solid green;
+  }
+  #moon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -24%;
+    z-index: -1;
+    // transform: scale(1);
+    $scale: 70%;
+    width: $scale;
+    height: $scale;
+    max-height: 80vh;
+    max-width: 80vh;
     border-radius: 100%;
-    box-shadow: 0 0 1rem 1rem;
+    box-shadow: 0 0 2.4vw 1.4vw white;
     object-fit: cover;
-    object-position: 20% 10%; /* try 20px 10px */
+    // border: 1px solid green;
+    // margin: 3rem;
+    // object-position: 20% 10%; /* try 20px 10px */
   }
 
   @mixin random($rem1, $rem2, $maxSize) {
@@ -90,12 +126,10 @@
     }
   }
 
-  #fireContainer {
-    // animation: fire 6s infinite;
-  }
   #fire,
   #fireBye {
     @include random(1rem, 0.1rem, 1.07);
+    animation: fire 6s infinite;
     position: absolute;
     align-self: center;
     background-image: url(https://i.imgur.com/Mr7Lej1.jpg);
@@ -108,15 +142,21 @@
     top: 0;
     bottom: 0;
     margin: auto;
-    animation: fire 6s infinite;
     border-radius: 100%;
-    transition: all 1s;
+    z-index: 1; //sino, no s epuede tocar, el ancho de la luna lo caga
+    border: 1px solid rgb(8, 87, 1);
+    border-style: outset;
+
+    &:active {
+      border-style: inset;
+    }
   }
 
   #fireBye {
-    transition: all 1s;
     filter: opacity(0);
+    transition: all 5s;
     &:hover {
+      transition: all 1s;
       filter: opacity(1);
     }
   }

@@ -3,6 +3,12 @@ import Style from './FireworksLanding.module.scss'
 import { Fireworks } from 'fireworks-js/dist/react'
 import { Link } from 'react-router-dom'
 import { useEffect } from 'react'
+import { animateScroll } from 'react-scroll'
+const goBottom = () => animateScroll.scrollToBottom({ duration: 1000 })
+
+
+
+
 
 
 const options = {
@@ -71,13 +77,16 @@ const style = {
     height: "100%",
 }
 
+var FireworksLandin = document.getElementById(Style.FireworksLandin);
+console.log(FireworksLandin)
 
 export const FireworksLanding: React.FunctionComponent<{}> = () => {
-
 
     const [fireWorks, ªfireWorks] = useState<boolean>(false)
 
     return (<div id={Style.FireworksLanding} >
+
+
 
         {fireWorks ?
             <>
@@ -86,11 +95,14 @@ export const FireworksLanding: React.FunctionComponent<{}> = () => {
             :
             null
         }
-        <div id={Style.fireContainer}>
-            <button onClick={() => ªfireWorks(!fireWorks)} id={fireWorks ? Style.fireBye : Style.fire} />
+
+        <button onClick={async () => { await ªfireWorks(!fireWorks) }} id={fireWorks ? Style.fireBye : Style.fire} />
+
+        <div id={Style.gradientDiv} />
+
+        <div id={Style.moonContainer}>
+            <img id={Style.moon} src="https://i.imgur.com/FztASHt.jpg" />
         </div>
-        <img id={Style.moon} src="https://i.imgur.com/FztASHt.jpg" />
-        {/* <div id={Style.fireContainer}> */}
-        {/* </div> */}
+
     </div>)
 }

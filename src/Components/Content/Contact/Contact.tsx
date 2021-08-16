@@ -14,38 +14,48 @@ export const Contact: React.FunctionComponent<{}> = () => {
 
         <div id={Style.contactButtons}>
 
-            <div className={Style.rotateText}>
-                <ArcText
-                    text="Enviar WhatsApp"
-                    characterWidth={10}
-                    radius={40}
-                    className={Style.curveButtons}
-                >
-                    <a href='https://wa.me/+541128676833' ><img src='https://dailankifkisa.com/wp-content/uploads/2020/08/whatsapp.png' /></a>
+            <div className={Style.curveButtonContainer}>
+                <a href='https://wa.me/+541128676833' >
+                    <ArcText
+                        text="Enviar WhatsApp"
+                        characterWidth={10}
+                        radius={40}
+                        className={Style.curveButton}
+                    >
+                        <img id={Style.imgIcon} src='https://dailankifkisa.com/wp-content/uploads/2020/08/whatsapp.png' />
 
-                </ArcText>
+                    </ArcText>
+                </a>
             </div>
-            <div className={Style.rotateText}>
-                <ArcText
-                    text="Enviar Mail"
-                    characterWidth={10}
-                    radius={40}
-                    className={Style.curveButtons}
-                >
-                    <a href='mailto:ezequielaguilera1993@gmail.com' ><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Circle-icons-mail.svg/768px-Circle-icons-mail.svg.png' /></a>
 
-                </ArcText>
+
+            <div className={Style.curveButtonContainer}>
+                <a href='mailto:ezequielaguilera1993@gmail.com' >
+                    <ArcText
+                        text="Enviar Mail"
+                        characterWidth={10}
+                        radius={40}
+                        className={Style.curveButton}
+                    >
+                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Circle-icons-mail.svg/768px-Circle-icons-mail.svg.png' />
+
+                    </ArcText>
+                </a>
             </div>
-            <div className={Style.rotateText}>
-                <ArcText
-                    text="Llamar"
-                    characterWidth={10}
-                    radius={40}
-                    className={Style.curveButtons}
-                >
 
-                    <a href='tel:+541128676833' ><img src='https://i.imgur.com/l6Qe81D.png' style={{ filter: "brightness(1.4)" }} /></a>
-                </ArcText>
+
+            <div className={Style.curveButtonContainer}>
+                <a href='tel:+541128676833' >
+                    <ArcText
+                        text="Llamar"
+                        characterWidth={10}
+                        radius={40}
+                        className={Style.curveButton}
+                    >
+
+                        <img src='https://i.imgur.com/l6Qe81D.png' style={{ filter: "brightness(1.4)" }} />
+                    </ArcText>
+                </a>
             </div>
 
         </div>
