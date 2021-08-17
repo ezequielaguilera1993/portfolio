@@ -48,12 +48,12 @@ export function Form() {
             return AAA
         }
 
-        function showMeChangesCreator(objInit: any, objForwardCreate: Function) {
+        function showMeChangesCreator(objCreator: Function) {
 
-            objInit = objectToPlainArray(objInit)
+            let objInit = objectToPlainArray(objCreator())
 
             return function () {
-                let objForward = objForwardCreate()
+                let objForward = objCreator()
                 objForward = objectToPlainArray(objForward)
                 console.log("objInit", objInit)
                 console.log("objForward", objForward)
@@ -66,17 +66,12 @@ export function Form() {
             }
         }
 
-        const showMeChanges = showMeChangesCreator(window, () => window)
+        const showMeChanges = showMeChangesCreator(() => document.getElementById(Style.divEditable))
 
-        window.addEventListener("keydown", () => {
-            // showMeChanges()
+
+        window.addEventListener("keyup", () => {
+            showMeChanges()
         })
-        window.addEventListener("scroll", () => {
-            // showMeChanges()
-        })
-
-
-
 
         // //Mapeo, y maxima cantidad de m que entran bien
         // let mapChar: any = { "0": 12, "1": 6, "2": 13, "3": 10, "4": 13, "5": 10, "6": 11, "7": 10, "8": 10, "9": 11, " ": 0, "!": 4, "\"": 3, "#": 6, "$": 8, "%": 10, "&": 9, "'": 2, "(": 6, ")": 6, "*": 5, "+": 6, ",": 3, "-": 6, ".": 3, "/": 8, ":": 4, ";": 4, "<": 6, "=": 6, ">": 6, "?": 13, "@": 11, "A": 17, "B": 18, "C": 14, "D": 16, "E": 14, "F": 18, "G": 14, "H": 19, "I": 10, "J": 9, "K": 18, "L": 14, "M": 22, "N": 18, "O": 12, "P": 15, "Q": 14, "R": 16, "S": 13, "T": 14, "U": 16, "V": 17, "W": 22, "X": 16, "Y": 16, "Z": 14, "[": 6, "]": 6, "^": 5, "_": 5, "`": 4, "a": 6, "b": 6, "c": 5, "d": 6, "e": 4, "f": 3, "g": 5, "h": 6, "i": 3, "j": 2, "k": 6, "l": 4, "m": 10, "n": 7, "o": 5, "p": 6, "q": 5, "r": 5, "s": 4, "t": 4, "u": 6, "v": 6, "w": 7, "x": 6, "y": 5, "z": 6, "{": 6, "|": 4, "}": 6, "~": 6, "": 8, "": 4, " ": 3, "¡": 4, "¢": 7, "£": 7, "¤": 4, "¥": 9, "¦": 4, "§": 13, "¨": 4, "©": 13, "ª": 4, "«": 7, "¬": 6, "­": 0, "®": 8, "¯": 4, "°": 2, "±": 6, "²": 6, "³": 4, "´": 4, "µ": 6, "¶": 11, "·": 3, "¸": 4, "¹": 2, "º": 3, "»": 7, "¼": 8, "½": 10, "¾": 9, "¿": 11, "À": 17, "Á": 17, "Â": 17, "Ã": 17, "Ä": 17, "Å": 17, "Æ": 27, "Ç": 14, "È": 14, "É": 14, "Ê": 14, "Ë": 14, "Ì": 10, "Í": 10, "Î": 10, "Ï": 10, "Ð": 16, "Ñ": 18, "Ò": 12, "Ó": 12, "Ô": 12, "Õ": 12, "Ö": 12, "×": 6, "Ø": 12, "Ù": 16, "Ú": 16, "Û": 16, "Ü": 16, "Ý": 16, "Þ": 15, "ß": 6, "à": 6, "á": 6, "â": 6, "ã": 6, "ä": 6, "å": 6, "æ": 6, "ç": 5, "è": 4, "é": 4, "ê": 4, "ë": 4, "ì": 3, "í": 3, "î": 3, "ï": 3, "ð": 5, "ñ": 7, "ò": 5, "ó": 5, "ô": 5, "õ": 5, "ö": 5, "÷": 6, "ø": 5, "ù": 6, "ú": 6, "û": 6, "ü": 6, "ý": 5, "þ": 6, "ÿ": 5, }
