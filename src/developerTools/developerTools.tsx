@@ -41,8 +41,23 @@ export const iWantCarJumps = (textWithCarJumps: string, divOrBr: "div" | "br") =
 
 
 
+export function repeat(iterationsA: number, iterationsB: number = 1, cb: Function,) {
+
+    for (let i = iterationsA; i <= iterationsB; ++i) {
+        cb(i, i - 1, iterationsB - i, iterationsB - i - 1)
+    }
+}
 
 
+export function objToString(obj: any) {
+    var str = '';
+    for (var p in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, p)) {
+            str += '"' + p + '"' + ':' + obj[p] + ",  ";
+        }
+    }
+    return "{" + str + "}";
+}
 
 export function TopBottomOfScreen(whenTop: Function, whenBottom: Function) {
     window.addEventListener("scroll", () => {

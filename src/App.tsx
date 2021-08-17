@@ -66,14 +66,10 @@ const options = {
   }`)
 }
 
-// let scrollCache = 0
-
-
 function App() {
 
   //http://vyctoire.com/about sensaciond e vida
   //https://prashantsani.com/ figuras en 3d
-
 
   return (
     <div className="App">

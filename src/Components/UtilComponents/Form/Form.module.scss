@@ -22,7 +22,6 @@ $pivotWidthScreen: 1000px;
     justify-content: center;
 
     * {
-      font-family: "WindSong", cursive;
       font-family: "Sacramento", cursive;
       font-size: $imageHeight * 0.05;
       color: black;
@@ -109,8 +108,8 @@ $pivotWidthScreen: 1000px;
         outline: none;
         -webkit-text-stroke: 0.7px #222222;
         text-align: left;
-        background-color: rgba(0, 128, 0, 0.5);
         resize: none;
+        overflow: hidden;
       }
     }
   }
