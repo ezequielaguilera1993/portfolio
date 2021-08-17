@@ -70,7 +70,7 @@ export function Form() {
 
 
         window.addEventListener("keyup", () => {
-            showMeChanges()
+            // showMeChanges()
         })
 
         // //Mapeo, y maxima cantidad de m que entran bien
