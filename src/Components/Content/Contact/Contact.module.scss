@@ -40,11 +40,12 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVERYWHERE!!
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin: 1vh 0vw;
-    margin-left: 3vw;
-    max-width: 98vw;
-
+    margin: 2vh auto;
+    margin-right: 0vw;
+    margin-left: 5vw;
+    max-width: 93vw;
     $rotate: -41.25grad;
+
     .curveButtonContainer {
       border-radius: 100%;
       $top: 2vh;

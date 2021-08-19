@@ -151,7 +151,8 @@ $pivotWidthScreen: 1000px;
 //DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP////DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//
 
 @media (min-width: $pivotWidthScreen) {
-  #Container {
+  @mixin baseDesktop() {
+    z-index: 1;
     //Constantes/////////
     $imageWidth: 40vmax;
     $ratioImg: 1621/1337;
@@ -276,5 +277,39 @@ $pivotWidthScreen: 1000px;
         // background-color: rgba(223, 111, 223, 0.39);
       }
     }
+    #submit {
+      position: absolute;
+      background-color: transparent;
+      right: $positionWidth * 1;
+      top: $positionHeight * 9.1;
+      font-size: $imageHeight * 0.06;
+      cursor: pointer;
+    }
+  }
+
+  #Container {
+    @include baseDesktop();
+    @keyframes APPEAR {
+      from {
+        filter: opacity(0);
+      }
+      to {
+        filter: opacity(1);
+      }
+    }
+    animation: APPEAR 2s forwards ease;
+  }
+
+  #ContainerSEND {
+    @include baseDesktop();
+
+    @keyframes SEND {
+      from {
+      }
+      to {
+        transform: rotatey(300grad) rotatez(360grad) translate(120%);
+      }
+    }
+    animation: SEND 4s forwards ease;
   }
 }

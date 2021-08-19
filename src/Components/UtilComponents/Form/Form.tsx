@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 
 import Style from "./Form.module.scss";
 import emailjs from 'emailjs-com'
-import React, { createRef, useEffect, useRef } from "react";
+import React, { createRef, useEffect, useRef, useState } from "react";
 import { showMeChangesCreator } from "../../../developerTools/developerTools";
 
 interface IinformationObject {
@@ -11,13 +11,24 @@ interface IinformationObject {
 
 function sendMail(informationObject: { name: string, mail: string, phone: string, message: string }) {
     emailjs.send("gmail", "template_2tshsrs", informationObject, "user_1aZLUJ4EJdglFQR5mfcZ1")
-        .then(() => alert(JSON.stringify(informationObject)))
-        .catch(() => alert("error"))
+        .then(() => console.log(JSON.stringify(informationObject)))
+        .catch(() => console.log("error"))
 }
 
 
 
 export function Form() {
+
+
+    const [send, ªsend] = useState<boolean>(false)
+
+    function sendNote() {
+        ªsend(true)
+        setTimeout(() => ªsend(false), 2400)
+    }
+
+    function refreshInputs() {
+    }
 
     let textAreaElement = useRef<HTMLTextAreaElement>(null)
     let textAreaElementMIRROR = useRef<HTMLTextAreaElement>(null)
@@ -72,12 +83,13 @@ export function Form() {
     });
     const onSubmit = (data: IinformationObject) => {
         sendMail(data)
+        sendNote()
     };
 
     console.log('Aca!')
 
     return (
-        <div id={Style.Container} >
+        <div id={send ? Style.ContainerSEND : Style.Container} >
             {/* <form>
                 <div className={Style.divs} style={{ padding: "0px", margin: "0px" }}>Hola</div>
                 <div className={Style.divs} style={{ padding: "0px", margin: "0px" }}>Juan</div>
@@ -99,14 +111,14 @@ export function Form() {
                         {...register("name", { required: false })}
                         type="text"
                     />
-                    {errors.name && <p>This is required</p>}
+                    {/* {errors.name && <p>This is required</p>} */}
                 </div>
 
                 <div id={Style.mail} className={Style.inputContainer}>
                     <label htmlFor="mail" placeholder='"florencia1990@hotmail.com"'>
                         Email: </label>
                     <input autoComplete="on"  {...register("mail", { required: true })} type="mail" placeholder='"florencia1990@hotmail.com"' />
-                    {errors.mail && <p>Campo requerido para poder contactarme</p>}
+                    {/* {errors.mail && <p>Campo requerido para poder contactarme</p>} */}
                 </div>
 
                 <div id={Style.phone} className={Style.inputContainer}>
@@ -115,7 +127,7 @@ export function Form() {
                         {...register("phone", { required: false })} type="tel"
                         placeholder='"+541128676833"'
                     />
-                    {errors.phone && <p>Campo requerido para poder contactarme</p>}
+                    {/* {errors.phone && <p>Campo requerido para poder contactarme</p>} */}
                 </div>
 
                 <div id={Style.message} className={Style.inputContainer}>
@@ -128,7 +140,7 @@ export function Form() {
                         rows={8}
                     >
                     </textarea>
-                    {errors.message && <p>Campo requerido para poder contactarme</p>}
+                    {/* {errors.message && <p>Campo requerido para poder contactarme</p>} */}
                     <textarea
                         placeholder='[...]'
                         {...register("message", { required: false })}
@@ -141,7 +153,7 @@ export function Form() {
                 </div>
 
 
-                {/* <input type="submit" /> */}
+                <input id={Style.submit} type="submit" />
             </form>
 
         </div>

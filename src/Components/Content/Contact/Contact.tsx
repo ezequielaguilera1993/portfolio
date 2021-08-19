@@ -51,7 +51,6 @@ export const Contact: React.FunctionComponent<{}> = () => {
                         radius={40}
                         className={Style.curveButton}
                     >
-
                         <img alt="icono de teléfono" src='https://i.imgur.com/l6Qe81D.png' style={{ filter: "brightness(1.4)" }} />
                     </ArcText>
                 </a>
