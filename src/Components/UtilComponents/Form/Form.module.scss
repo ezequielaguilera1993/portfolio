@@ -5,15 +5,17 @@
 $pivotWidthScreen: 1000px;
 //IF CHANGE, CHANGE IN EVEREWHERE!!
 //BASE
-#Container {
-}
-@mixin baseMobile() {
+
+//MOBILE
+@media (max-width: $pivotWidthScreen) {
   #Container {
     //Constantes/////////
-    $imageWidth: 40vmax;
+    $imageWidth: 96vw;
     $ratioImg: 1621/1337;
     $imageHeight: $imageWidth * $ratioImg;
     $positionHeight: $imageHeight/10;
+    $MILIpositionHeight: $positionHeight/1000;
+
     $positionWidth: $imageWidth/10;
     ////////////////////
 
@@ -42,6 +44,15 @@ $pivotWidthScreen: 1000px;
       width: $imageWidth;
       height: $imageWidth * $ratioImg;
       margin: auto;
+
+      #date {
+        position: absolute;
+        top: $positionHeight * 0.77;
+        right: $positionWidth * 0.4;
+        transform: rotate(1grad);
+        font-size: 1.5rem;
+        color: #363636;
+      }
 
       .inputContainer {
         background-color: transparent;
@@ -92,17 +103,20 @@ $pivotWidthScreen: 1000px;
     }
 
     #message {
-      top: $positionHeight * 1.51;
+      top: $positionHeight * 1.52;
+
       label {
       }
+
       position: relative;
+
       textarea {
         position: absolute;
         left: $positionWidth * 0.18;
         text-indent: $positionWidth * 1.3;
         width: 88.5%;
-        height: fit-content;
         font-weight: normal;
+        font-size: $imageHeight * 0.0477;
         background-color: transparent;
         color: #222222;
         outline: none;
@@ -111,20 +125,156 @@ $pivotWidthScreen: 1000px;
         resize: none;
         overflow: hidden;
       }
+
+      #textAreaElementMIRROR {
+        visibility: collapse;
+        // position: absolute;
+        // top: $positionHeight * 1.52;
+        // background-color: rgba(223, 111, 223, 0.39);
+      }
     }
   }
 }
 
-//MOBILE
-@media (max-width: $pivotWidthScreen) {
-  @include baseMobile;
-}
+//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE////MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE
+//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE////MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE
+//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE////MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE
+//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE////MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE
+//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE////MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE//MOBILE
 
-//DESKTOP
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP////DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//
+//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP////DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//
+//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP////DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//
+//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP////DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//
+//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP////DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//DESKTOP//
+
 @media (min-width: $pivotWidthScreen) {
-  @include baseMobile;
-}
+  #Container {
+    //Constantes/////////
+    $imageWidth: 40vmax;
+    $ratioImg: 1621/1337;
+    $imageHeight: $imageWidth * $ratioImg;
+    $positionHeight: $imageHeight/10;
+    $MILIpositionHeight: $positionHeight/1000;
 
-#divEditable {
-  background-color: none;
+    $positionWidth: $imageWidth/10;
+    ////////////////////
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    * {
+      font-family: "Sacramento", cursive;
+      font-size: $imageHeight * 0.05;
+      color: black;
+      font-weight: bolder;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+
+    #backgroundImage {
+      width: $imageWidth;
+      height: $imageHeight;
+      margin: auto;
+    }
+
+    Form {
+      position: absolute;
+      width: $imageWidth;
+      height: $imageWidth * $ratioImg;
+      margin: auto;
+
+      #date {
+        position: absolute;
+        top: $positionHeight * 0.77;
+        right: $positionWidth * 0.4;
+        transform: rotate(1grad);
+        font-size: 1.5rem;
+        color: #363636;
+      }
+
+      .inputContainer {
+        background-color: transparent;
+        position: relative;
+        display: flex;
+        margin-left: $positionWidth * 0.6;
+        label {
+          text-align: left;
+          font-weight: bolder;
+        }
+        input {
+          width: 70%;
+          font-weight: normal;
+          background-color: transparent;
+          color: #222222;
+          outline: none;
+          -webkit-text-stroke: 0.7px #222222;
+        }
+      }
+    }
+
+    #name {
+      top: $positionHeight * 1.62;
+      label {
+      }
+      input {
+        text-indent: $positionWidth * 0.025;
+      }
+    }
+
+    #mail {
+      top: $positionHeight * 1.57;
+      label {
+      }
+      input {
+        text-indent: $positionWidth * 0.025;
+      }
+    }
+
+    #phone {
+      top: $positionHeight * 1.54;
+      label {
+      }
+      input {
+        text-indent: $positionWidth * 0.025;
+        font-size: $imageHeight * 0.04;
+      }
+    }
+
+    #message {
+      top: $positionHeight * 1.52;
+
+      label {
+      }
+
+      position: relative;
+
+      textarea {
+        position: absolute;
+        left: $positionWidth * 0.18;
+        text-indent: $positionWidth * 1.3;
+        width: 88.5%;
+        font-weight: normal;
+        font-size: $imageHeight * 0.0477;
+        background-color: transparent;
+        color: #222222;
+        outline: none;
+        -webkit-text-stroke: 0.7px #222222;
+        text-align: left;
+        resize: none;
+        overflow: hidden;
+      }
+
+      #textAreaElementMIRROR {
+        visibility: collapse;
+        // position: absolute;
+        // top: $positionHeight * 1.52;
+        // background-color: rgba(223, 111, 223, 0.39);
+      }
+    }
+  }
 }

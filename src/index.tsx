@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import { developerTools } from './developerTools/developerTools';
-import { useEffect } from 'react';
-import { CharSizer } from './Components/UtilComponents/CharSizer/CharSizer';
+// import { developerTools } from './developerTools/developerTools';
+// import { useEffect } from 'react';
+// import { CharSizer } from './Components/UtilComponents/CharSizer/CharSizer';
 
 // developerTools({ consoleInfo: true, showMargins: true, marginSize: 2 })
 

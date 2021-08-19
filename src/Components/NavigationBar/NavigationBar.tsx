@@ -4,7 +4,7 @@ import React from 'react'
 // import { Link } from 'react-router-dom'
 import Style from './NavigationBar.module.scss'
 import { Link, animateScroll } from 'react-scroll'
-import AboutStyle from '../Content/About/About.module.scss'
+// import AboutStyle from '../Content/About/About.module.scss'
 import PortfolioStyle from '../Content/Portfolio/Portfolio.module.scss'
 import ContactStyle from '../Content/Contact/Contact.module.scss'
 import { smallScreen, vh } from '../../developerTools/developerTools'
@@ -14,7 +14,7 @@ export const NavigationBar: React.FunctionComponent<{}> = () => {
     const sc = smallScreen()
     const duration = 300
     const goTop = () => animateScroll.scrollToTop({ duration: duration })
-    const goBottom = () => animateScroll.scrollToBottom({ duration: 1000 })
+    // const goBottom = () => animateScroll.scrollToBottom({ duration: 1000 })
 
     return (
         <div id={Style.NavigationBar} style={{ height: NavigationBarHeight + "vh" }}>

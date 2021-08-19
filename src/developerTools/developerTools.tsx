@@ -1,8 +1,79 @@
 
-import Styles from "./developerTools.module.scss";
+// import Styles from "./developerTools.module.scss";
 
 //AUTOPUSH
 // npm run git -- ""
+
+
+
+export function objectToPlainArray(obj: any) {
+    let AAA = obj
+    let BBB: any = {};
+
+    let c = 100
+
+    while (c) {
+        Object.entries(AAA)
+        c--
+        for (let e in AAA) {
+            // console.log("Aca!")
+            if (typeof AAA[e] !== "object") {
+                BBB[e] = AAA[e]
+            }
+            else {
+                BBB = { ...BBB, ...AAA[e] }
+            }
+        }
+        AAA = { ...BBB }
+        BBB = {}
+    }
+    return AAA
+}
+//obtener fecha
+
+var m = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
+var ds = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
+var f = new Date();
+var f = new Date();
+console.log(ds[f.getDay()] + " " + f.getDate() + " de " + m[f.getMonth()] + " de " + f.getFullYear());
+
+/**
+@example
+let showMeChanges=showMeChangesCreator(useRef<HTMLTextAreaElement>(null))
+
+window.addEventListener("keyup", () => {
+showMeChanges()
+})
+
+window.addEventListener("click", () => {
+showMeChanges()
+}) [...etc]
+*/
+
+
+
+
+export function showMeChangesCreator(ref: React.RefObject<HTMLTextAreaElement>) {
+
+    if (ref.current) {
+        let objCreator: HTMLTextAreaElement = ref.current
+        let objInit = objectToPlainArray(objCreator)
+
+        return function () {
+            let objForward = objectToPlainArray(objCreator)
+            // console.log("objInit", objInit)
+            console.log("objForward", objForward)
+            console.log("///////////////////")
+            for (let e in objInit) {
+                if (objInit[e] !== objForward[e])
+                    console.log("🎉" + "Init: " + e + " |||", "Forward: " + objForward[e] + "💖")
+            }
+            console.log("////////////////////////////////////////////////////////////////////////////")
+        }
+    }
+    else return () => { alert("Error!") }
+}
+
 
 export function smallScreen() {
     return vw(100) < 1000 ? true : false
@@ -53,7 +124,7 @@ export function objToString(obj: any) {
     var str = '';
     for (var p in obj) {
         if (Object.prototype.hasOwnProperty.call(obj, p)) {
-            str += '"' + p + '"' + ':' + obj[p] + ",  ";
+            str += '"' + p + '":' + obj[p] + ",  ";
         }
     }
     return "{" + str + "}";

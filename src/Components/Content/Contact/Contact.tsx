@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Style from './Contact.module.scss'
 import { Form } from '../../UtilComponents/Form/Form'
-import { WhatsAppFloatButton } from '../../UtilComponents/WhatsAppFloatButton/WhatsAppFloatButton'
 import { ArcText } from '@arctext/react'
 import { NavigationBarHeight, osBxShadow } from '../../NavigationBar/NavigationBar'
 import { smallScreen as sc } from '../../../developerTools/developerTools'
@@ -22,7 +21,7 @@ export const Contact: React.FunctionComponent<{}> = () => {
                         radius={40}
                         className={Style.curveButton}
                     >
-                        <img id={Style.imgIcon} src='https://dailankifkisa.com/wp-content/uploads/2020/08/whatsapp.png' />
+                        <img alt="icono de WhatsApp" id={Style.imgIcon} src='https://dailankifkisa.com/wp-content/uploads/2020/08/whatsapp.png' />
 
                     </ArcText>
                 </a>
@@ -37,7 +36,7 @@ export const Contact: React.FunctionComponent<{}> = () => {
                         radius={40}
                         className={Style.curveButton}
                     >
-                        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Circle-icons-mail.svg/768px-Circle-icons-mail.svg.png' />
+                        <img alt="Icono de un mail" src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Circle-icons-mail.svg/768px-Circle-icons-mail.svg.png' />
 
                     </ArcText>
                 </a>
@@ -53,7 +52,7 @@ export const Contact: React.FunctionComponent<{}> = () => {
                         className={Style.curveButton}
                     >
 
-                        <img src='https://i.imgur.com/l6Qe81D.png' style={{ filter: "brightness(1.4)" }} />
+                        <img alt="icono de teléfono" src='https://i.imgur.com/l6Qe81D.png' style={{ filter: "brightness(1.4)" }} />
                     </ArcText>
                 </a>
             </div>

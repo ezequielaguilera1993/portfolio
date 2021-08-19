@@ -1,163 +1,415 @@
-@mixin componentBorders($FireworksLanding, $weigth: 1px, $margin: 1px) {
-  #{$FireworksLanding} {
-    border: 1px solid rgb(255, 255, 255);
-    margin: $margin;
-    border-radius: 14px;
+//PIVOT SIZE
+$pivotWidthScreen: 1000px;
+//IF CHANGE, CHANGE IN EVEREWHERE!!
 
-    * {
-      border: $weigth rgb(0, 174, 255) solid;
+//MOBILE
+@media (max-width: $pivotWidthScreen) {
+  @mixin componentBorders($FireworksLanding, $weigth: 1px, $margin: 1px) {
+    #{$FireworksLanding} {
+      border: 1px solid rgb(255, 255, 255);
       margin: $margin;
-
       border-radius: 14px;
+
+      * {
+        border: $weigth rgb(0, 174, 255) solid;
+        margin: $margin;
+
+        border-radius: 14px;
+      }
+    }
+  }
+  // @include componentBorders(#FireworksLanding);
+
+  #FireworksLanding {
+    background-image: url(https://cdn.pixabay.com/photo/2016/06/05/07/59/stars-1436950_960_720.jpg);
+    background-size: contain;
+    max-width: 100%;
+    max-height: 100vh;
+    height: 100vh;
+    text-align: right;
+    position: relative;
+    z-index: 0;
+    margin-top: 18vh;
+
+    // overflow-x: hidden;
+    #gradientDiv {
+      background: rgb(24, 24, 24);
+      background: linear-gradient(
+        180deg,
+        rgba(24, 24, 24, 1) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      // background-color: white;
+      width: 100%;
+      height: 14vw;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+
+      z-index: -2;
+    }
+
+    #moonContainer {
+      background-color: rgba(0, 0, 0, 0);
+      color: black;
+      overflow: hidden;
+      position: absolute;
+      right: 0px;
+      $scale: 50vmax;
+      top: $scale * -1.7/5;
+      width: $scale * 0.7;
+      height: $scale;
+      max-height: 98vh;
+      // border: 1px solid green;
+    }
+    #moon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -14vmax;
+      z-index: -1;
+      // transform: scale(1);
+      $scale: 40vmax;
+      width: $scale;
+      height: $scale;
+      max-height: 80vh;
+      max-width: 80vh;
+      border-radius: 100%;
+      box-shadow: 0 0 2.4vw 1.4vw white;
+      object-fit: cover;
+      // border: 1px solid green;
+      // margin: 3rem;
+      // object-position: 20% 10%; /* try 20px 10px */
+    }
+
+    @mixin random($rem1, $rem2, $maxSize) {
+      $initialColor: rgb(random(255), random(255), random(255));
+      @keyframes fire {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 $rem1 $rem2 $initialColor;
+        }
+
+        10% {
+          transform: scale($maxSize);
+          box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
+        }
+
+        20% {
+          transform: scale(1);
+          box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
+        }
+        30% {
+          transform: scale($maxSize);
+          box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
+        }
+        40% {
+          transform: scale(1);
+          box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
+        }
+        50% {
+          transform: scale($maxSize);
+          box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
+        }
+        60% {
+          transform: scale(1);
+          box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
+        }
+        70% {
+          transform: scale($maxSize);
+          box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
+        }
+        80% {
+          transform: scale(1);
+          box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
+        }
+        90% {
+          transform: scale($maxSize);
+          box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 $rem1 $rem2 $initialColor;
+        }
+      }
+    }
+
+    @keyframes wooah_fire {
+      from {
+        $scale: 8vh;
+        width: $scale;
+        height: $scale;
+        filter: opacity(0.3);
+      }
+
+      to {
+        transform: translateY(-40vh);
+        $scale: 20vh;
+        width: $scale;
+        height: $scale;
+        filter: opacity(1);
+      }
+    }
+
+    #fire {
+      @include random(1rem, 0.1rem, 1.07);
+      animation: fire 6s infinite, wooah_fire 1s normal forwards;
+      position: absolute;
+      // align-self: center;
+      background-image: url(https://i.imgur.com/Mr7Lej1.jpg);
+      background-size: contain;
+      $scale: 8vh;
+      width: $scale;
+      height: $scale;
+      left: 0;
+      right: 0;
+      // top: 0;
+      bottom: 6vh;
+      margin: auto;
+      border-radius: 100%;
+      z-index: 1; //sino, no s epuede tocar, el ancho de la luna lo caga
+      border: 1px solid rgb(8, 87, 1);
+      border-style: outset;
+    }
+
+    @keyframes wooah_fireBye {
+      from {
+        $scale: 20vh;
+        width: $scale;
+        height: $scale;
+      }
+
+      to {
+        transform: translateY(46vh) rotate(400grad);
+        $scale: 8vh;
+        width: $scale;
+        height: $scale;
+        filter: opacity(0.3);
+      }
+    }
+
+    #fireBye {
+      animation: wooah_fireBye 1s forwards ease;
+      position: absolute;
+      // align-self: center;
+      background-image: url(https://i.imgur.com/Mr7Lej1.jpg);
+      background-size: contain;
+      right: 0;
+      top: 0;
+      bottom: 12vh;
+      left: 0;
+      margin: auto;
+      border-radius: 100%;
+      z-index: 1; //sino, no s epuede tocar, el ancho de la luna lo caga
+      border: 1px solid rgb(8, 87, 1);
+      border-style: outset;
     }
   }
 }
-// @include componentBorders(#FireworksLanding);
+///////////////MOBILE///////////////////////////////////////////
 
-#FireworksLanding {
-  background-image: url(https://cdn.pixabay.com/photo/2016/06/05/07/59/stars-1436950_960_720.jpg);
-  background-size: contain;
-  max-width: 100%;
-  max-height: 100vh;
-  height: 100vh;
-  text-align: right;
-  position: relative;
-  z-index: 0;
-  // overflow-x: hidden;
-  #gradientDiv {
-    background: rgb(24, 24, 24);
-    background: linear-gradient(
-      180deg,
-      rgba(24, 24, 24, 1) 0%,
-      rgba(0, 0, 0, 0) 100%
-    );
-    // background-color: white;
-    width: 100%;
-    height: 14vw;
-    position: absolute;
-    top: 0px;
-    right: 0px;
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+//DESKTOP
+@media (min-width: $pivotWidthScreen) {
+  @mixin componentBorders($FireworksLanding, $weigth: 1px, $margin: 1px) {
+    #{$FireworksLanding} {
+      border: 1px solid rgb(255, 255, 255);
+      margin: $margin;
+      border-radius: 14px;
 
-    z-index: -2;
-  }
+      * {
+        border: $weigth rgb(0, 174, 255) solid;
+        margin: $margin;
 
-  #moonContainer {
-    background-color: rgba(0, 0, 0, 0);
-    color: black;
-    overflow: hidden;
-    position: absolute;
-    right: 0px;
-    $scale: 50vw;
-    top: $scale * -1.7/5;
-    width: $scale;
-    height: $scale;
-    max-height: 98vh;
-    // border: 1px solid green;
-  }
-  #moon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: -24%;
-    z-index: -1;
-    // transform: scale(1);
-    $scale: 70%;
-    width: $scale;
-    height: $scale;
-    max-height: 80vh;
-    max-width: 80vh;
-    border-radius: 100%;
-    box-shadow: 0 0 2.4vw 1.4vw white;
-    object-fit: cover;
-    // border: 1px solid green;
-    // margin: 3rem;
-    // object-position: 20% 10%; /* try 20px 10px */
-  }
-
-  @mixin random($rem1, $rem2, $maxSize) {
-    $initialColor: rgb(random(255), random(255), random(255));
-    @keyframes fire {
-      0% {
-        transform: rotate(0rad) scale(1);
-        box-shadow: 0 0 $rem1 $rem2 $initialColor;
-      }
-
-      10% {
-        transform: rotate(0rad) scale($maxSize);
-        box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
-      }
-
-      20% {
-        transform: rotate(0rad) scale(1);
-        box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
-      }
-      30% {
-        transform: rotate(0rad) scale($maxSize);
-        box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
-      }
-      40% {
-        transform: rotate(0rad) scale(1);
-        box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
-      }
-      50% {
-        transform: rotate(0rad) scale($maxSize);
-        box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
-      }
-      60% {
-        transform: rotate(0rad) scale(1);
-        box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
-      }
-      70% {
-        transform: rotate(0rad) scale($maxSize);
-        box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
-      }
-      80% {
-        transform: rotate(0rad) scale(1);
-        box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
-      }
-      90% {
-        transform: rotate(0rad) scale($maxSize);
-        box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
-      }
-      100% {
-        transform: rotate(0rad) scale(1);
-        box-shadow: 0 0 $rem1 $rem2 $initialColor;
+        border-radius: 14px;
       }
     }
   }
+  // @include componentBorders(#FireworksLanding);
 
-  #fire,
-  #fireBye {
-    @include random(1rem, 0.1rem, 1.07);
-    animation: fire 6s infinite;
-    position: absolute;
-    align-self: center;
-    background-image: url(https://i.imgur.com/Mr7Lej1.jpg);
+  #FireworksLanding {
+    background-image: url(https://cdn.pixabay.com/photo/2016/06/05/07/59/stars-1436950_960_720.jpg);
     background-size: contain;
-    $scale: 10vw;
-    width: $scale;
-    height: $scale;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    border-radius: 100%;
-    z-index: 1; //sino, no s epuede tocar, el ancho de la luna lo caga
-    border: 1px solid rgb(8, 87, 1);
-    border-style: outset;
+    max-width: 100%;
+    max-height: 100vh;
+    height: 100vh;
+    text-align: right;
+    position: relative;
+    z-index: 0;
+    // overflow-x: hidden;
+    #gradientDiv {
+      background: rgb(24, 24, 24);
+      background: linear-gradient(
+        180deg,
+        rgba(24, 24, 24, 1) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      // background-color: white;
+      width: 100%;
+      height: 14vw;
+      position: absolute;
+      top: 0px;
+      right: 0px;
 
-    &:active {
-      border-style: inset;
+      z-index: -2;
     }
-  }
 
-  #fireBye {
-    filter: opacity(0);
-    transition: all 5s;
-    &:hover {
-      transition: all 1s;
-      filter: opacity(1);
+    #moonContainer {
+      background-color: rgba(0, 0, 0, 0);
+      color: black;
+      overflow: hidden;
+      position: absolute;
+      right: 0px;
+      $scale: 50vmax;
+      top: $scale * -1.7/5;
+      width: $scale * 0.7;
+      height: $scale;
+      max-height: 98vh;
+      // border: 1px solid green;
+    }
+    #moon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -14vmax;
+      z-index: -1;
+      // transform: scale(1);
+      $scale: 50vmax;
+      width: $scale;
+      height: $scale;
+      max-height: 80vh;
+      max-width: 80vh;
+      border-radius: 100%;
+      box-shadow: 0 0 2.4vw 1.4vw white;
+      object-fit: cover;
+      // border: 1px solid green;
+      // margin: 3rem;
+      // object-position: 20% 10%; /* try 20px 10px */
+    }
+
+    @mixin random($rem1, $rem2, $maxSize) {
+      $initialColor: rgb(random(255), random(255), random(255));
+      @keyframes fire {
+        0% {
+          transform: scale(1);
+          box-shadow: 0 0 $rem1 $rem2 $initialColor;
+        }
+
+        10% {
+          transform: scale($maxSize);
+          box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
+        }
+
+        20% {
+          transform: scale(1);
+          box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
+        }
+        30% {
+          transform: scale($maxSize);
+          box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
+        }
+        40% {
+          transform: scale(1);
+          box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
+        }
+        50% {
+          transform: scale($maxSize);
+          box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
+        }
+        60% {
+          transform: scale(1);
+          box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
+        }
+        70% {
+          transform: scale($maxSize);
+          box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
+        }
+        80% {
+          transform: scale(1);
+          box-shadow: 0 0 $rem1 $rem2 rgb(random(255), random(255), random(255));
+        }
+        90% {
+          transform: scale($maxSize);
+          box-shadow: 0 0 3rem $rem2 rgb(random(255), random(255), random(255));
+        }
+        100% {
+          transform: scale(1);
+          box-shadow: 0 0 $rem1 $rem2 $initialColor;
+        }
+      }
+    }
+
+    #fire,
+    #fireBye {
+      @include random(1rem, 0.1rem, 1.07);
+      animation: fire 6s infinite;
+      position: absolute;
+      align-self: center;
+      background-image: url(https://i.imgur.com/Mr7Lej1.jpg);
+      background-size: contain;
+      $scale: 10vw;
+      width: $scale;
+      height: $scale;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      border-radius: 100%;
+      z-index: 1; //sino, no s epuede tocar, el ancho de la luna lo caga
+      border: 1px solid rgb(8, 87, 1);
+      border-style: outset;
+      transition: all 5s;
+
+      &:active {
+        border-style: inset;
+      }
+    }
+
+    #fireBye {
+      animation: none;
+      box-shadow: 0 0 10rem 1rem rgb(12, 104, 12);
+      filter: opacity(0);
+      transition: all 4s;
+      &:hover {
+        transition: all 1s;
+        filter: opacity(1);
+      }
     }
   }
 }

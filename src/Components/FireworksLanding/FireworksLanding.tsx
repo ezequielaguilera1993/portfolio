@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import Style from './FireworksLanding.module.scss'
 import { Fireworks } from 'fireworks-js/dist/react'
-import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
-import { animateScroll } from 'react-scroll'
-const goBottom = () => animateScroll.scrollToBottom({ duration: 1000 })
+import { NavigationBarHeight } from '../NavigationBar/NavigationBar'
+// import { animateScroll } from 'react-scroll'
+// const goBottom = () => animateScroll.scrollToBottom({ duration: 1000 })
 
 
 
@@ -18,8 +17,8 @@ const options = {
         "max": 360
     },
     "delay": {
-        "min": 15,
-        "max": 30
+        "min": 20,
+        "max": 45
     },
     "rocketsPoint": 30,
     "speed": 1,
@@ -96,12 +95,12 @@ export const FireworksLanding: React.FunctionComponent<{}> = () => {
             null
         }
 
-        <button onClick={async () => { await ªfireWorks(!fireWorks) }} id={fireWorks ? Style.fireBye : Style.fire} />
+        <button style={{}} onClick={async () => { await ªfireWorks(!fireWorks) }} id={fireWorks ? Style.fireBye : Style.fire} />
 
         <div id={Style.gradientDiv} />
 
         <div id={Style.moonContainer}>
-            <img id={Style.moon} src="https://i.imgur.com/FztASHt.jpg" />
+            <img alt="imágen de una luna enorme" id={Style.moon} src="https://i.imgur.com/FztASHt.jpg" />
         </div>
 
     </div>)

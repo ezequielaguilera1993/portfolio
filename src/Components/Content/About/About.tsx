@@ -1,5 +1,4 @@
 import React from 'react'
-import { iWantCarJumps } from '../../../developerTools/developerTools'
 import Style from './About.module.scss'
 import { icons } from './Logos'
 export const About: React.FunctionComponent<{}> = () => {

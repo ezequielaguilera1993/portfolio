@@ -1,0 +1,46 @@
+*Buenas
+Te metiste en un lio de grandes ligas, hay varias publicaciones con respuestas muy entreveradas para lo que querés, tuve que hacer lo mismo que vos hace unos días y se me ocurrió lo que dejo abajo.*
+
+**En principio...
+Según veo vos tenes**
+
+> `<H1/>`: lo usas de titulo
+> 
+> `<textarea/>`: lo usas como input multilinea (esta perfecto, porque un
+> input común no admite saltos de linea. Otra opción sería por ejemplo
+> un <div contenteditable="true"/> pero no viene al tema. También
+> podrías usar un input comun, pero con un listener de keydown, y si
+> toco la tecla entrar, que agregue un \n al p, pero bueno tampoco viene
+> al caso asi esta genial, cumple con lo que vos querés que haga.  
+> `<p/>`: lo usas para renderear lo que vas escribiendo
+
+
+**Como solucionarlo**
+La primera opcion evidente es contar el numero de caracteres que entra en el `<p/>`, y hacer el max lenght (como en la respuesta de arriba) **PERO** esto **solamente funciona para fuentes monospace**, es decir, fuentes en donde cada caracter ocupa la misma cantidad de espacio.
+
+Si la fuente no es monoespaciada tenés un problema, porque 10 apostrofes (') ocupan MUCHO menos espacio que una (M). Asi que esta solución es valida, **pero solo para fuentes monospace** (y habria que ver que tan escalable es para diferentes dispositivos, tenés que andar contando cuantas letras pones y tal)
+
+**Segunda solución que sirve en cualquier lado**
+Es mas compleja, y yo uso react para hacerla, pero la podes hacer tranquilamente en javascript plano (react termina sacando javascript plano así que termina siendo lo mismo)
+
+Para hacerlo necesitas **UN TEXTAREA EXTRA**
+
+    <H1/>
+
+    <textarea/>
+
+> **`<textareaEXTRA/>`**
+
+    <p/>
+
+
+**Y la lógica es simple**
+**1)** El value del textareaEXTRA es igual a textarea de antes + "-". Es decir que va a ser un guion mas largo. Cuando vos pongas cualquier tecla en el textarea, el textareaEXTRA va a escribir automaticamente esa letra mas un guion. Para esto le haces un listener de keydown, y asocias los values.
+
+> Por lo pronto tenés entonces dos textareas, uno que es el de siempre, y otro que cuando escribis en el de siempre, lo copia agregando a lo ultimo un guion
+
+
+**2)** Necesitas una forma de darte cuenta cuando el text area llega a lo ultimo. El encargado de esto es el textareaEXTRA. Los text area poseen una propiedad que se llama **scrollHeight** (que es la que uso yo pero en tu caso no serviria). Tambien tienen otras, tenes que encontrar la propiedad que crezca cuando el textareaEXTRA se pasa del margen 
+
+3)
+

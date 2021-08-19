@@ -15,11 +15,12 @@
 // @include componentBorders(#Contact);
 
 //PIVOT SIZE
-$pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
+$pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVERYWHERE!!
+
 //MOBILE
 @media (max-width: $pivotWidthScreen) {
-  #Contact {
-  }
+  // #Contact {
+  // }
 
   #title {
     font-size: 2rem;
@@ -38,14 +39,17 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
   #contactButtons {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: 1vh 0vw;
+    margin-left: 3vw;
+    max-width: 98vw;
 
     $rotate: -41.25grad;
     .curveButtonContainer {
       border-radius: 100%;
       $top: 2vh;
-      margin: $top 1vw;
+
+      margin: $top 0;
       margin-top: $top + 2.4;
       transition: all 0.2s;
       background: radial-gradient(
@@ -53,17 +57,6 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
         rgb(255, 255, 255) 40%,
         rgba(255, 0, 0, 0) 53%
       );
-
-      &:hover {
-        transform: scale(1.9) rotate($rotate);
-        margin-left: 1.5vw;
-        margin-right: 1.5vw;
-        background: radial-gradient(
-          circle,
-          rgb(255, 255, 255) 40%,
-          rgba(255, 0, 0, 0) 54.5%
-        );
-      }
 
       transition: all 0.4s linear;
       transform: rotate($rotate) scale(1.5);
@@ -92,7 +85,7 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
     // margin-bottom: 0.3rem;
     // padding-top: 0.2rem;
     background-color: rgb(36, 36, 36);
-    width: 90%;
+    width: 100vw;
   }
 }
 ////////////////
