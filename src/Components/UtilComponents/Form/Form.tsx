@@ -102,7 +102,7 @@ export function Form() {
             </form> */}
 
 
-            <img alt="Imágen de fondo del formulario de nota de envio, es una nota de papel" src="https://i.imgur.com/Dz4ynCf.jpg" id={Style.backgroundImage} />
+            <img alt="Imágen de fondo del formulario de nota de envio, es una nota de papel" src="https://i.imgur.com/78Mxw6s.jpg" id={Style.backgroundImage} />
 
             <form ref={formRef} onSubmit={handleSubmit(onSubmit)} autoComplete="on">
 

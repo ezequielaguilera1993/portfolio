@@ -1,24 +1,24 @@
-/* 
-@keyframes salsa {
-  49.5% {
-    filter: brightness(2);
-  }
-  50.5% {
-    background-color: rgb(46, 63, 46);
-  }
-  to {
-    background-color: black;
-  }
-} */
+@mixin componentBorders($altaBirraContainer, $weigth: 1px, $margin: 4px) {
+  #{$altaBirraContainer} {
+    border: 1px solid rgb(174, 226, 250);
+    margin: $margin;
+    border-radius: 14px;
 
-/* soloParaQueLoAgregue */
+    * {
+      border: $weigth rgb(0, 174, 255) solid;
+      margin: $margin;
+
+      border-radius: 14px;
+    }
+  }
+}
+// @include componentBorders(#altaBirraContainer);
 
 //Constants
 //
 $ratioYoutubeVideo: 0.5625;
 //
 $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
-
 #title {
   font-size: 2rem;
   background-color: rgba(0, 0, 0, 0.267);
@@ -33,13 +33,6 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
   box-shadow: 0rem 0rem 0.3rem 0.01rem;
 }
 
-@mixin positionTrowConfetti($scale: 1) {
-  bottom: 0.4rem * $scale;
-  right: 0.4rem * $scale;
-  width: 3rem * $scale;
-  height: 3rem * $scale;
-}
-
 @mixin base() {
   /* Solo para que le asigne el id! */
   #Portfolio {
@@ -47,7 +40,6 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
   }
   #altaBirraContainer {
     position: relative;
-    z-index: 0;
   }
 
   .youtubeVideo {
@@ -82,7 +74,7 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
     animation: APPEARmoreConfetti 1s;
     position: absolute;
     border-radius: 100%;
-    // @include positionTrowConfetti();
+
     box-shadow: 0rem 0rem 0.3rem 0.01rem white;
     filter: grayscale(0.2);
     background: url(https://i.imgur.com/wrfAe7w.png);
@@ -107,7 +99,7 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
     animation: APPEARmoreConfetti 1s;
     transform: scale(1.32);
     position: absolute;
-    // @include positionTrowConfetti();
+
     border-radius: 100%;
 
     top: 50%;
@@ -137,6 +129,7 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
 //MOBILE/////////////////////////////////////////////////////////////////////////
 @media (max-width: $pivotWidthScreen) {
   @include base;
+
   .youtubeVideo,
   .youtubeVideoPlay {
     $sizeInVw: 95vw;
@@ -144,9 +137,23 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
     height: $sizeInVw * $ratioYoutubeVideo;
   }
 
+  #altaBirraContainer {
+    padding-bottom: 8vmax;
+  }
   #moreConfettiLoading,
   #moreConfetti {
-    bottom: 5vh+1; //Same as navigationBar! + some (1vh)
+    /*
+Defaulys margins of an H2 element 
+margin-top: 0.83em;
+margin-bottom: 0.83em; */
+    transform: translateX(-50%);
+    top: auto;
+    bottom: 0px;
+    right: auto;
+    left: auto;
+    width: 8vmax;
+    height: 8vmax;
+    margin-bottom: -1vmax;
   }
 }
 //////////////////////////////////////////////////////////////////////////////////

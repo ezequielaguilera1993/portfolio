@@ -126,14 +126,7 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
         </div>
  */}
 
-        <div style={{ marginLeft: "-4vh", zIndex: 10 }}>
-            <Confetti active={confetti} config={config} />
-        </div>
 
-        {/* Manual confetti */}
-        <div style={{ marginLeft: "-4vh", zIndex: 10 }}>
-            <Confetti active={moreConfetti} config={config} />
-        </div>
 
 
         {/* <div style={{ display: 'flex', justifyContent: "flex-end", zIndex: 1, position: "absolute" }} >
@@ -146,7 +139,17 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
             <div id={Style.title}>~Portfolio~</div>
         </Element>
         <div id={Style.altaBirraContainer} >
+
             <h2>AltaBirra</h2>
+
+            <div style={{ marginLeft: "-4vh" }}>
+                <Confetti active={confetti} config={config} />
+            </div>
+
+            {/* Manual confetti */}
+            <div style={{ marginLeft: "-4vh", zIndex: 0 }}>
+                <Confetti active={moreConfetti} config={config} />
+            </div>
             <Element name="altaBirraVideo">
                 <YouTube
                     videoId={"_pI3rPdwZp0"}
@@ -168,9 +171,13 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
                             null
                 }
             </Element>
+
+
         </div>
 
+
         <h2 style={{}} >PokemonSPA</h2>
+
 
         {/* <div style={{ position: "fixed", left: "260px", top: vh(NavigationBarHeight), height: "36.56vw", width: vw(65) + "px", margin: "auto", backgroundColor: "gray", }}>Rule! vw(65)</div>
 
