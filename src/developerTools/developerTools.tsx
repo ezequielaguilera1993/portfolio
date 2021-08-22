@@ -31,12 +31,12 @@ export function objectToPlainArray(obj: any) {
 }
 //obtener fecha
 
-var m = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-var ds = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
-var f = new Date();
-var f = new Date();
-console.log(ds[f.getDay()] + " " + f.getDate() + " de " + m[f.getMonth()] + " de " + f.getFullYear());
-
+export function fecha() {
+    var m = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    var ds = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
+    var f = new Date();
+    return ds[f.getDay()] + " " + f.getDate() + " de " + m[f.getMonth()] + " de " + f.getFullYear()
+}
 /**
 @example
 let showMeChanges=showMeChangesCreator(useRef<HTMLTextAreaElement>(null))
@@ -66,7 +66,7 @@ export function showMeChangesCreator(ref: React.RefObject<HTMLTextAreaElement>) 
             console.log("///////////////////")
             for (let e in objInit) {
                 if (objInit[e] !== objForward[e])
-                    console.log("🎉" + "Init: " + e + " |||", "Forward: " + objForward[e] + "💖")
+                    console.log("🎉 Init: " + e + " ||| Forward: " + objForward[e] + "💖")
             }
             console.log("////////////////////////////////////////////////////////////////////////////")
         }

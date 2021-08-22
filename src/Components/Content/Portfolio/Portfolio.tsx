@@ -5,6 +5,7 @@ import YouTube from 'react-youtube';
 import Confetti from 'react-dom-confetti';
 import { smallScreen as sc, vh, vw } from '../../../developerTools/developerTools';
 import { NavigationBarHeight, osBxShadow } from '../../NavigationBar/NavigationBar';
+import { Link, animateScroll } from 'react-scroll'
 var Scroll = require('react-scroll');
 var Element = Scroll.Element;
 var scroller = Scroll.scroller;
@@ -49,22 +50,35 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
 
             const heightOfVideo = (vw(65) * 9 / 16) + 10//5px de cada lado por el border! //the height is ratio-proportional at width!, and width value is 65 (see scss associate)
 
-            scroller.scrollTo('altaBirraVideo', {
+            // scroller.scrollTo('altaBirraVideo', {
+            //     duration: 300,
+            //     delay: 0,
+            //     smooth: true,
+            //     offset: (-1) * (vh(NavigationBarHeight) + ((vh(100 - NavigationBarHeight) - heightOfVideo) / 2))
+            // })
+            scroller.scrollTo('title', {
                 duration: 300,
                 delay: 0,
                 smooth: true,
-                offset: (-1) * (vh(NavigationBarHeight) + ((vh(100 - NavigationBarHeight) - heightOfVideo) / 2))
+                offset: vh(-NavigationBarHeight)
             })
         }
 
         else if (smallScreen === true) {
             const heightOfVideo = (vw(95) * 9 / 16) + 10//5px de cada lado por el border! //the height is ratio-proportional at width!, and width value is 65 (see scss associate)
 
-            scroller.scrollTo('altaBirraVideo', {
-                duration: 300,
+            // scroller.scrollTo('altaBirraVideo', {
+            // duration: 300,
+            // delay: 0,
+            // smooth: true,
+            // offset: (-1) * (((vh(100 - NavigationBarHeight) - heightOfVideo) / 2))
+            // })
+            scroller.scrollTo('title', {
+                duration: 3000,
                 delay: 0,
                 smooth: true,
-                offset: (-1) * (((vh(100 - NavigationBarHeight) - heightOfVideo) / 2))
+                offset: vh(-NavigationBarHeight)
+
             })
         }
     }
@@ -105,7 +119,7 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
     ///////////////////////////////////////////RETURN///////////////////////////////////////////////////
     ///////////////////////////////////////////////////RETURN///////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////
-    return (<div id={Style.Portfolio} style={{ marginTop: sc() ? "1rem" : NavigationBarHeight + osBxShadow + "vh" }} >
+    return (<div id={Style.container} style={{ marginTop: sc() ? "1rem" : NavigationBarHeight + osBxShadow + "vh" }} >
 
         {/* Auto Confeti */}
         {/* <div style={{ display: 'flex', justifyContent: "flex-end" }}>
@@ -127,38 +141,37 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
             <div style={{ width: "100px", height: "100px", backgroundColor: "#fff", zIndex: 1 }} ></div>
         </div> */}
 
-        {
-            showMoreConfetti && !moreConfettiLoading ?
-                <button id={Style.moreConfetti} onClick={throwMoreConfetti}></button>
-                :
-                showMoreConfetti && moreConfettiLoading ?
-                    <svg id={Style.moreConfettiLoading} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" style={{ margin: "auto", background: "none", display: "block", shapeRendering: "auto" }} width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
-                        <circle cx="50" cy="50" r="32" stroke-width="8" stroke="#4877be" stroke-dasharray="50.26548245743669 50.26548245743669" fill="none" stroke-linecap="round">
-                            <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" keyTimes="0;1" values="0 50 50;360 50 50"></animateTransform>
-                        </circle>
-                    </svg>
-                    :
-                    null
-        }
+
         {/* end of confetti things */}
-
-        <div id={Style.portfolio} >
+        <Element name="title">
             <div id={Style.title}>~Portfolio~</div>
-
+        </Element>
+        <div id={Style.altaBirraContainer} >
             <h2>AltaBirra</h2>
             <Element name="altaBirraVideo">
-
                 <YouTube
                     videoId={"_pI3rPdwZp0"}
                     onStateChange={onStateChangeAltaBirra}
                     onPlay={onPlayAltaBirra}
                     className={playAltabirra ? Style.youtubeVideoPlay : Style.youtubeVideo}
                 />
+                {
+                    showMoreConfetti && !moreConfettiLoading ?
+                        <button id={Style.moreConfetti} onClick={throwMoreConfetti}></button>
+                        :
+                        showMoreConfetti && moreConfettiLoading ?
+                            <svg id={Style.moreConfettiLoading} xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" style={{ margin: "auto", background: "none", display: "block", shapeRendering: "auto" }} width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+                                <circle cx="50" cy="50" r="32" stroke-width="8" stroke="#4877be" stroke-dasharray="50.26548245743669 50.26548245743669" fill="none" stroke-linecap="round">
+                                    <animateTransform attributeName="transform" type="rotate" repeatCount="indefinite" dur="1s" keyTimes="0;1" values="0 50 50;360 50 50"></animateTransform>
+                                </circle>
+                            </svg>
+                            :
+                            null
+                }
             </Element>
-            <h2 style={{}} >PokemonSPA</h2>
-
         </div>
 
+        <h2 style={{}} >PokemonSPA</h2>
 
         {/* <div style={{ position: "fixed", left: "260px", top: vh(NavigationBarHeight), height: "36.56vw", width: vw(65) + "px", margin: "auto", backgroundColor: "gray", }}>Rule! vw(65)</div>
 

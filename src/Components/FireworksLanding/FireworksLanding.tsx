@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Style from './FireworksLanding.module.scss'
 import { Fireworks } from 'fireworks-js/dist/react'
-import { NavigationBarHeight } from '../NavigationBar/NavigationBar'
+// import { NavigationBarHeight } from '../NavigationBar/NavigationBar'
 // import { animateScroll } from 'react-scroll'
 // const goBottom = () => animateScroll.scrollToBottom({ duration: 1000 })
 
@@ -76,8 +76,6 @@ const style = {
     height: "100%",
 }
 
-var FireworksLandin = document.getElementById(Style.FireworksLandin);
-console.log(FireworksLandin)
 
 export const FireworksLanding: React.FunctionComponent<{}> = () => {
 

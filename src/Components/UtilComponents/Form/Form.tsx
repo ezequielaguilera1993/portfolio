@@ -2,8 +2,8 @@ import { useForm } from "react-hook-form";
 
 import Style from "./Form.module.scss";
 import emailjs from 'emailjs-com'
-import React, { createRef, useEffect, useRef, useState } from "react";
-import { showMeChangesCreator } from "../../../developerTools/developerTools";
+import { useEffect, useRef, useState } from "react";
+// import { showMeChangesCreator } from "../../../developerTools/developerTools";
 
 interface IinformationObject {
     name: string; mail: string; phone: string; message: string;
@@ -19,28 +19,32 @@ function sendMail(informationObject: { name: string, mail: string, phone: string
 
 export function Form() {
 
-
+    //states
     const [send, ªsend] = useState<boolean>(false)
-
-    function sendNote() {
-        ªsend(true)
-        setTimeout(() => ªsend(false), 2400)
-    }
-
-    function refreshInputs() {
-    }
-
+    //Refs
     let textAreaElement = useRef<HTMLTextAreaElement>(null)
     let textAreaElementMIRROR = useRef<HTMLTextAreaElement>(null)
 
+    let formRef = useRef<HTMLFormElement>(null)
+
+    function sendNote() {
+        ªsend(true)
+
+        setTimeout(() => {
+            formRef.current?.reset()
+            ªsend(false)
+        }, 2400)
+    }
+
+
     function date() {
-        var m = new Array("Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre");
-        var ds = new Array("Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado");
-        var f = new Date();
+        var m = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+        var ds = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
         var f = new Date();
 
         return ds[f.getDay()] + " " + f.getDate() + " de " + m[f.getMonth()] + " de " + f.getFullYear()
     }
+
 
     useEffect(() => {
         // const show = showMeChangesCreator(textAreaElement)
@@ -56,7 +60,7 @@ export function Form() {
 
                 txtAreaMIRROR.textContent = txtArea?.value + "-"
 
-                console.log(txtArea.scrollHeight, txtAreaMIRROR.scrollHeight)
+                // console.log(txtArea.scrollHeight, txtAreaMIRROR.scrollHeight)
                 if (txtArea.scrollHeight < txtAreaMIRROR.scrollHeight) {
                     txtArea.maxLength = txtArea.value.length
                 }
@@ -76,7 +80,7 @@ export function Form() {
 
     const {
         register,
-        formState: { errors },
+        // formState: { },
         handleSubmit
     } = useForm({
         mode: "onBlur" // "onChange"
@@ -86,7 +90,7 @@ export function Form() {
         sendNote()
     };
 
-    console.log('Aca!')
+    // console.log('Aca!')
 
     return (
         <div id={send ? Style.ContainerSEND : Style.Container} >
@@ -100,7 +104,7 @@ export function Form() {
 
             <img alt="Imágen de fondo del formulario de nota de envio, es una nota de papel" src="https://i.imgur.com/Dz4ynCf.jpg" id={Style.backgroundImage} />
 
-            <form onSubmit={handleSubmit(onSubmit)} autoComplete="on">
+            <form ref={formRef} onSubmit={handleSubmit(onSubmit)} autoComplete="on">
 
                 <span id={Style.date} >{date()}</span>
 
@@ -117,7 +121,7 @@ export function Form() {
                 <div id={Style.mail} className={Style.inputContainer}>
                     <label htmlFor="mail" placeholder='"florencia1990@hotmail.com"'>
                         Email: </label>
-                    <input autoComplete="on"  {...register("mail", { required: true })} type="mail" placeholder='"florencia1990@hotmail.com"' />
+                    <input autoComplete="on"  {...register("mail", { required: false })} type="mail" placeholder='"florencia1990@hotmail.com"' />
                     {/* {errors.mail && <p>Campo requerido para poder contactarme</p>} */}
                 </div>
 
@@ -147,9 +151,7 @@ export function Form() {
                         ref={textAreaElementMIRROR}
                         id={Style.textAreaElementMIRROR}
                         rows={8}
-                        contentEditable={true}
-                    >
-                    </textarea>
+                    />
                 </div>
 
 

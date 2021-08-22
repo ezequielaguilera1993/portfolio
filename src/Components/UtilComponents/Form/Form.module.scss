@@ -1,14 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Stalemate&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
 //PIVOT SIZE
 $pivotWidthScreen: 1000px;
 //IF CHANGE, CHANGE IN EVEREWHERE!!
 //BASE
 
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&display=swap");
+
 //MOBILE
 @media (max-width: $pivotWidthScreen) {
-  #Container {
+  @mixin baseMobile() {
     //Constantes/////////
     $imageWidth: 96vw;
     $ratioImg: 1621/1337;
@@ -24,10 +23,9 @@ $pivotWidthScreen: 1000px;
     justify-content: center;
 
     * {
-      font-family: "Sacramento", cursive;
+      font-family: "Bad Script", cursive;
       font-size: $imageHeight * 0.05;
       color: black;
-      font-weight: bolder;
       margin: 0;
       padding: 0;
       border: none;
@@ -50,7 +48,7 @@ $pivotWidthScreen: 1000px;
         top: $positionHeight * 0.77;
         right: $positionWidth * 0.4;
         transform: rotate(1grad);
-        font-size: 1.5rem;
+        font-size: $imageHeight * 0.04;
         color: #363636;
       }
 
@@ -61,15 +59,16 @@ $pivotWidthScreen: 1000px;
         margin-left: $positionWidth * 0.6;
         label {
           text-align: left;
-          font-weight: bolder;
+          font-weight: 500;
+          color: rgb(0, 0, 0);
         }
         input {
           width: 70%;
-          font-weight: normal;
+          font-weight: lighter;
           background-color: transparent;
-          color: #222222;
+          color: #3f3f3f;
           outline: none;
-          -webkit-text-stroke: 0.7px #222222;
+          // -webkit-text-stroke: 0.7px #222222;
         }
       }
     }
@@ -84,7 +83,7 @@ $pivotWidthScreen: 1000px;
     }
 
     #mail {
-      top: $positionHeight * 1.57;
+      top: $positionHeight * 1.65;
       label {
       }
       input {
@@ -93,7 +92,7 @@ $pivotWidthScreen: 1000px;
     }
 
     #phone {
-      top: $positionHeight * 1.54;
+      top: $positionHeight * 1.78;
       label {
       }
       input {
@@ -103,9 +102,10 @@ $pivotWidthScreen: 1000px;
     }
 
     #message {
-      top: $positionHeight * 1.52;
+      top: $positionHeight * 1.89;
 
       label {
+        font-weight: lighter;
       }
 
       position: relative;
@@ -118,12 +118,13 @@ $pivotWidthScreen: 1000px;
         font-weight: normal;
         font-size: $imageHeight * 0.0477;
         background-color: transparent;
-        color: #222222;
+        color: #3f3f3f;
         outline: none;
-        -webkit-text-stroke: 0.7px #222222;
+        // -webkit-text-stroke: 0.7px #222222;
         text-align: left;
         resize: none;
         overflow: hidden;
+        font-weight: normal;
       }
 
       #textAreaElementMIRROR {
@@ -131,6 +132,43 @@ $pivotWidthScreen: 1000px;
         // position: absolute;
         // top: $positionHeight * 1.52;
         // background-color: rgba(223, 111, 223, 0.39);
+      }
+    }
+    #submit {
+      position: absolute;
+      background-color: transparent;
+      right: $positionWidth * 1;
+      top: $positionHeight * 9.1;
+      font-size: $imageHeight * 0.06;
+      cursor: pointer;
+    }
+  }
+
+  #Container {
+    @include baseMobile();
+    z-index: 10;
+    @keyframes APPEAR {
+      from {
+        filter: opacity(0);
+      }
+      to {
+        filter: opacity(1);
+      }
+    }
+    animation: APPEAR 2s forwards ease;
+  }
+
+  #ContainerSEND {
+    z-index: 10;
+
+    @include baseMobile();
+    animation: SEND 5s forwards ease;
+
+    @keyframes SEND {
+      from {
+      }
+      to {
+        transform: rotatey(100grad) rotatez(1000grad) translate(400%, 100%);
       }
     }
   }
@@ -154,7 +192,7 @@ $pivotWidthScreen: 1000px;
   @mixin baseDesktop() {
     z-index: 1;
     //Constantes/////////
-    $imageWidth: 40vmax;
+    $imageWidth: 44vmax;
     $ratioImg: 1621/1337;
     $imageHeight: $imageWidth * $ratioImg;
     $positionHeight: $imageHeight/10;
@@ -194,7 +232,7 @@ $pivotWidthScreen: 1000px;
         top: $positionHeight * 0.77;
         right: $positionWidth * 0.4;
         transform: rotate(1grad);
-        font-size: 1.5rem;
+        font-size: $imageHeight * 0.03;
         color: #363636;
       }
 

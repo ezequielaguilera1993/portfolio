@@ -13,6 +13,22 @@
 
 /* soloParaQueLoAgregue */
 
+@mixin componentBorders($container, $weigth: 1px, $margin: 4px) {
+  #{$container} {
+    border: 1px solid rgb(174, 226, 250);
+    margin: $margin;
+    border-radius: 14px;
+
+    * {
+      border: $weigth rgb(0, 174, 255) solid;
+      margin: $margin;
+
+      border-radius: 14px;
+    }
+  }
+}
+// @include componentBorders(#container);
+
 //Constants
 //
 $ratioYoutubeVideo: 0.5625;
@@ -33,17 +49,20 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
   box-shadow: 0rem 0rem 0.3rem 0.01rem;
 }
 
-@mixin positionTrowConfetti($scale: 1) {
-  bottom: 0.4rem * $scale;
-  right: 0.4rem * $scale;
+$sizeInVw: 65vw;
+@mixin positionTrowConfetti($scale: 1.7) {
+  bottom: 50%;
+  transform: translateY(50%) translateX(50%);
+  right: (100vw - $sizeInVw)/4;
   width: 3rem * $scale;
   height: 3rem * $scale;
 }
 
 @mixin base() {
   /* Solo para que le asigne el id! */
-  #Portfolio {
+  #altaBirraContainer {
     background-color: none;
+    position: relative;
   }
   #altaBirraVideo {
   }
@@ -58,7 +77,6 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
   }
 
   .youtubeVideoPlay {
-    $sizeInVw: 65vw;
     width: $sizeInVw;
     height: $sizeInVw * $ratioYoutubeVideo;
     transition: all 500ms;
@@ -78,15 +96,13 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
 
   #moreConfetti {
     animation: APPEARmoreConfetti 1s;
-    position: fixed;
+    position: absolute;
     border-radius: 100%;
     @include positionTrowConfetti();
     box-shadow: 0rem 0rem 0.3rem 0.01rem white;
-    filter: grayscale(0.2);
-    background: url(https://i.imgur.com/wrfAe7w.png);
-    filter: brightness(1);
+    filter: grayscale(0.2) brightness(1.9);
+    background: url(https://i.imgur.com/GPsE9M5.jpg);
     background-size: cover;
-    font-size: 1rem;
     font-family: serif;
     -webkit-text-stroke: 0.4px black;
     font-weight: bold;
@@ -98,7 +114,7 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
     background-color: rgb(78, 77, 78);
     animation: APPEARmoreConfetti 1s;
     transform: scale(1.32);
-    position: fixed;
+    position: absolute;
     @include positionTrowConfetti();
     border-radius: 100%;
   }
