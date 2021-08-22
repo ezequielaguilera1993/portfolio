@@ -67,19 +67,18 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
         else if (smallScreen === true) {
             const heightOfVideo = (vw(95) * 9 / 16) + 10//5px de cada lado por el border! //the height is ratio-proportional at width!, and width value is 65 (see scss associate)
 
-            // scroller.scrollTo('altaBirraVideo', {
-            // duration: 300,
-            // delay: 0,
-            // smooth: true,
-            // offset: (-1) * (((vh(100 - NavigationBarHeight) - heightOfVideo) / 2))
-            // })
-            scroller.scrollTo('title', {
-                duration: 3000,
+            scroller.scrollTo('altaBirraVideo', {
+                duration: 300,
                 delay: 0,
                 smooth: true,
-                offset: vh(-NavigationBarHeight)
-
+                offset: (-1) * (((vh(100 - NavigationBarHeight) - heightOfVideo) / 2))
             })
+            // scroller.scrollTo('title', {
+            //     duration: 3000,
+            //     delay: 0,
+            //     smooth: true,
+            //     offset: vh(-NavigationBarHeight)
+            // })
         }
     }
 
@@ -127,12 +126,12 @@ export const Portfolio: React.FunctionComponent<{}> = (conf) => {
         </div>
  */}
 
-        <div style={{ marginLeft: "-4vh" }}>
+        <div style={{ marginLeft: "-4vh", zIndex: 10 }}>
             <Confetti active={confetti} config={config} />
         </div>
 
         {/* Manual confetti */}
-        <div style={{ marginLeft: "-4vh" }}>
+        <div style={{ marginLeft: "-4vh", zIndex: 10 }}>
             <Confetti active={moreConfetti} config={config} />
         </div>
 

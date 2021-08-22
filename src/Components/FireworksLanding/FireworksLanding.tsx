@@ -10,31 +10,30 @@ import { Fireworks } from 'fireworks-js/dist/react'
 
 
 
-const options = {
-    ...JSON.parse(`{
+const options = JSON.parse(`{
     "hue": {
         "min": 0,
-        "max": 360
+        "max": 345
     },
     "delay": {
-        "min": 20,
-        "max": 45
+        "min": 5,
+        "max": 50
     },
-    "rocketsPoint": 30,
+    "rocketsPoint": 50,
     "speed": 1,
-    "acceleration": 1.5,
-    "friction": 0.9,
-    "gravity": 1.1,
-    "particles": 124,
+    "acceleration": 1.1,
+    "friction": 0.9500000000000001,
+    "gravity": 1.5,
+    "particles": 182,
     "trace": 10,
-    "explosion": 7,
+    "explosion": 10,
     "autoresize": true,
     "brightness": {
-        "min": 13,
-        "max": 20,
+        "min": 50,
+        "max": 80,
         "decay": {
-            "min": 0.006,
-            "max": 0.016
+            "min": 0.015,
+            "max": 0.03
         }
     },
     "boundaries": {
@@ -48,27 +47,20 @@ const options = {
         "enable": true,
         "files": [
             "https://crashmax-dev.github.io/fireworks-js/sounds/explosion0.mp3",
-            "https://crashmax-dev.github.io/fireworks-js/sounds/explosion2.mp3",
-            "https://crashmax-dev.github.io/fireworks-js/sounds/explosion0.mp3",
-            "https://crashmax-dev.github.io/fireworks-js/sounds/explosion2.mp3",
-            "https://crashmax-dev.github.io/fireworks-js/sounds/explosion2.mp3",
-            "https://crashmax-dev.github.io/fireworks-js/sounds/explosion0.mp3",
-            "https://crashmax-dev.github.io/fireworks-js/sounds/explosion0.mp3",
-            "https://crashmax-dev.github.io/fireworks-js/sounds/explosion1.mp3"
-            
+            "https://crashmax-dev.github.io/fireworks-js/sounds/explosion1.mp3",
+            "https://crashmax-dev.github.io/fireworks-js/sounds/explosion2.mp3"
         ],
         "volume": {
-            "min": 15,
-            "max": 25
+            "min": 4,
+            "max": 8
         }
     },
     "mouse": {
-        "click": false,
+        "click": true,
         "move": false,
         "max": 1
     }
 }`)
-}
 
 
 
@@ -87,7 +79,7 @@ export const FireworksLanding: React.FunctionComponent<{}> = () => {
 
         {fireWorks ?
             <>
-                <Fireworks options={options} style={{ ...style, filter: "sepia(.5) brightness(2)" }} />
+                <Fireworks options={options} style={{ ...style, filter: "sepia(0.2) brightness(1)" }} />
             </>
             :
             null

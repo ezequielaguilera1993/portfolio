@@ -13,22 +13,6 @@
 
 /* soloParaQueLoAgregue */
 
-@mixin componentBorders($container, $weigth: 1px, $margin: 4px) {
-  #{$container} {
-    border: 1px solid rgb(174, 226, 250);
-    margin: $margin;
-    border-radius: 14px;
-
-    * {
-      border: $weigth rgb(0, 174, 255) solid;
-      margin: $margin;
-
-      border-radius: 14px;
-    }
-  }
-}
-// @include componentBorders(#container);
-
 //Constants
 //
 $ratioYoutubeVideo: 0.5625;
@@ -49,22 +33,21 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
   box-shadow: 0rem 0rem 0.3rem 0.01rem;
 }
 
-$sizeInVw: 65vw;
-@mixin positionTrowConfetti($scale: 1.7) {
-  bottom: 50%;
-  transform: translateY(50%) translateX(50%);
-  right: (100vw - $sizeInVw)/4;
+@mixin positionTrowConfetti($scale: 1) {
+  bottom: 0.4rem * $scale;
+  right: 0.4rem * $scale;
   width: 3rem * $scale;
   height: 3rem * $scale;
 }
 
 @mixin base() {
   /* Solo para que le asigne el id! */
-  #altaBirraContainer {
+  #Portfolio {
     background-color: none;
-    position: relative;
   }
-  #altaBirraVideo {
+  #altaBirraContainer {
+    position: relative;
+    z-index: 0;
   }
 
   .youtubeVideo {
@@ -76,6 +59,7 @@ $sizeInVw: 65vw;
     border: 5px solid rgb(51, 51, 51);
   }
 
+  $sizeInVw: 65vw;
   .youtubeVideoPlay {
     width: $sizeInVw;
     height: $sizeInVw * $ratioYoutubeVideo;
@@ -98,15 +82,23 @@ $sizeInVw: 65vw;
     animation: APPEARmoreConfetti 1s;
     position: absolute;
     border-radius: 100%;
-    @include positionTrowConfetti();
+    // @include positionTrowConfetti();
     box-shadow: 0rem 0rem 0.3rem 0.01rem white;
-    filter: grayscale(0.2) brightness(1.9);
-    background: url(https://i.imgur.com/GPsE9M5.jpg);
+    filter: grayscale(0.2);
+    background: url(https://i.imgur.com/wrfAe7w.png);
+    filter: brightness(1);
     background-size: cover;
+    font-size: 1rem;
     font-family: serif;
     -webkit-text-stroke: 0.4px black;
     font-weight: bold;
     color: rgb(255, 255, 255);
+
+    top: 50%;
+    transform: translateY(-50%) translateX(50%);
+    right: (100vw - $sizeInVw)/4;
+    width: 5rem;
+    height: 5rem;
   }
 
   #moreConfettiLoading {
@@ -115,8 +107,14 @@ $sizeInVw: 65vw;
     animation: APPEARmoreConfetti 1s;
     transform: scale(1.32);
     position: absolute;
-    @include positionTrowConfetti();
+    // @include positionTrowConfetti();
     border-radius: 100%;
+
+    top: 50%;
+    transform: translateY(-50%) translateX(50%);
+    right: (100vw - $sizeInVw)/4;
+    width: 7rem;
+    height: 7rem;
   }
 
   @keyframes home {
