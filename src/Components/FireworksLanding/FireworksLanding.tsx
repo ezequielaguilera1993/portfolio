@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Style from './FireworksLanding.module.scss'
 import { Fireworks } from 'fireworks-js/dist/react'
+import { smallScreen } from '../../developerTools/developerTools'
 // import { NavigationBarHeight } from '../NavigationBar/NavigationBar'
 // import { animateScroll } from 'react-scroll'
 // const goBottom = () => animateScroll.scrollToBottom({ duration: 1000 })
@@ -19,7 +20,7 @@ const options = JSON.parse(`{
         "min": 5,
         "max": 50
     },
-    "rocketsPoint": 50,
+    "rocketsPoint": ${smallScreen() ? 10 : 50},
     "speed": 1,
     "acceleration": 1.1,
     "friction": 0.9500000000000001,
@@ -56,7 +57,7 @@ const options = JSON.parse(`{
         }
     },
     "mouse": {
-        "click": true,
+        "click": false,
         "move": false,
         "max": 1
     }

@@ -149,7 +149,7 @@ $pivotWidthScreen: 1000px;
 
   #Container {
     @include baseMobile();
-    z-index: 10;
+    z-index: 0;
     @keyframes APPEAR {
       from {
         filter: opacity(0);
@@ -197,7 +197,7 @@ $pivotWidthScreen: 1000px;
     //Constantes/////////
     $imageWidth: 44vmax;
     $ratioImg: 1621/1337;
-    $imageHeight: $imageWidth * $ratioImg * 1;
+    $imageHeight: $imageWidth * $ratioImg * 0.8;
     $positionHeight: $imageHeight/10;
     $MILIpositionHeight: $positionHeight/1000;
 
@@ -235,7 +235,7 @@ $pivotWidthScreen: 1000px;
         top: $positionHeight * 0.77;
         right: $positionWidth * 0.4;
         transform: rotate(1grad);
-        font-size: $imageHeight * 0.03;
+        font-size: $imageHeight * 0.035;
         color: #363636;
       }
 

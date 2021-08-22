@@ -43,7 +43,7 @@ $pivotWidthScreen: 1000px;
       );
       // background-color: white;
       width: 100%;
-      height: 14vw;
+      height: 14vmax;
       position: absolute;
       top: 0px;
       right: 0px;
@@ -170,7 +170,7 @@ $pivotWidthScreen: 1000px;
       margin: auto;
       border-radius: 100%;
       z-index: 1; //sino, no s epuede tocar, el ancho de la luna lo caga
-      border: 1px solid rgb(8, 87, 1);
+      // border: 1px solid rgb(8, 87, 1);
       border-style: outset;
     }
 
@@ -203,7 +203,7 @@ $pivotWidthScreen: 1000px;
       margin: auto;
       border-radius: 100%;
       z-index: 1; //sino, no s epuede tocar, el ancho de la luna lo caga
-      border: 1px solid rgb(8, 87, 1);
+      // border: 1px solid rgb(8, 87, 1);
       border-style: outset;
     }
   }
@@ -283,7 +283,7 @@ $pivotWidthScreen: 1000px;
       );
       // background-color: white;
       width: 100%;
-      height: 14vw;
+      height: 14vmax;
       position: absolute;
       top: 0px;
       right: 0px;
@@ -394,7 +394,7 @@ $pivotWidthScreen: 1000px;
       margin: auto;
       border-radius: 100%;
       z-index: 1; //sino, no s epuede tocar, el ancho de la luna lo caga
-      border: 1px solid rgb(8, 87, 1);
+      // border: 1px solid rgb(8, 87, 1);
       border-style: outset;
       transition: all 5s;
 
@@ -415,3 +415,4 @@ $pivotWidthScreen: 1000px;
     }
   }
 }
+/*  */
