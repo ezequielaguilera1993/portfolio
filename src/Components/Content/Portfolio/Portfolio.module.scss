@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @mixin componentBorders($altaBirraContainer, $weigth: 1px, $margin: 4px) {
   #{$altaBirraContainer} {
     border: 1px solid rgb(174, 226, 250);
@@ -88,7 +90,7 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
 
     top: 50%;
     transform: translateY(-50%) translateX(50%);
-    right: (100vw - $sizeInVw)/4;
+    right: math.div(100vw - $sizeInVw, 4);
     width: 5rem;
     height: 5rem;
   }
@@ -104,7 +106,7 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
 
     top: 50%;
     transform: translateY(-50%) translateX(50%);
-    right: (100vw - $sizeInVw)/4;
+    right: math.div(100vw - $sizeInVw, 4);
     width: 7rem;
     height: 7rem;
   }
@@ -140,17 +142,23 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
   #altaBirraContainer {
     padding-bottom: 8vmax;
   }
-  #moreConfettiLoading,
   #moreConfetti {
-    /*
-Defaulys margins of an H2 element 
-margin-top: 0.83em;
-margin-bottom: 0.83em; */
-    transform: translateX(-50%);
+    transform: translateY(0%) translateX(-50%);
     top: auto;
     bottom: 0px;
     right: auto;
     left: auto;
+    width: 8vmax;
+    height: 8vmax;
+    margin-bottom: -1vmax;
+  }
+
+  #moreConfettiLoading {
+    transform: translateY(10%) translateX(0%) scale(1.5);
+    top: auto;
+    bottom: 0px;
+    right: 0;
+    left: 0;
     width: 8vmax;
     height: 8vmax;
     margin-bottom: -1vmax;

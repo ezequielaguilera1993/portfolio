@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 //PIVOT SIZE
 $pivotWidthScreen: 1000px;
 //IF CHANGE, CHANGE IN EVEREWHERE!!
@@ -56,7 +58,7 @@ $pivotWidthScreen: 1000px;
       position: absolute;
       right: 0px;
       $scale: 50vmax;
-      top: $scale * -1.7/5;
+      top: math.div($scale * -1.7, 5);
       width: $scale * 0.7;
       height: $scale;
       max-height: 98vh;
@@ -296,7 +298,7 @@ $pivotWidthScreen: 1000px;
       position: absolute;
       right: 0px;
       $scale: 50vmax;
-      top: $scale * -1.7/5;
+      top: math.div($scale * -1.7, 5);
       width: $scale * 0.7;
       height: $scale;
       max-height: 98vh;
