@@ -51,7 +51,7 @@ inset	outset */
     // border: 0.1rem solid grey;
     margin-bottom: 0.4rem;
     width: 90%;
-
+    position: relative;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -63,7 +63,19 @@ inset	outset */
       text-align: left;
       // text-justify: inter-character;
     }
-    img {
+
+    .toogleRockLanguage {
+      $size: 12%;
+      width: $size;
+      height: auto;
+      margin-left: 6vw;
+      border-radius: 1000px;
+      box-shadow: 0 0 1rem -0.3rem;
+      transition: 1000ms;
+      right: 2vw;
+    }
+
+    #perfil {
       // background-color: #3300c0;
       $size: 38%;
       width: $size;
@@ -136,7 +148,11 @@ inset	outset */
       text-align: center;
       // text-justify: inter-character;
     }
-    img {
+
+    .toogleRockLanguage {
+    }
+
+    #perfil {
       // background-color: #3300c0;
       $size: 23%;
       width: $size;

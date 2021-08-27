@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Style from './_videoAltaBirra.module.scss'
 import YouTube from 'react-youtube';
 import Confetti from 'react-dom-confetti';
 import { smallScreen as sc, vh, vw } from '../../../developerTools/developerTools';
 import { NavigationBarHeight, osBxShadow } from '../../NavigationBar/NavigationBar';
 import { Link, animateScroll } from 'react-scroll'
+import LanguageContext from '../../../Context/language';
 var Scroll = require('react-scroll');
 var Element = Scroll.Element;
 var scroller = Scroll.scroller;
@@ -15,6 +16,7 @@ let ONCEonPlayAltaBirra = true
 
 
 export const _videoAltaBirra: React.FunctionComponent<{}> = (conf) => {
+    const inSpanish = useContext(LanguageContext).languageState.inSpanish
 
     const smallScreen = sc()
 
@@ -125,7 +127,7 @@ export const _videoAltaBirra: React.FunctionComponent<{}> = (conf) => {
         <Element name="titleAltaBirra">
             <h2 id={Style.subTitles} >AltaBirra</h2>
         </Element>
-        <h3 style={{ margin: "0px", marginBottom: "2vh" }} >Single Page Application dedicada al comercio de cervezas artesanales 🍺</h3>
+        <h3 style={{ margin: "0px", marginBottom: "2vh" }} >{inSpanish ? "Single Page Application dedicada al comercio de cervezas artesanales 🍺" : "Single Page Application dedicated to the craft beer trade 🍺"}</h3>
 
 
 

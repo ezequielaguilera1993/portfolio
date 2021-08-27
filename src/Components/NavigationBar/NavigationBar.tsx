@@ -12,19 +12,19 @@ import LanguageContext from '../../Context/language'
 export const NavigationBarHeight = 5;
 export const osBxShadow = 4.2
 export const NavigationBar: React.FunctionComponent<{}> = () => {
+    const inSpanish = useContext(LanguageContext).languageState.inSpanish
+
     const sc = smallScreen()
     const duration = 300
     const goTop = () => animateScroll.scrollToTop({ duration: duration })
     // const goBottom = () => animateScroll.scrollToBottom({ duration: 1000 })
-    const languageContext = useContext(LanguageContext)
     return (
         <div id={Style.NavigationBar} style={{ height: NavigationBarHeight + "vh" }}>
             {/* <Link to="/About">About </Link>
             <Link to="/Portfolio">Portfolio</Link> */}
-            <span className={Style.link} onClick={goTop} >Sobre mi</span>
+            <span className={Style.link} onClick={goTop} >{inSpanish ? 'Sobre mí' : 'About me'}</span>
             <Link className={Style.link} to={PortfolioStyle.title} smooth={true} duration={duration} offset={!sc ? -vh(NavigationBarHeight) - osBxShadow : -osBxShadow} >Portfolio</Link>
-            <Link className={Style.link} to={ContactStyle.title} smooth={true} duration={duration} offset={!sc ? -vh(NavigationBarHeight) - osBxShadow : -osBxShadow} >Contacto</Link>
-            <button onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }); console.log('languageContext.languageState.language:::', languageContext.languageState.inSpanish) }}>||||||||||||||</button>
+            <Link className={Style.link} to={ContactStyle.title} smooth={true} duration={duration} offset={!sc ? -vh(NavigationBarHeight) - osBxShadow : -osBxShadow} >{inSpanish ? 'Contacto' : 'Contact'}</Link>
         </div >
     )
 }

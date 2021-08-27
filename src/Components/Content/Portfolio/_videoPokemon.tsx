@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Style from './_videoPokemon.module.scss'
 import YouTube from 'react-youtube';
 import Confetti from 'react-dom-confetti';
 import { smallScreen as sc, vh, vw } from '../../../developerTools/developerTools';
 import { NavigationBarHeight, osBxShadow } from '../../NavigationBar/NavigationBar';
 import { Link, animateScroll } from 'react-scroll'
+import LanguageContext from '../../../Context/language';
 var Scroll = require('react-scroll');
 var Element = Scroll.Element;
 var scroller = Scroll.scroller;
@@ -15,6 +16,7 @@ let ONCEonPlayPokemon = true
 
 
 export const _videoPokemon: React.FunctionComponent<{}> = (conf) => {
+    const inSpanish = useContext(LanguageContext).languageState.inSpanish
 
     const smallScreen = sc()
 
@@ -115,7 +117,7 @@ export const _videoPokemon: React.FunctionComponent<{}> = (conf) => {
             <h2 id={Style.subTitles} >Pokémon SPA</h2>
         </Element>
 
-        <h3 style={{ margin: "0px", marginBottom: "2vh" }} >Single Page Application sobre Pokémons</h3>
+        <h3 style={{ margin: "0px", marginBottom: "2vh" }} >{inSpanish ? "Single Page Application sobre Pokémons" : "Single Page Application about Pokémons"}</h3>
 
 
 
@@ -164,10 +166,18 @@ export const _videoPokemon: React.FunctionComponent<{}> = (conf) => {
                         null
             }
 
-            <a style={{ textDecoration: "none", color: "white" }} href="https://www.youtube.com/watch?v=nO87QhVz-OQ" rel="noreferrer" target="_blank" >
+            <a style={{ textDecoration: "none", color: "white" }} href={inSpanish ? "https://www.youtube.com/watch?v=nO87QhVz-OQ" : 'https://www.youtube.com/watch?v=xFU2HL-PQNo'} rel="noreferrer" target="_blank" >
                 <div style={{ marginTop: "2vh" }}>
-                    <i>"Pokemon? Pokemon? osea que el poke y luego el mon y luego llega otro allá y sale uno pequeño y luego yo no se que es lo que me quieres decir pero uAaAaAaAa"
-                    </i>
+
+                    {inSpanish ?
+                        <i>"Pokemon? Pokemon? osea que el poke y luego el mon y luego llega otro allá y sale uno pequeño y luego yo no se que es lo que me quieres decir pero uAaAaAaAa"
+                        </i>
+                        :
+                        <i>"Pokemon? Pokemon? with the poke and the man and the thing with the guy comes out of the little thing and he makes a Bdaa Bhah Buh Dhaa Bhaaa Ahhg Ahhg Ahg"
+                        </i>
+                    }
+
+
                 </div>
             </a>
         </div>

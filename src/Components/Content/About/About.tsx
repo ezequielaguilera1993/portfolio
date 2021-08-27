@@ -1,30 +1,40 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import LanguageContext from '../../../Context/language'
 import Style from './About.module.scss'
 import { icons } from './Logos'
 export const About: React.FunctionComponent<{}> = () => {
+    const inSpanish = useContext(LanguageContext).languageState.inSpanish
 
-
+    const languageContext = useContext(LanguageContext)
     return (<div id={Style.About} >
 
 
-        <div id={Style.title}>~Sobre mi~</div>
+        <div id={Style.title}>{inSpanish ? '~Sobre mí~' : '~About me~'}</div>
 
-        <div id={Style.subTitles} >~ Presentación ~</div>
+        <div id={Style.subTitles} >{inSpanish ? '~ Presentación ~' : '~ Presentation ~'}</div>
         <div id={Style.imgANDdescription}>
-            {/* <div id={Style.description} >
-                {
-                    iWantCarJumps(about, "div")
-                }
-            </div> */}
-            <img alt="Imágen de Ezequiel Aguilera, el propietario de este portfolio. Joven buen mozo y pelirrojo jaja. No pero hablando en serio es bien guapo" src="https://i.imgur.com/A5s3OuY.png?3" />
+            {inSpanish ?
+                <img className={Style.toogleRockLanguage} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }} src="https://i.imgur.com/9BXuQig.jpg" />
+                :
+                <img className={Style.toogleRockLanguage} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }} src="https://i.imgur.com/fM5lDzY.jpg" />
+            }
+
+            <img id={Style.perfil} alt="Imágen de Ezequiel Aguilera, el propietario de este portfolio. Joven buen mozo y pelirrojo jaja. No pero hablando en serio es bien guapo" src="https://i.imgur.com/A5s3OuY.png?3" />
             <div className={Style.descriptionContainer}>
-                <div className={Style.description} >✨ Soy Ezequiel Aguilera
+                <div className={Style.description} >{inSpanish ? '✨ Soy Ezequiel Aguilera' : '✨ I am Ezequiel Aguilera'}
                 </div>
                 <div style={{ marginLeft: ".5rem" }} className={Style.description} >Full Stack Web Developer.
                 </div>
                 <div style={{ marginLeft: "0rem" }} className={Style.description} >
-                    Apasionado de la programación, valoro mucho el trabajo en equipo por haber vivido muy lindas experiencias que me enriquecieron como persona y también como desarrollador.</div>
+
+                    {inSpanish ? 'Apasionado de la programación, valoro mucho el trabajo en equipo por haber vivido muy lindas experiencias que me enriquecieron como persona y también como desarrollador.'
+                        :
+                        'Passionate about programming, I really value teamwork for having lived very nice experiences that enriched me as a person and also as a developer.'
+                    }
+                </div>
             </div>
+
+
         </div>
 
 

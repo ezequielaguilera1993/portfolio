@@ -3,6 +3,8 @@ import { smallScreen as sc } from '../../../developerTools/developerTools';
 import { NavigationBarHeight, osBxShadow } from '../../NavigationBar/NavigationBar';
 import { _videoAltaBirra } from './_videoAltaBirra';
 import { _videoPokemon } from './_videoPokemon';
+import { useContext } from 'react';
+import LanguageContext from '../../../Context/language';
 var Scroll = require('react-scroll');
 var Element = Scroll.Element;
 
@@ -11,7 +13,6 @@ var Element = Scroll.Element;
 
 
 export const Portfolio: React.FunctionComponent<{}> = (conf) => {
-
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////
