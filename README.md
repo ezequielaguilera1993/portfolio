@@ -1,11 +1,11 @@
 # Hello!
-Portfolio deploy: https://ezequielaguileraportfolio.vercel.app/
+ <a href="https://ezequielaguileraportfolio.vercel.app/">Portfolio deploy</a>
+ 
+<a href="https://drive.google.com/drive/folders/1N-7CiVb7uNXslN5gYVhKVT38DBef0FDr?usp=sharing">See my Cv</a>
 
-Linkedin: https://www.linkedin.com/in/ezequiel-aguilera/
+<a href="https://www.linkedin.com/in/ezequiel-aguilera/">See my Linkedin</a>
 
-Cv: https://drive.google.com/drive/folders/1N-7CiVb7uNXslN5gYVhKVT38DBef0FDr?usp=sharing
+<a href="mailto:ezequielaguilera1993@gmail.com">Send Mail</a>
 
-Mailto: <a src="mailto:ezequielaguilera1993@gmail.com">mailto:ezequielaguilera1993@gmail.com</a>
-
-WhatsApp:<a src="wa.me/+541128676833">wa.me/+541128676833</a> 
+<a href="https://wa.me/+541128676833">Send WhatsApp</a> 
 
