@@ -1,10 +1,10 @@
+import { ArcText } from '@arctext/react'
 import React, { useContext } from 'react'
 import LanguageContext from '../../../Context/language'
 import Style from './About.module.scss'
 import { icons } from './Logos'
 export const About: React.FunctionComponent<{}> = () => {
     const inSpanish = useContext(LanguageContext).languageState.inSpanish
-
     const languageContext = useContext(LanguageContext)
     return (<div id={Style.About} >
 
@@ -14,9 +14,30 @@ export const About: React.FunctionComponent<{}> = () => {
         <div id={Style.subTitles} >{inSpanish ? '~ Presentación ~' : '~ Presentation ~'}</div>
         <div id={Style.imgANDdescription}>
             {inSpanish ?
-                <img className={Style.toogleRockLanguage} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }} src="https://i.imgur.com/9BXuQig.jpg" />
+                <div className={Style.curveButtonContainer} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }} >
+                    <ArcText
+                        text="Cambiar de idioma"
+                        characterWidth={9}
+                        radius={35}
+                        className={Style.curveButton}
+                    >
+                        <img className={Style.toogleRockLanguage} src="https://i.imgur.com/9BXuQig.jpg" />
+                    </ArcText>
+                </div>
+
                 :
-                <img className={Style.toogleRockLanguage} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }} src="https://i.imgur.com/fM5lDzY.jpg" />
+
+                <div className={Style.curveButtonContainer} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }} >
+                    <ArcText
+                        text="Change language"
+                        characterWidth={9}
+                        radius={35}
+                        className={Style.curveButton}
+                    >
+                        <img className={Style.toogleRockLanguage} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }} src="https://i.imgur.com/fM5lDzY.jpg" />
+                    </ArcText>
+                </div>
+
             }
 
             <img id={Style.perfil} alt="Imágen de Ezequiel Aguilera, el propietario de este portfolio. Joven buen mozo y pelirrojo jaja. No pero hablando en serio es bien guapo" src="https://i.imgur.com/A5s3OuY.png?3" />

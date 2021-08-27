@@ -24,6 +24,7 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVEREWHERE!!
     flex-direction: column;
     display: flex;
     align-items: center;
+    position: relative;
   }
 
   #About p {
@@ -47,6 +48,36 @@ inset	outset */
     width: 100%;
   }
 
+  .curveButtonContainer {
+    position: relative;
+    left: 11vw;
+    border-radius: 100%;
+    // margin-left: 10vw;
+    transition: all 0.2s;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: radial-gradient(
+      circle,
+      rgb(255, 255, 255) 40%,
+      rgba(255, 0, 0, 0) 53%
+    );
+    transition: all 0.4s linear;
+    transform: scale(2.5);
+    font-size: 0.5rem;
+    font-family: monospace;
+    img {
+      // transform: rotate(-$rotate);
+      $scale: 70%;
+      width: $scale;
+      height: $scale;
+      border-radius: 50%;
+    }
+  }
+
   #imgANDdescription {
     // border: 0.1rem solid grey;
     margin-bottom: 0.4rem;
@@ -62,17 +93,6 @@ inset	outset */
       color: rgb(238, 238, 238);
       text-align: left;
       // text-justify: inter-character;
-    }
-
-    .toogleRockLanguage {
-      $size: 12%;
-      width: $size;
-      height: auto;
-      margin-left: 6vw;
-      border-radius: 1000px;
-      box-shadow: 0 0 1rem -0.3rem;
-      transition: 1000ms;
-      right: 2vw;
     }
 
     #perfil {
@@ -124,6 +144,38 @@ inset	outset */
 //MOBILE
 @media (max-width: $pivotWidthScreen) {
   @include baseMobile;
+  .curveButtonContainer {
+    // display: none;
+    position: absolute;
+    right: 0px;
+    left: auto;
+    top: -7vh;
+    border-radius: 100%;
+    // margin-left: 10vw;
+    transition: all 0.2s;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: radial-gradient(
+      circle,
+      rgb(255, 255, 255) 40%,
+      rgba(255, 0, 0, 0) 53%
+    );
+    transition: all 0.4s linear;
+    transform: scale(1.4);
+    font-size: 0.5rem;
+    font-family: monospace;
+    img {
+      // transform: rotate(-$rotate);
+      $scale: 70%;
+      width: $scale;
+      height: $scale;
+      border-radius: 50%;
+    }
+  }
 }
 
 //DESKTOP
@@ -147,9 +199,6 @@ inset	outset */
       font-size: 1.5rem;
       text-align: center;
       // text-justify: inter-character;
-    }
-
-    .toogleRockLanguage {
     }
 
     #perfil {
