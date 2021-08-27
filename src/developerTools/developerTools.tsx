@@ -50,7 +50,14 @@ showMeChanges()
 }) [...etc]
 */
 
+export function preloadImage(urls: string[]) {
 
+    urls.forEach((e) => {
+        var img = new Image();
+        img.src = e;
+    })
+
+}
 
 
 export function showMeChangesCreator(ref: React.RefObject<HTMLTextAreaElement>) {

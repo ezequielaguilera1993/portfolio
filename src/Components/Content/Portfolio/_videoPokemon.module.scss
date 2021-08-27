@@ -1,22 +1,5 @@
 @use 'sass:math';
 
-@mixin componentBorders($altaBirraContainer, $weigth: 1px, $margin: 4px) {
-  #{$altaBirraContainer} {
-    border: 1px solid rgb(174, 226, 250);
-    margin: $margin;
-    border-radius: 14px;
-
-    * {
-      border: $weigth rgb(0, 174, 255) solid;
-      margin: $margin;
-
-      border-radius: 14px;
-    }
-  }
-}
-
-// @include componentBorders(#altaBirraContainer);
-
 //Constants
 //
 $ratioYoutubeVideo: 0.5625;
@@ -41,7 +24,7 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
   #Portfolio {
     background-color: none;
   }
-  #altaBirraContainer {
+  #pokemonContainer {
     position: relative;
   }
 
@@ -140,7 +123,7 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
     height: $sizeInVw * $ratioYoutubeVideo;
   }
 
-  #altaBirraContainer {
+  #pokemonContainer {
     padding-bottom: 8vmax;
   }
   #moreConfetti {
