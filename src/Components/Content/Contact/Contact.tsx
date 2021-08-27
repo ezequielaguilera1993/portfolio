@@ -1,22 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Style from './Contact.module.scss'
 import { Form } from '../../UtilComponents/Form/Form'
 import { ArcText } from '@arctext/react'
 import { NavigationBarHeight, osBxShadow } from '../../NavigationBar/NavigationBar'
 import { smallScreen as sc } from '../../../developerTools/developerTools'
+import LanguageContext from '../../../Context/language'
 
 export const Contact: React.FunctionComponent<{}> = () => {
+
+    const inSpanish = useContext(LanguageContext).languageState.inSpanish
+
+
+
     return (<div id={Style.Contact} >
-        <div id={Style.title} style={{ marginTop: sc() ? "1rem" : NavigationBarHeight + osBxShadow + "vh" }}>~Contacto~</div>
-
-
-
+        <div id={Style.title} style={{ marginTop: sc() ? "1rem" : NavigationBarHeight + osBxShadow + "vh" }}>{inSpanish ? "~Contacto~" : '~Contact~'}</div>
+        {console.log(inSpanish, 'inSpanish')}
         <div id={Style.contactButtons}>
 
             <div className={Style.curveButtonContainer}>
                 <a href='https://wa.me/+541128676833' >
                     <ArcText
-                        text="Enviar WhatsApp"
+                        text={inSpanish ? "Enviar WhatsApp" : "Send WhatsApp"}
                         characterWidth={10}
                         radius={40}
                         className={Style.curveButton}
@@ -31,7 +35,7 @@ export const Contact: React.FunctionComponent<{}> = () => {
             <div className={Style.curveButtonContainer}>
                 <a href='mailto:ezequielaguilera1993@gmail.com' >
                     <ArcText
-                        text="Enviar Mail"
+                        text={inSpanish ? "Enviar Mail" : 'Send Mail'}
                         characterWidth={10}
                         radius={40}
                         className={Style.curveButton}
@@ -46,7 +50,7 @@ export const Contact: React.FunctionComponent<{}> = () => {
             <div className={Style.curveButtonContainer}>
                 <a href='tel:+541128676833' >
                     <ArcText
-                        text="Llamar"
+                        text={inSpanish ? "Llamar" : 'Call me'}
                         characterWidth={10}
                         radius={40}
                         className={Style.curveButton}
@@ -59,7 +63,7 @@ export const Contact: React.FunctionComponent<{}> = () => {
         </div>
 
 
-        <div id={Style.subTitles} >~ Enviar una nota ~</div>
+        <div id={Style.subTitles} >{inSpanish ? "~ Enviar una nota ~" : '~ Send a note ~'}</div>
 
         <Form />
 

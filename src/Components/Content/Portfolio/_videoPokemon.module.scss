@@ -18,6 +18,13 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
   align-items: center;
   box-shadow: 0rem 0rem 0.3rem 0.01rem;
 }
+#subTitles {
+  // font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  padding-top: 0.2rem;
+  background-color: rgb(36, 36, 36);
+  width: 100%;
+}
 
 @mixin base() {
   /* Solo para que le asigne el id! */
@@ -26,6 +33,21 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
   }
   #pokemonContainer {
     position: relative;
+  }
+
+  @keyframes aLinksAnimation {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.02);
+    }
+  }
+  #aLinks {
+    animation: aLinksAnimation infinite linear alternate 0.8s;
+    margin: 2vh 0.4vw;
+    filter: drop-shadow(rgb(255, 255, 255) 0px 0px 0.2rem);
+    transition: all 0.5s;
   }
 
   .youtubeVideo {
@@ -109,6 +131,14 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
 //DESKTOP////////////////////////////////////////////////////////////////////////
 @media (min-width: $pivotWidthScreen) {
   @include base;
+
+  #aLinks {
+    &:hover {
+      transition: all 0.2s;
+
+      filter: drop-shadow(rgb(188, 252, 202) 0px 0px 0.2rem);
+    }
+  }
 }
 /////////////////////////////////////////////////////////////////////////////////
 
@@ -124,28 +154,27 @@ $pivotWidthScreen: 1000px; //If change this, change this in everywhere mfucker!
   }
 
   #pokemonContainer {
-    padding-bottom: 8vmax;
   }
   #moreConfetti {
-    transform: translateY(0%) translateX(-50%);
+    transform: translateY(180%) translateX(0%);
     top: auto;
     bottom: 0px;
-    right: auto;
+    right: 2vmax;
     left: auto;
-    width: 8vmax;
-    height: 8vmax;
-    margin-bottom: -1vmax;
+    width: 6vmax;
+    height: 6vmax;
+    margin-bottom: 1vmax;
   }
 
   #moreConfettiLoading {
-    transform: translateY(10%) translateX(0%) scale(1.5);
+    transform: translateY(150%) translateX(0%);
     top: auto;
     bottom: 0px;
-    right: 0;
-    left: 0;
-    width: 8vmax;
-    height: 8vmax;
-    margin-bottom: -1vmax;
+    right: 1.5vmax;
+    left: auto;
+    width: 7vmax;
+    height: 7vmax;
+    margin-bottom: 1vmax;
   }
 }
 //////////////////////////////////////////////////////////////////////////////////

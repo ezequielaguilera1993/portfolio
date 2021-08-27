@@ -51,6 +51,7 @@ export const _videoPokemon: React.FunctionComponent<{}> = (conf) => {
         if (smallScreen === false) {
             const heightOfVideo = (vw(65) * 9 / 16) + 10//5px de cada lado por el border! //the height is ratio-proportional at width!, and width value is 65 (see scss associate)
             //     offset: (-1) * (vh(NavigationBarHeight) + ((vh(100 - NavigationBarHeight) - heightOfVideo) / 2))
+
             scroller.scrollTo('pokemonTitle', {
                 duration: 300,
                 delay: 0,
@@ -60,8 +61,9 @@ export const _videoPokemon: React.FunctionComponent<{}> = (conf) => {
         }
         else if (smallScreen === true) {
             const heightOfVideo = (vw(95) * 9 / 16) + 10//5px de cada lado por el border! //the height is ratio-proportional at width!, and width value is 65 (see scss associate)
+            console.log(scroller, 'scroller')
 
-            scroller.scrollTo('pokemonVideo', {
+            scroller.scrollTo('pokemonTitle', {
                 duration: 300,
                 delay: 0,
                 smooth: true,
@@ -90,7 +92,7 @@ export const _videoPokemon: React.FunctionComponent<{}> = (conf) => {
         angle: 90,
         spread: 360,
         startVelocity: 50,
-        elementCount: smallScreen ? 50 : 200,
+        elementCount: smallScreen ? 30 : 200,
         dragFriction: smallScreen ? 0.2 : 0.1,
         duration: 3000,
         stagger: 3,
@@ -109,14 +111,18 @@ export const _videoPokemon: React.FunctionComponent<{}> = (conf) => {
     return (<div id={Style.container} style={{ marginTop: sc() ? "1rem" : NavigationBarHeight + osBxShadow + "vh" }} >
 
 
-        {/* end of confetti things */}
+        <Element name="pokemonTitle">
+            <h2 id={Style.subTitles} >Pokémon SPA</h2>
+        </Element>
+
+        <h3 style={{ margin: "0px", marginBottom: "2vh" }} >Single Page Application sobre Pokémons</h3>
+
+
+
+
+
         <div id={Style.pokemonContainer} >
 
-
-
-            <Element name="pokemonTitle">
-                <h2>Pokémon SPA</h2>
-            </Element>
             <div style={{ marginLeft: "-4vh" }}>
                 <Confetti active={confetti} config={config} />
             </div>
@@ -158,12 +164,22 @@ export const _videoPokemon: React.FunctionComponent<{}> = (conf) => {
                         null
             }
 
-
+            <a style={{ textDecoration: "none", color: "white" }} href="https://www.youtube.com/watch?v=nO87QhVz-OQ" rel="noreferrer" target="_blank" >
+                <div style={{ marginTop: "2vh" }}>
+                    <i>"Pokemon? Pokemon? osea que el poke y luego el mon y luego llega otro allá y sale uno pequeño y luego yo no se que es lo que me quieres decir pero uAaAaAaAa"
+                    </i>
+                </div>
+            </a>
         </div>
 
-        {/* <div style={{ position: "fixed", left: "260px", top: vh(NavigationBarHeight), height: "36.56vw", width: vw(65) + "px", margin: "auto", backgroundColor: "gray", }}>Rule! vw(65)</div>
+        <a href="https://github.com/ezequielaguilera1993/Pokemon-SPA.git" target="_blank">
+            <img id={Style.aLinks} src="https://i.imgur.com/lbDj1Ou.png" alt="Link al Github de proyecto pokemon" width="90" height="90" />
+        </a>
 
+        <a href="https://pokemon-proyect.vercel.app/" target="_blank">
+            <img id={Style.aLinks} src="https://image.flaticon.com/icons/png/512/1508/1508878.png" alt="Link al deploy del proyecto pokemon" width="100" height="100" />
+        </a>
 
-        <div style={{ position: "fixed", left: "260px", top: vh(NavigationBarHeight) + vw(36.56), height: vh(3), width: vw(10) + "px", margin: "auto", backgroundColor: "greenyellow", }}>Rule! vw(65)</div> */}
-    </div >)
+    </div >
+    )
 }

@@ -8,30 +8,44 @@ import { smallScreen } from './developerTools/developerTools';
 
 import { Route } from 'react-router-dom';
 import { FireworksLanding } from './Components/FireworksLanding/FireworksLanding';
+import { useContext, useReducer } from 'react';
+import LanguageContext, { LanguageContextProvider, languageInitialState, languageReducer } from './Context/language';
 
 
-function App() {
+export interface iApplicationProps { }
 
+
+const App: React.FunctionComponent<iApplicationProps> = () => {
   //http://vyctoire.com/about sensaciond e vida
   //https://prashantsani.com/ figuras en 3d
 
-  return (
-    <div className="App">
-      <Route path="/" >
-        <NavigationBar />
-        {/* div that make place to navigation bar, if the screen is swamll, the navigarot go down, and no neceseary to make place */}
-        {
-          smallScreen() ? null :
-            <div style={{ marginTop: NavigationBarHeight + "vh" }} />
-        }
-        <About />
-        <Portfolio />
-        <Contact />
-        {/* <Footer /> */}
-        <FireworksLanding />
+  const [languageState, languageDispatch] = useReducer(languageReducer, languageInitialState)
 
-      </Route>
-    </div >
+
+  const languageContextValues = {
+    languageState,
+    languageDispatch
+  }
+
+  return (
+    <LanguageContextProvider value={languageContextValues}>
+      <div className="App">
+        <Route path="/" >
+          <NavigationBar />
+          {/* div that make place to navigation bar, if the screen is swamll, the navigarot go down, and no neceseary to make place */}
+          {
+            smallScreen() ? null :
+              <div style={{ marginTop: NavigationBarHeight + "vh" }} />
+          }
+          <About />
+          <Portfolio />
+          <Contact />
+          {/* <Footer /> */}
+          <FireworksLanding />
+
+        </Route>
+      </div >
+    </LanguageContextProvider>
   );
 }
 

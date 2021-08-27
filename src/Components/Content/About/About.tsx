@@ -29,7 +29,7 @@ export const About: React.FunctionComponent<{}> = () => {
 
 
 
-        <div id={Style.subTitles} >~ Tech kills ~</div>
+        <div id={Style.subTitles} >~ Tech skills ~</div>
 
 
         <div id={Style.logos} >

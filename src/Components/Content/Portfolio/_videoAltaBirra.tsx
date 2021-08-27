@@ -60,7 +60,7 @@ export const _videoAltaBirra: React.FunctionComponent<{}> = (conf) => {
             //     smooth: true,
             //     offset: (-1) * (vh(NavigationBarHeight) + ((vh(100 - NavigationBarHeight) - heightOfVideo) / 2))
             // })
-            scroller.scrollTo('title', {
+            scroller.scrollTo('titleAltaBirra', {
                 duration: 300,
                 delay: 0,
                 smooth: true,
@@ -71,7 +71,7 @@ export const _videoAltaBirra: React.FunctionComponent<{}> = (conf) => {
         else if (smallScreen === true) {
             const heightOfVideo = (vw(95) * 9 / 16) + 10//5px de cada lado por el border! //the height is ratio-proportional at width!, and width value is 65 (see scss associate)
 
-            scroller.scrollTo('altaBirraVideo', {
+            scroller.scrollTo('titleAltaBirra', {
                 duration: 300,
                 delay: 0,
                 smooth: true,
@@ -105,7 +105,7 @@ export const _videoAltaBirra: React.FunctionComponent<{}> = (conf) => {
         angle: 90,
         spread: 360,
         startVelocity: 50,
-        elementCount: smallScreen ? 50 : 200,
+        elementCount: smallScreen ? 30 : 200,
         dragFriction: smallScreen ? 0.2 : 0.1,
         duration: 3000,
         stagger: 3,
@@ -122,11 +122,15 @@ export const _videoAltaBirra: React.FunctionComponent<{}> = (conf) => {
     ///////////////////////////////////////////////////RETURN///////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////
     return (<div id={Style.container} style={{ marginTop: sc() ? "1rem" : NavigationBarHeight + osBxShadow + "vh" }} >
+        <Element name="titleAltaBirra">
+            <h2 id={Style.subTitles} >AltaBirra</h2>
+        </Element>
+        <h3 style={{ margin: "0px", marginBottom: "2vh" }} >Single Page Application dedicada al comercio de cervezas artesanales 🍺</h3>
 
 
-        <div id={Style.altaBirraContainer} >
 
-            <h2>AltaBirra</h2>
+        <div id={Style.altaBirraContainer}>
+
 
             <div style={{ marginLeft: "-4vh" }}>
                 <Confetti active={confetti} config={config} />
@@ -169,9 +173,11 @@ export const _videoAltaBirra: React.FunctionComponent<{}> = (conf) => {
                             null
                 }
             </Element>
-
-
         </div>
+
+        <a href="https://github.com/LeaMarco/AltaBirra.git" target="_blank"><img id={Style.aLinks} src="https://i.imgur.com/lbDj1Ou.png" alt="typescript" width="90" height="90" /></a>
+        <a href="https://altabirra.vercel.app/" target="_blank"><img id={Style.aLinks} src="https://image.flaticon.com/icons/png/512/1508/1508878.png" alt="typescript" width="100" height="100" /> </a>
+
 
         {/* <div style={{ position: "fixed", left: "260px", top: vh(NavigationBarHeight), height: "36.56vw", width: vw(65) + "px", margin: "auto", backgroundColor: "gray", }}>Rule! vw(65)</div>
 

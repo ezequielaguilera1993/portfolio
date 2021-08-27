@@ -2,7 +2,8 @@ import { useForm } from "react-hook-form";
 
 import Style from "./Form.module.scss";
 import emailjs from 'emailjs-com'
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import LanguageContext from "../../../Context/language";
 // import { showMeChangesCreator } from "../../../developerTools/developerTools";
 
 interface IinformationObject {
@@ -18,6 +19,8 @@ function sendMail(informationObject: { name: string, mail: string, phone: string
 
 
 export function Form() {
+
+    const inSpanish = useContext(LanguageContext).languageState.inSpanish
 
     //states
     const [send, ªsend] = useState<boolean>(false)
@@ -38,11 +41,26 @@ export function Form() {
 
 
     function date() {
-        var m = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
-        var ds = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
-        var f = new Date();
+        let m;
+        {
+            inSpanish ? m = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+                :
+                m = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        }
+        let ds;
+        {
+            inSpanish ? ds = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"]
+                :
+                ds = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        }
 
-        return ds[f.getDay()] + " " + f.getDate() + " de " + m[f.getMonth()] + " de " + f.getFullYear()
+
+        let f = new Date();
+
+        return inSpanish ? ds[f.getDay()] + " " + f.getDate() + " de " + m[f.getMonth()] + " del " + f.getFullYear()
+            :
+            ds[f.getDay()] + ", " + m[f.getMonth()] + "  " + f.getDate() + ", " + f.getFullYear()
+
     }
 
 
@@ -111,7 +129,7 @@ export function Form() {
                 <div id={Style.name} className={Style.inputContainer}>
                     <label htmlFor="name">Nombre: </label>
                     <input autoComplete="on"
-                        placeholder='"Florencia"'
+                        placeholder={inSpanish ? '"Florencia"' : '"Florence"'}
                         {...register("name", { required: false })}
                         type="text"
                     />
@@ -119,9 +137,12 @@ export function Form() {
                 </div>
 
                 <div id={Style.mail} className={Style.inputContainer}>
-                    <label htmlFor="mail" placeholder='"florencia1990@hotmail.com"'>
+                    <label htmlFor="mail"
+                        placeholder={inSpanish ? '"florencia1990@hotmail.com"' : '"florence1990@hotmail.com"'}>
                         Email: </label>
-                    <input autoComplete="on"  {...register("mail", { required: false })} type="mail" placeholder='"florencia1990@hotmail.com"' />
+                    <input autoComplete="on"  {...register("mail", { required: false })} type="mail"
+                        placeholder={inSpanish ? '"florencia1990@hotmail.com"' : '"florence1990@hotmail.com"'}
+                    />
                     {/* {errors.mail && <p>Campo requerido para poder contactarme</p>} */}
                 </div>
 
@@ -129,14 +150,14 @@ export function Form() {
                     <label htmlFor="phone">Teléfono: </label>
                     <input autoComplete="on"
                         {...register("phone", { required: false })} type="tel"
-                        placeholder='"+541128676833"'
+                        placeholder={inSpanish ? '"+541128676833"' : '"+44 (0) 7700123456"'}
                     />
                     {/* {errors.phone && <p>Campo requerido para poder contactarme</p>} */}
                 </div>
 
                 <div id={Style.message} className={Style.inputContainer}>
 
-                    <label htmlFor="message">Nota: </label>
+                    <label htmlFor="message">{inSpanish ? "Nota:" : 'Note:'} </label>
                     <textarea
                         placeholder='[...]'
                         {...register("message", { required: false })}
@@ -155,7 +176,8 @@ export function Form() {
                 </div>
 
 
-                <input id={Style.submit} type="submit" />
+                <input id={Style.submit} type="submit" value={inSpanish ? "Enviar" : 'Send'} />
+
             </form>
 
         </div>
