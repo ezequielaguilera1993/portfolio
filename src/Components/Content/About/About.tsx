@@ -16,7 +16,7 @@ export const About: React.FunctionComponent<{}> = () => {
             {inSpanish ?
                 <div className={Style.curveButtonContainer} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }} >
                     <ArcText
-                        text="Cambiar de idioma"
+                        text="Change language"
                         characterWidth={9}
                         radius={35}
                         className={Style.curveButton}
@@ -29,7 +29,7 @@ export const About: React.FunctionComponent<{}> = () => {
 
                 <div className={Style.curveButtonContainer} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }} >
                     <ArcText
-                        text="Change language"
+                        text="Cambiar de idioma"
                         characterWidth={9}
                         radius={35}
                         className={Style.curveButton}
