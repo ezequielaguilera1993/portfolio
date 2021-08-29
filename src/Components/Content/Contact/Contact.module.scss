@@ -19,9 +19,8 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVERYWHERE!!
 
 //MOBILE
 @media (max-width: $pivotWidthScreen) {
-  // #Contact {
-  // }
-
+  #Contact {
+  }
   #title {
     font-size: 2rem;
     background-color: rgba(0, 0, 0, 0.267);
@@ -42,15 +41,15 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVERYWHERE!!
     justify-content: space-evenly;
     margin: 2vh auto;
     margin-right: 0vw;
-    margin-left: 5vw;
-    max-width: 93vw;
+    margin-left: 2vw;
+    max-width: 100vw;
     $rotate: -41.25grad;
-
+    overflow: hidden;
     .curveButtonContainer {
       border-radius: 100%;
       $top: 2vh;
 
-      margin: $top 0;
+      margin: $top 2vw;
       margin-top: $top + 2.4;
       transition: all 0.2s;
       background: radial-gradient(
@@ -60,7 +59,7 @@ $pivotWidthScreen: 1000px; //IF CHANGE, CHANGE IN EVERYWHERE!!
       );
 
       transition: all 0.4s linear;
-      transform: rotate($rotate) scale(1.5);
+      transform: rotate($rotate) scale(1.4);
 
       .curveButton {
         // background-color: rgb(136, 136, 136);

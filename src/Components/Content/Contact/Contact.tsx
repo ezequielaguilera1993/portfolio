@@ -14,7 +14,6 @@ export const Contact: React.FunctionComponent<{}> = () => {
 
     return (<div id={Style.Contact} >
         <div id={Style.title} style={{ marginTop: sc() ? "1rem" : NavigationBarHeight + osBxShadow + "vh" }}>{inSpanish ? "~Contacto~" : '~Contact~'}</div>
-        {console.log(inSpanish, 'inSpanish')}
         <div id={Style.contactButtons}>
 
             <div className={Style.curveButtonContainer}>
@@ -56,6 +55,21 @@ export const Contact: React.FunctionComponent<{}> = () => {
                         className={Style.curveButton}
                     >
                         <img alt="icono de teléfono" src='https://i.imgur.com/l6Qe81D.png' style={{ filter: "brightness(1.4)" }} />
+                    </ArcText>
+                </a>
+            </div>
+
+
+
+            <div className={Style.curveButtonContainer}>
+                <a href="https://www.linkedin.com/in/ezequiel-aguilera/" >
+                    <ArcText
+                        text="Linkedin"
+                        characterWidth={10}
+                        radius={40}
+                        className={Style.curveButton}
+                    >
+                        <img alt="icono de linkedin" src='https://i.imgur.com/bIP3Zic.png' style={{ borderRadius: "50%" }} />
                     </ArcText>
                 </a>
             </div>

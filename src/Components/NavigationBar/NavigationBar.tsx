@@ -22,6 +22,9 @@ export const NavigationBar: React.FunctionComponent<{}> = () => {
         <div id={Style.NavigationBar} style={{ height: NavigationBarHeight + "vh" }}>
             {/* <Link to="/About">About </Link>
             <Link to="/Portfolio">Portfolio</Link> */}
+
+
+
             <span className={Style.link} onClick={goTop} >{inSpanish ? 'Sobre mí' : 'About me'}</span>
             <Link className={Style.link} to={PortfolioStyle.title} smooth={true} duration={duration} offset={!sc ? -vh(NavigationBarHeight) - osBxShadow : -osBxShadow} >Portfolio</Link>
             <Link className={Style.link} to={ContactStyle.title} smooth={true} duration={duration} offset={!sc ? -vh(NavigationBarHeight) - osBxShadow : -osBxShadow} >{inSpanish ? 'Contacto' : 'Contact'}</Link>

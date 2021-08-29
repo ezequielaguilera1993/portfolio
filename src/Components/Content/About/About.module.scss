@@ -53,7 +53,7 @@ inset	outset */
     left: 11vw;
     border-radius: 100%;
     // margin-left: 10vw;
-    transition: all 0.2s;
+    transition: all 0.1s;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -62,13 +62,15 @@ inset	outset */
     user-select: none;
     background: radial-gradient(
       circle,
-      rgb(255, 255, 255) 40%,
+      rgb(226, 226, 226) 40%,
       rgba(255, 0, 0, 0) 53%
     );
-    transition: all 0.4s linear;
+
+    transition: all 0.2s linear;
     transform: scale(2.5);
     font-size: 0.5rem;
     font-family: monospace;
+
     img {
       // transform: rotate(-$rotate);
       $scale: 70%;
@@ -141,15 +143,44 @@ inset	outset */
   }
 }
 
+@function limitFontSize($maxSize) {
+}
+
 //MOBILE
 @media (max-width: $pivotWidthScreen) {
   @include baseMobile;
+  #title {
+    position: relative;
+  }
+  * {
+    // border: 1px solid green;
+  }
+  .upToogleLanguage {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    z-index: 100;
+    top: 0.6rem;
+    right: 0;
+    font-size: 0.87rem;
+    // margin: 1vh 0;
+    img {
+      margin: 0 0.4rem;
+      // width: 10vw;
+      height: 2.4rem;
+      border-radius: 50%;
+      filter: drop-shadow(0 0 0.1rem rgb(255, 255, 255));
+    }
+  }
+
   .curveButtonContainer {
     // display: none;
     position: absolute;
     right: 0px;
     left: auto;
-    top: -7vh;
+    top: -1vw;
     border-radius: 100%;
     // margin-left: 10vw;
     transition: all 0.2s;
@@ -159,6 +190,7 @@ inset	outset */
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
     background: radial-gradient(
       circle,
       rgb(255, 255, 255) 40%,
@@ -178,9 +210,53 @@ inset	outset */
   }
 }
 
+//MOBILE MINI
+@media (max-width: 400px) {
+  .upToogleLanguage {
+    font-size: 0.6rem;
+    top: 0.7rem;
+    img {
+      margin: 0 0.1rem;
+      // width: 10vw;
+      height: 2rem;
+      border-radius: 50%;
+      filter: drop-shadow(0 0 0.1rem rgb(255, 255, 255));
+    }
+  }
+}
+
+//MOBILE MINI-MINI
+@media (max-width: 313px) {
+  .upToogleLanguage {
+    font-size: 0.6rem;
+    top: 0.7rem;
+    .label {
+      display: none;
+    }
+    img {
+      margin: 0 0.1rem;
+      // width: 10vw;
+      height: 2rem;
+      border-radius: 50%;
+      filter: drop-shadow(0 0 0.1rem rgb(255, 255, 255));
+    }
+  }
+}
+
 //DESKTOP
 @media (min-width: $pivotWidthScreen) {
   @include baseMobile;
+
+  .curveButtonContainer {
+    &:hover {
+      background: radial-gradient(
+        circle,
+        rgb(255, 255, 255) 40%,
+        rgba(255, 0, 0, 0) 53%
+      );
+      transform: scale(2.6);
+    }
+  }
 
   #imgANDdescription {
     // border: 0.1rem solid grey;
@@ -227,10 +303,16 @@ inset	outset */
       color: transparent;
     }
     $scale: 4vw;
+
     img {
       width: $scale;
       height: $scale;
+      transition: all 0.2s;
       border-radius: 0.3rem;
+
+      &:hover {
+        filter: drop-shadow(0 0 1rem rgb(88, 88, 88));
+      }
     }
     img[src="https://www.nextontop.com/assets/img/services/web/expressjs.svg"]
     {
@@ -241,6 +323,9 @@ inset	outset */
     {
       transform: scale(1.57);
       filter: brightness(3);
+      &:hover {
+        filter: brightness(3) drop-shadow(0 0 1rem rgb(255, 255, 255));
+      }
     }
   }
 }

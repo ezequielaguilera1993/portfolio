@@ -1,6 +1,7 @@
 import { ArcText } from '@arctext/react'
 import React, { useContext } from 'react'
 import LanguageContext from '../../../Context/language'
+import { smallScreen } from '../../../developerTools/developerTools'
 import Style from './About.module.scss'
 import { icons } from './Logos'
 export const About: React.FunctionComponent<{}> = () => {
@@ -8,35 +9,73 @@ export const About: React.FunctionComponent<{}> = () => {
     const languageContext = useContext(LanguageContext)
     return (<div id={Style.About} >
 
+        {console.log(inSpanish, 'inSpanish')}
 
         <div id={Style.title}>{inSpanish ? '~Sobre mí~' : '~About me~'}</div>
-
         <div id={Style.subTitles} >{inSpanish ? '~ Presentación ~' : '~ Presentation ~'}</div>
+
+        {smallScreen() ?
+
+            (
+                inSpanish ?
+                    <div className={Style.upToogleLanguage} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }}>
+                        <div>
+                            <div className={Style.label}>Change</div>
+                            <div className={Style.label}>language</div>
+                        </div>
+                        <img src="https://i.imgur.com/9BXuQig.jpg" />
+
+                    </div>
+
+                    :
+
+                    <div className={Style.upToogleLanguage} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }}>
+                        <div>
+                            <div className={Style.label}>Change</div>
+                            <div className={Style.label}>language</div>
+                        </div>
+                        <img src="https://i.imgur.com/fM5lDzY.jpg" />
+                    </div>
+
+
+            ) : null
+        }
+
+
+
+
         <div id={Style.imgANDdescription}>
-            {inSpanish ?
-                <div className={Style.curveButtonContainer} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }} >
-                    <ArcText
-                        text="Change language"
-                        characterWidth={9}
-                        radius={35}
-                        className={Style.curveButton}
-                    >
-                        <img className={Style.toogleRockLanguage} src="https://i.imgur.com/9BXuQig.jpg" />
-                    </ArcText>
-                </div>
+            {
+                !smallScreen() ?
+                    (
+                        inSpanish ?
+                            <div className={Style.curveButtonContainer} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }} >
+                                <ArcText
+                                    text="Change language"
+                                    characterWidth={9}
+                                    radius={35}
+                                    className={Style.curveButton}
+                                >
+                                    <img className={Style.toogleRockLanguage} src="https://i.imgur.com/9BXuQig.jpg" />
+                                </ArcText>
+                            </div>
 
-                :
+                            :
 
-                <div className={Style.curveButtonContainer} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }} >
-                    <ArcText
-                        text="Cambiar de idioma"
-                        characterWidth={9}
-                        radius={35}
-                        className={Style.curveButton}
-                    >
-                        <img className={Style.toogleRockLanguage} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }} src="https://i.imgur.com/fM5lDzY.jpg" />
-                    </ArcText>
-                </div>
+                            <div className={Style.curveButtonContainer} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }} >
+                                <ArcText
+                                    text="Cambiar de idioma"
+                                    characterWidth={9}
+                                    radius={35}
+                                    className={Style.curveButton}
+                                >
+                                    <img className={Style.toogleRockLanguage} onClick={() => { languageContext.languageDispatch({ type: "CHANGE_LANGUAGE" }) }} src="https://i.imgur.com/fM5lDzY.jpg" />
+                                </ArcText>
+                            </div>
+                    )
+                    :
+                    null
+
 
             }
 
@@ -71,12 +110,3 @@ export const About: React.FunctionComponent<{}> = () => {
 
     </div>)
 }
-
-
-
-
-
-
-
-
-
