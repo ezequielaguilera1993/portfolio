@@ -10,7 +10,7 @@ import ContactStyle from '../Content/Contact/Contact.module.scss'
 import { smallScreen, vh } from '../../developerTools/developerTools'
 import LanguageContext from '../../Context/language'
 export const NavigationBarHeight = 5;
-export const osBxShadow = 4.2
+export const osBxShadow = 3.2
 export const NavigationBar: React.FunctionComponent<{}> = () => {
     const inSpanish = useContext(LanguageContext).languageState.inSpanish
 
