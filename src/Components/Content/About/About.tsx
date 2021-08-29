@@ -105,7 +105,7 @@ export const About: React.FunctionComponent<{}> = () => {
         <div id={Style.logos} >
             {icons}
         </div>
-        <p> | Typescript | Javascript | Git | React | Redux | HTML | Sass | CSS | Figma | NodeJs  | Express | Postman | PostgreSQL | SQLite | Prisma | Sequelize | Kotlin | Babel | Electron | Firebase | </p>
+        <p id={Style.logosText}> | Typescript | Javascript | Git | React | Redux | HTML | Sass | CSS | Figma | NodeJs  | Express | Postman | PostgreSQL | SQLite | Prisma | Sequelize | Kotlin | Babel | Electron | Firebase | </p>
 
 
     </div>)

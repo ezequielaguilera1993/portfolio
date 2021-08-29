@@ -167,13 +167,14 @@ export const _videoPokemon: React.FunctionComponent<{}> = (conf) => {
             }
 
             <a style={{ textDecoration: "none", color: "white" }} href={inSpanish ? "https://www.youtube.com/watch?v=nO87QhVz-OQ" : 'https://www.youtube.com/watch?v=xFU2HL-PQNo'} rel="noreferrer" target="_blank" >
-                <div style={{ marginTop: "2vh" }}>
+                <div style={{ marginTop: "2vh", maxWidth: "95vw", marginLeft: "auto", marginRight: "auto" }}>
 
                     {inSpanish ?
-                        <i>"Pokemon? Pokemon? osea que el poke y luego el mon y luego llega otro allá y sale uno pequeño y luego yo no se que es lo que me quieres decir pero uAaAaAaAa"
+
+                        <i /* style={{ margin: "0 1vw" }} */>"Pokemon? Pokemon? osea que el poke y luego el mon y luego llega otro allá y sale uno pequeño y luego yo no se que es lo que me quieres decir pero uAaAaAaAa"
                         </i>
                         :
-                        <i>"Pokemon? Pokemon? with the poke and the man and the thing with the guy comes out of the little thing and he makes a Bdaa Bhah Buh Dhaa Bhaaa Ahhg Ahhg Ahg"
+                        <i /* style={{ margin: "0 1vw" }} */>"Pokemon? Pokemon? with the poke and the man and the thing with the guy comes out of the little thing and he makes a Bdaa Bhah Buh Dhaa Bhaaa Ahhg Ahhg Ahg"
                         </i>
                     }
 

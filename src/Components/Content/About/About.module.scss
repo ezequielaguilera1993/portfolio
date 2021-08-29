@@ -149,6 +149,11 @@ inset	outset */
 //MOBILE
 @media (max-width: $pivotWidthScreen) {
   @include baseMobile;
+
+  #logosText {
+    max-width: 95vw;
+  }
+
   #title {
     position: relative;
   }
