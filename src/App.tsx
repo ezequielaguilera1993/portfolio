@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { NavigationBar, NavigationBarHeight } from './Components/NavigationBar/NavigationBar';
 import { About } from './Components/Content/About/About';
 import { Portfolio } from './Components/Content/Portfolio/Portfolio';
