@@ -132,8 +132,7 @@ inset	outset */
     }
 
     img[alt="reactnative"] {
-      width: $scale;
-      height: $scale;
+      width: $scale * 0.8;
     }
 
     img[src="https://www.nextontop.com/assets/img/services/web/expressjs.svg"]
